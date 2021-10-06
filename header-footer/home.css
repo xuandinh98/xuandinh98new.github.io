@@ -1,0 +1,12 @@
+body{
+    margin:0;
+    background-color: #000D24;
+}
+#video_background {
+    width: 100%;
+    height: auto;
+}
+#btn-anchor{
+    width: 100%;
+    display: inline-block;
+}
