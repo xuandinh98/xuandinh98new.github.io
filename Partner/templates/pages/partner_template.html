@@ -1,4 +1,4 @@
-{% include "pages_home/header_footer.html" %}
+{% extends "pages_home/header_footer.html" %}
 {% load static %}
 {% block title %}Đối tác{% endblock %}
 
@@ -219,6 +219,8 @@
         </div>
 
 {% endblock %}
+
+{% block js %}
 <script src="{% static 'js/bootstrap.js' %}"></script>
 <script src="{% static 'js/jquery.dcjqaccordion.2.7.js' %}"></script>
 <script src="{% static 'js/scripts.js' %}"></script>
@@ -314,4 +316,4 @@
 		});
 	</script>
 	<!-- //calendar -->
-{% block js %}Đối tác{% endblock %}
+{% endblock %}
