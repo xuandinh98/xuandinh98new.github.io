@@ -1,9 +1,13 @@
 <html>
     <head>
         {% load static %}
-        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+        Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
         <title>{% block title %}{% endblock %}</title>
         <link rel="stylesheet" href="{% static 'css/header.css' %}">
+        <link rel="stylesheet" href="{% static 'css/footer.css' %}">
         <link rel="stylesheet" href="{% static 'themify-icons/themify-icons.css' %}">
         {% block css %}
         
@@ -60,5 +64,9 @@
             </div>
             </div>
             <div id="up-page">Quay lại đầu trang</div>
+
+        {% block js %}
+        
+        {% endblock %}
     </body>
 </html>
