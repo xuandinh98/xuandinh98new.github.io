@@ -1,0 +1,20 @@
+{% extends "pages_home/header_footer.html" %}
+{% load static %}
+{% block title %}Đối tác{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<video id="video_background" preload="auto" autoplay="true" loop="loop" muted volume="0">
+    <source src="{% static 'video/background.mp4' %}" type="video/webm"/>
+    </video>
+<div id="btn-anchor">
+    <button>GONGFIX</button>
+    <button>DỊCH VỤ</button>
+    <button>SỰ KIỆN</button>
+    <button>LIÊN HỆ</button>
+</div>
+
+{% endblock %}

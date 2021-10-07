@@ -1,0 +1,64 @@
+<html>
+    <head>
+        {% load static %}
+        <meta charset="utf-8">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'css/header.css' %}">
+        <link rel="stylesheet" href="{% static 'themify-icons/themify-icons.css' %}">
+        {% block css %}
+        
+        {% endblock %}
+    </head>
+    <body>
+        <!-- header -->
+        <div id="header">
+        <div id="nav-line">
+        <div id=icon></div>
+        <div id="menu">
+        <ul>
+            <li>HOME</li>
+            <li>GIỚI THIỆU</li>
+            <li>CỬA HÀNG</li>
+            <li>SỰ KIỆN</li>
+            <li>ĐỐI TÁC</li>
+        </ul>
+        </div>
+        </div>
+        <div id="button-line">
+        <input id="search" type="text" placeholder="Search"><i class="ti-search" style="margin-right:50px;   cursor: pointer;"></i>
+        <button class="snip1582">Đăng nhập</button>
+        <button class="snip1582">Đăng ký</button>
+        </div>
+        <div class="clear"></div>
+        </div>
+
+        <!-- content -->
+        {% block content %}
+        {% endblock %}
+
+        <!-- footer -->
+        <div id="footer">
+            <div id="infomation">
+            <h4>Gongfix</h4>
+            <p>Hệ thống sửa chữa xe lưu động hàng đầu Việt Nam</p>
+            <ul>
+                <li>Địa chỉ: khu phố 6, phường Linh Trung, Thủ Đức</li>
+                <li>SĐT: 037908947</li>
+                <li>Email: gongfix@gmail.com</li>
+            </ul>
+            </div>
+            <div id="contact">
+            <h4 style="text-align: center; margin-bottom: 75px;">Liên hệ ngay với chúng tôi</h4>
+            <ul>
+                <li><img src="{% static 'img/5a10bd6c677c114d55fa4c4292bdf17a.png' %}" alt=""></li>
+                <li><img src="{% static 'img/916dc9c9c06166d747a2d3b46161a543.png' %}" alt=""></li>
+                <li><img src="{% static 'img/ef95f2b10fd4612609c34d67d8bcbdd8.jfif' %}" alt=""></li>
+            </ul>
+            </div>
+            <div id="map">
+                <img src="{% static 'img/bce6e8b98f7dd0437d1b2d8b909273b9.jfif' %}" alt="" style="width: 100%; height:150px">
+            </div>
+            </div>
+            <div id="up-page">Quay lại đầu trang</div>
+    </body>
+</html>
