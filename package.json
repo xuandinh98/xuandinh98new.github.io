@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "bs-stepper": "^1.7.0",
+    "materialize-stepper": "^3.1.0"
+  }
+}

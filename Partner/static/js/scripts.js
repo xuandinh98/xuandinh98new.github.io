@@ -286,5 +286,29 @@
 
     });
 
+    
+
 
 })(jQuery);
+
+function checkEmail(email) {
+    if(email == "" || email == null){
+        return 0;
+    }
+    else if (!/^[\w\.%\+\-]+@[a-z0-9.-]+\.(com|gov|in|jo|org|vn)$/i.test(email)){
+        return 0;
+    }
+    return 1;
+}
+
+function checkNumberPhone(numberPhone) {
+    var vnf_regex = /^((09[1-4|6-9]|03[2-9]|07[0|6-9]|08[1-5|8|9]|05[6|8|9])+([0-9]{7}))$/; //sdt VN bắt đầu bằng các đầu số trên và có 10 chữ số
+
+    if (numberPhone == '' || numberPhone == null){
+        return 0
+    }
+    else if(numberPhone !=='' && vnf_regex.test(numberPhone) == false){
+        return 0;
+    }
+    return 1;
+}
