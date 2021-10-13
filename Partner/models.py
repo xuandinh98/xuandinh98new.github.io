@@ -55,3 +55,27 @@ class TypeRepair(models.Model):
     status = models.IntegerField()
     created_at = models.DateTimeField()
     updated_at = models.DateTimeField()
+
+class Provinces(models.Model):
+    id = models.BigAutoField(primary_key = True)
+    name = models.TextField(blank=True)
+    gso_id = models.TextField(blank=True)
+    created_at = models.DateTimeField(blank=True)
+    updated_at = models.DateTimeField(blank=True)
+
+class Districts(models.Model):
+    id = models.BigAutoField(primary_key = True)
+    name = models.TextField()
+    gso_id = models.TextField()
+    province_id = models.IntegerField()
+    created_at = models.DateTimeField()
+    updated_at = models.DateTimeField()
+
+class Wards(models.Model):
+    id = models.BigAutoField(primary_key = True)
+    name = models.TextField()
+    gso_id = models.TextField()
+    district_id = models.IntegerField()
+    created_at = models.DateTimeField()
+    updated_at = models.DateTimeField()
+

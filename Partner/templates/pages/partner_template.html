@@ -24,10 +24,6 @@
 <script src="{% static 'js/raphael-min.js' %}"></script>
 <script src="{% static 'js/morris.js' %}"></script>
 
-
-
-
-
 <!-- CSS -->
 <link rel="stylesheet" href="https://unpkg.com/materialize-stepper@3.1.0/dist/css/mstepper.min.css">
 
@@ -36,19 +32,6 @@
 <link href="{% static 'stepper/mstepper.css' %}" rel="stylesheet">
 <!-- Stepper CSS - minified-->
 <link href="{% static 'stepper/mstepper.min.css' %}" rel="stylesheet">
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- Materializecss compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
@@ -62,6 +45,9 @@
 <!-- jQueryValidation Plugin -->
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
 
+<!-- select 2 -->
+<link rel="stylesheet" href="{% static 'css/select2.min.css' %}">
+<script src="{% static 'js/select2.min.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -118,29 +104,33 @@
 	<div id="menu1" class="tab-pane fade">
         <div class="form-w3layouts">
 
-            <div class="container">
+            <div class="panel-body">
   
                 <div class="stepwizard col-md-offset-3">
                     <div class="stepwizard-row setup-panel">
                         <div class="stepwizard-step">
                             <a href="#step-1" type="button" class="btn btn-primary">1</a>
-                            <p>Step 1</p>
+                            <p>Thông tin cá nhân</p>
                         </div>
                         <div class="stepwizard-step">
-                            <a href="#step-2" type="button" class="btn btn-default" disabled="disabled">2</a>
-                            <p>Step 2</p>
+                            <a href="#step-2" type="button" class="btn btn-default disabled-a">2</a>
+                            <p>Xác thực cá nhân</p>
                         </div>
                         <div class="stepwizard-step">
-                            <a href="#step-3" type="button" class="btn btn-default" disabled="disabled">3</a>
-                            <p>Step 3</p>
+                            <a href="#step-3" type="button" class="btn btn-default disabled-a">3</a>
+                            <p>Thông tin cửa hàng</p>
                         </div>
                         <div class="stepwizard-step">
-                            <a href="#step-4" type="button" class="btn btn-default" disabled="disabled">4</a>
-                            <p>Step 4</p>
+                            <a href="#step-4" type="button" class="btn btn-default disabled-a">4</a>
+                            <p>Thông tin ngân hàng</p>
                         </div>
                         <div class="stepwizard-step">
-                            <a href="#step-5" type="button" class="btn btn-default" disabled="disabled">5</a>
-                            <p>Step 5</p>
+                            <a href="#step-5" type="button" class="btn btn-default disabled-a">5</a>
+                            <p>Thông tin tài khoản</p>
+                        </div>
+                        <div class="stepwizard-step">
+                            <a href="#step-6" type="button" class="btn btn-default disabled-a">6</a>
+                            <p>Kết thúc</p>
                         </div>
                     </div>
                 </div>
@@ -149,40 +139,38 @@
                     <div class="row setup-content" id="step-1">
                         <div class="col-xs-6 col-md-offset-3">
                             <div class="col-md-12">
-                                <h3> Step 1</h3>
+                                <h3>Thông tin cá nhân</h3>
                                 <div class="form-group">
                                     <label class="control-label">Họ và chữ lót *</label>
                                     <input maxlength="100" type="text" required="required" class="form-control signup-firstname"/>
-                                    <p class="help-block warning-firstname">Bạn chưa nhập đầy đủ thông tin</p>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Tên *</label>
                                     <input maxlength="100" type="text" required="required" class="form-control signup-lastname"/>
-                                    <p class="help-block warning-firstname">Bạn chưa nhập đầy đủ thông tin</p>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label">Giới tính</label>
-                                    <input type="radio" name="signup-sex" id="nam" value="nam" checked="checked"><label for="nam">Nam</label>
-                                    <input type="radio" name="signup-sex" id="nu" value="nam" checked="checked"><label for="nu">Nữ</label>
+                                    <label class="control-label">Giới tính: </label>
+                                    <input type="radio" name="signup-sex" id="nam" value="nam" checked="checked"><label class="lable-checkbox" for="nam">Nam</label>
+                                    <input type="radio" name="signup-sex" id="nu" value="nam" checked="checked"><label class="lable-checkbox" for="nu">Nữ</label>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Email *</label>
                                     <input maxlength="100" type="text" required="required" class="form-control signup-email"/>
-                                    <p class="help-block warning-email">Email không hợp lệ</p>
+                                    <p class="warning-email help-block-signup">Email không hợp lệ</p>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Số điện thoại 1 *</label>
                                     <input maxlength="100" type="text" required="required" class="form-control signup-phone1"/>
-                                    <p class="help-block warning-phone1">Số điện thoại không hợp lệ</p>
+                                    <p class="warning-phone1 help-block-signup">Số điện thoại không hợp lệ</p>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Số điện thoại 2</label>
-                                    <input maxlength="100" type="text" required="required" class="form-control signup-phone2"/>
-                                    <p class="help-block warning-phone2">Số điện thoại không hợp lệ</p>
+                                    <input maxlength="100" type="text" class="form-control signup-phone2"/>
+                                    <p class="warning-phone2 help-block-signup">Số điện thoại không hợp lệ</p>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Ảnh hồ sơ</label>
-                                    <input type="file" class="form-control signup-avatar">
+                                    <input type="file" class="form-control signup-avatar" accept="image/png, image/gif, image/jpeg" accept="image/png, image/gif, image/jpeg">
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Nguồn tuyển dụng</label>
@@ -200,7 +188,7 @@
                     <div class="row setup-content" id="step-2">
                         <div class="col-xs-6 col-md-offset-3">
                             <div class="col-md-12">
-                            <h3> Step 2</h3>
+                            <h3>Xác thực cá nhân</h3>
                             <div class="form-group">
                                 <label class="control-label">Số CMND/CCCD</label>
                                 <input maxlength="200" type="text" required="required" class="form-control signup-cmnd-number" placeholder="Enter Company Name" />
@@ -223,11 +211,18 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Ảnh mặt trước</label>
-                                <input maxlength="200" type="file" id="datepicker2" required="required" class="form-control signup-cmnd-pic-front" placeholder="Enter Company Address"  />
+                                <input maxlength="200" type="file" id="datepicker2" class="form-control signup-cmnd-pic-front" accept="image/png, image/gif, image/jpeg" required/>
+                                <p class="warning-pic-cmnd-1 help-block-signup1">Chưa chọn ảnh</p>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Ảnh mặt sau</label>
+                                <input maxlength="200" type="file" id="datepicker2" class="form-control signup-cmnd-pic-back" accept="image/png, image/gif, image/jpeg" required/>
+                                <p class="warning-pic-cmnd-2 help-block-signup1">Chưa chọn ảnh</p>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Giấy xác nhận công an</label>
-                                <input maxlength="200" type="file" id="datepicker2" required="required" class="form-control signup-cmnd-certification" placeholder="Enter Company Address"  />
+                                <input maxlength="200" type="file" id="datepicker2" class="form-control signup-cmnd-certification" required/>
+                                <p class="warning-signup-cmnd-certification help-block-signup1">Chưa chọn file xác nhận</p>
                             </div>
                             <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
                             </div>
@@ -236,40 +231,42 @@
                     <div class="row setup-content" id="step-3">
                         <div class="col-xs-6 col-md-offset-3">
                             <div class="col-md-12">
-                            <h3> Step 2</h3>
+                            <h3>Thông tin cửa hàng</h3>
                             <div class="form-group">
                                 <label class="control-label">Tên cửa hàng</label>
                                 <input maxlength="200" type="text" required="required" class="form-control signup-store-name" placeholder="Enter Company Name" />
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Quốc gia</label>
-                                <select class="form-control m-bot15 signup-store-nation">
-                                    <option>Việt Nam</option>
-                                    <option>Trung Quốc</option>
-                                    <option>Mỹ</option>
-                                    <option>Lào</option>
+                                <select class="form-control m-bot15 select2 select2-hidden-accessible area signup-store-nation" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                    <option value="" selected disabled hidden>Chọn Quốc Gia</option> 
+                                    <option value="vietnam">Việt Nam</option>
+                                    <option value="trungquoc">Trung Quốc</option>
+                                    <option value="my">Mỹ</option>
+                                    <option value="lao">Lào</option>
                                 </select>
+                                <p class="warning-signup-store-nation help-block-signup">Chưa chọn đầy đủ thông tin</p>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Tỉnh/Thành</label>
-                                <select class="form-control m-bot15 signup-store-province">
-                                    <option>Đồng Tháp</option>
-                                    <option>Hồ Chí Minh</option>
+                                <select class="form-control m-bot15 select2 select2-hidden-accessible area signup-store-province" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                    <option value="" selected disabled hidden>Chọn Tỉnh/Thành</option> 
                                 </select>
+                                <p class="warning-signup-store-province help-block-signup">Chưa chọn đầy đủ thông tin</p>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Quận/Huyện</label>
-                                <select class="form-control m-bot15 signup-store-district">
-                                    <option>Quận 1</option>
-                                    <option>Quận 2</option>
+                                <select class="form-control m-bot15 select2 select2-hidden-accessible area signup-store-district" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                    <option value="" selected disabled hidden>Chọn Quận/Huyện</option> 
                                 </select>
+                                <p class="warning-signup-store-district help-block-signup">Chưa chọn đầy đủ thông tin</p>
                             </div>
                             <div class="form-group">
-                                <label class="control-label">Phường/Xã/Thị trấn</label>
-                                <select class="form-control m-bot15 signup-store-wards">
-                                    <option>Lai Vung</option>
-                                    <option>Linh Trung</option>
+                                <label class="control-label">Xã/Phường/Thị trấn</label>
+                                <select class="form-control m-bot15 select2 select2-hidden-accessible area signup-store-wards" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                    <option value="" selected disabled hidden>Chọn Xã/Phường/Thị trấn</option> 
                                 </select>
+                                <p class="warning-signup-store-wards help-block-signup">Chưa chọn đầy đủ thông tin</p>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Địa chỉ</label>
@@ -277,18 +274,28 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Ảnh cửa hàng</label>
-                                <input maxlength="200" type="file" id="datepicker2" required="required" class="form-control signup-cmnd-certification" placeholder="Enter Company Address"  />
+                                <input maxlength="200" type="file" id="datepicker2" required="required" class="form-control signup-cmnd-certification" placeholder="Enter Company Address" accept="image/png, image/gif, image/jpeg" />
                             </div>
                             <div class="form-group">
-                                <label class="control-label">Loại phương tiện</label>
-                                <input type="checkbox" class="signup-store-vehicle1" name="vehicle1" value="Bike">
-                                <label for="vehicle1">Xe đạp</label>
-                                <input type="checkbox" class="signup-store-vehicle2" name="vehicle1" value="Bike">
-                                <label for="vehicle1">Xe máy</label>
-                                <input type="checkbox" class="signup-store-vehicle2" name="vehicle1" value="Bike">
-                                <label for="vehicle1">Ô tô</label>
-                                <input type="checkbox" class="signup-store-vehicle2" name="vehicle1" value="Bike">
-                                <label for="vehicle1">Xe kéo</label>
+                                <label class="control-label">Loại phương tiện cung cấp</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                    <label class="form-check-label" for="inlineCheckbox1">Xe đạp</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                    <label class="form-check-label" for="inlineCheckbox2">Xe máy</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                    <label class="form-check-label" for="inlineCheckbox3">Xe hơi</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input signup-store-vehicle3" type="checkbox" id="inlineCheckbox4" value="option4">
+                                    <label class="form-check-label" for="inlineCheckbox4">Xe kéo</label>
+                                </div>
+                                <p class="warning-signup-store-vehicle help-block-signup">Chưa chọn loại phương tiện cung cấp</p>
+
                             </div>
                             <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
                             </div>
@@ -298,7 +305,7 @@
                     <div class="row setup-content" id="step-4">
                         <div class="col-xs-6 col-md-offset-3">
                             <div class="col-md-12">
-                            <h3> Step 2</h3>
+                            <h3>Thông tin ngân hàng</h3>
                             <div class="form-group">
                                 <label class="control-label">Tên ngân hàng</label>
                                 <input maxlength="200" type="text" required="required" class="form-control signup-store-name" placeholder="Enter Company Name" />
@@ -323,7 +330,7 @@
                     <div class="row setup-content" id="step-5">
                         <div class="col-xs-6 col-md-offset-3">
                             <div class="col-md-12">
-                            <h3> Step 2</h3>
+                            <h3>Thông tin tài khoản</h3>
                             <div class="form-group">
                                 <label class="control-label">Tên đăng nhập</label>
                                 <input maxlength="200" type="text" required="required" class="form-control signup-account-username" placeholder="Enter Company Name" />
@@ -337,7 +344,19 @@
                                 <input maxlength="200" type="text" id="datepicker2" required="required" class="form-control signup-account-repassword" placeholder="Enter Company Address"  />
                             </div>
                             
-                            <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                            <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Submit</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row setup-content" id="step-6">
+                        <div class="col-xs-6 col-md-offset-3">
+                            <div class="col-md-12">
+                                <div class="alert alert-danger clearfix">
+                                    <div class="noti-info">
+                                        <span>Đăng kí đối tác thành công. Đăng nhập vào tài khoản đã tạo và chờ xác nhận nhé!</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -352,6 +371,81 @@
 {% endblock %}
 
 {% block js %}
+<script>
+    $(".signup-store-nation").change(function() {
+        $(".signup-store-province option").remove();
+        $(".signup-store-province").append("<option value='' selected disabled hidden>Chọn Tỉnh/Thành</option> ");
+        $(".signup-store-district option").remove();
+        $(".signup-store-district").append("<option value='' selected disabled hidden>Chọn Quận/Huyện</option> ");
+        $(".signup-store-wards option").remove();
+        $(".signup-store-wards").append("<option value='' selected disabled hidden>Chọn Xã/Phường/Thị trấn</option> ");
+        if($(this).val() == "vietnam") {
+            // make POST ajax call
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'postProvinces' %}",
+                data: {"csrfmiddlewaretoken": '{{csrf_token}}', 'type' : "1", 'data' : ''},
+                success: function (response) {
+                    var response = jQuery.parseJSON( response );
+                    $.each( response, function( key, value ) {
+                        $(".signup-store-province").append("<option value='" + value.pk + "'>"+value.fields.name+"</option>");
+                    });
+                },
+                error: function (response) {
+                    // alert the error if any error occured
+                    alert(response["responseJSON"]["error"]);
+                }
+            })
+        }
+    });
+
+    $(".signup-store-province").change(function() {
+        $(".signup-store-district option").remove();
+        $(".signup-store-district").append("<option value='' selected disabled hidden>Chọn Quận/Huyện</option> ");
+        $(".signup-store-wards option").remove();
+        $(".signup-store-wards").append("<option value='' selected disabled hidden>Chọn Xã/Phường/Thị trấn</option> ");
+        var id = $(this).val();
+        // make POST ajax call
+        $.ajax({
+            type: 'POST',
+            url: "{% url 'postProvinces' %}",
+            data: {"csrfmiddlewaretoken": '{{csrf_token}}', 'type' : "2", 'data' : id},
+            success: function (response) {
+                var response = jQuery.parseJSON( response );
+                $.each( response, function( key, value ) {
+                    $(".signup-store-district").append("<option value='" + value.pk + "'>"+value.fields.name+"</option>");
+                });
+            },
+            error: function (response) {
+                // alert the error if any error occured
+                alert(response["responseJSON"]["error"]);
+            }
+        })
+    })
+
+    $(".signup-store-district").change(function() {
+        $(".signup-store-wards option").remove();
+        $(".signup-store-wards").append("<option value='' selected disabled hidden>Chọn Xã/Phường/Thị trấn</option> ");
+        
+        var id = $(this).val();
+        // make POST ajax call
+        $.ajax({
+            type: 'POST',
+            url: "{% url 'postProvinces' %}",
+            data: {"csrfmiddlewaretoken": '{{csrf_token}}', 'type' : "3", 'data' : id},
+            success: function (response) {
+                var response = jQuery.parseJSON( response );
+                $.each( response, function( key, value ) {
+                    $(".signup-store-wards").append("<option value='" + value.pk + "'>"+value.fields.name+"</option>");
+                });
+            },
+            error: function (response) {
+                // alert the error if any error occured
+                alert(response["responseJSON"]["error"]);
+            }
+        })
+    })
+</script>
 <script src="{% static 'js/bootstrap.js' %}"></script>
 <script src="{% static 'js/jquery.dcjqaccordion.2.7.js' %}"></script>
 <script src="{% static 'js/scripts.js' %}"></script>
@@ -360,11 +454,11 @@
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
 <script src="{% static 'js/jquery.scrollTo.js' %}"></script>
 <!-- morris JavaScript -->	
-<script>
-	</script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
-    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css" />
+
+    <script src="{% static 'datepicker/jquery.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'datepicker/jquery-ui.min.js' %}" type="text/javascript"></script>
+    <link href="{% static 'datepicker/jquery-ui.css' %}" rel="Stylesheet" type="text/css" />
+    
 
     <script>
         $( "#datepicker" ).datepicker({
@@ -383,87 +477,15 @@
             duration: "slow"
         });
 
-        $(".btn-partner1").click(function() {
-            //instance.wrongStep();
-            var firstname = $(".signup-firstname").val();
-            var lastname = $(".signup-lastname").val();
-            var email = $(".signup-email").val();
-            var phone1 = $(".signup-phone1").val();
-            var phone2 = $(".signup-phone2").val();
-
-            var checkemail = checkEmail(email);
-            var checkphone1 = checkNumberPhone(phone1);
-            var checkphone2 = checkNumberPhone(phone2);
-
-            if(firstname == null || firstname == "") {
-                $(".warning-firstname").css("display", "block");
-                $(".signup-firstname").focus();
-                return false;
-            }
-            else {
-                $(".warning-firstname").css("display", "none");
-            }
-
-            if(lastname == null || lastname == "") {
-                $(".warning-lastname").css("display", "block");
-                $(".signup-lastname").focus();
-                return false;
-            }
-            else {
-                $(".warning-lastname").css("display", "none");
-            }
-
-            if(checkemail == 0) {
-                $(".warning-email").css("display", "block");
-                $(".signup-email").focus();
-                return false;
-            }
-            else {
-                $(".warning-email").css("display", "none");
-            }
-
-            if (checkphone1 == 0) {
-                $(".warning-phone1").css("display", "block");
-                $(".signup-phone1").focus();
-                return false;
-            }
-            else {
-                $(".warning-phone1").css("display", "none");
-            }
-
-            if (phone2.length != 0) {
-                if(checkphone2 == 0) {
-                    $(".warning-phone2").css("display", "block");
-                    $(".signup-phone2").focus();
-                    return false;
-                }
-                else {
-                    $(".warning-phone2").css("display", "none");
-                }
-            }
-            else {
-                $(".warning-phone2").css("display", "none");
-            }
-
-            $(".block2").css("display", "block");
-            $(".block1").css("display", "none");
-            
-        });
-        $(".btn-partner2").click(function() {
-            $(".block3").css("display", "block");
-        });
-        $(".btn-partner3").click(function() {
-            $(".block4").css("display", "block");
-        });
-        $(".btn-partner4").click(function() {
-            $(".block5").css("display", "block");
-        });
-
         //
         // stepper
         //
 
         $(document).ready(function () {
+            
+
+            var a = 1;
+
             var navListItems = $('div.setup-panel div a'),
                 allWells = $('.setup-content'),
                 allNextBtn = $('.nextBtn');
@@ -471,10 +493,15 @@
             allWells.hide();
 
             navListItems.click(function (e) {
+                // if(a==1 || !$(this).hasClass('disabled-a')) {
+                //     a=0;
+                // }
+                // else {
+                //     return false;
+                // }
                 e.preventDefault();
                 var $target = $($(this).attr('href')),
                         $item = $(this);
-                        //$item.is('[disabled=disabled]')
                 if (!$item.hasClass('disabled')) {
                     navListItems.removeClass('btn-primary').addClass('btn-default');
                     $item.addClass('btn-primary');
@@ -486,11 +513,104 @@
             });
 
             allNextBtn.click(function(){
-                var curStep = $(this).closest(".setup-content"),
-                    curStepBtn = curStep.attr("id"),
-                    nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-                    curInputs = curStep.find("input[type='text'],input[type='url']"),
-                    isValid = true;
+                a=1;
+                var curStep = $(this).closest(".setup-content");
+                var curStepBtn = curStep.attr("id");
+
+                if(curStepBtn == "step-1") {
+                    var email = $(".signup-email").val();
+                    var phone1 = $(".signup-phone1").val();
+                    var phone2 = $(".signup-phone2").val();
+
+                    var checkemail = checkEmail(email);
+                    var checkphone1 = checkNumberPhone(phone1);
+                    var checkphone2 = checkNumberPhone(phone2);
+
+                    if(checkemail == 0) {
+                        $(".warning-email").css("display", "block");
+                        $(".signup-email").focus();
+                        return false;
+                    }
+                    else {
+                        $(".warning-email").css("display", "none");
+                    }
+
+                    if (checkphone1 == 0) {
+                        $(".warning-phone1").css("display", "block");
+                        $(".signup-phone1").focus();
+                        return false;
+                    }
+                    else {
+                        $(".warning-phone1").css("display", "none");
+                    }
+
+                    if (phone2 === phone1) {
+                        $(".warning-phone2").text("Số điện thoại 2 bị trùng với số điện thoại 1");
+                        $(".warning-phone2").css("display", "block");
+                        $(".signup-phone2").focus();
+                        return false;
+                    }
+                    else {
+                        $(".warning-phone1").css("display", "none");
+                    }
+
+                    if (phone2.length != 0) {
+                        if(checkphone2 == 0) {
+                            $(".warning-phone2").text("Số điện thoại không hợp lệ");
+                            $(".warning-phone2").css("display", "block");
+                            $(".signup-phone2").focus();
+                            return false;
+                        }
+                        else {
+                            $(".warning-phone2").css("display", "none");
+                        }
+                    }
+                    else {
+                        $(".warning-phone2").css("display", "none");
+                    }
+
+                }
+                else if(curStepBtn == "step-2") {
+                    if($('.signup-cmnd-pic-front').get(0).files.length > 0) {
+                        $(".warning-pic-cmnd-1").css("display", "none");
+                    }
+                    else {
+                        $(".warning-pic-cmnd-1").css("display", "block");
+                        return false;
+                    }
+
+                    if($('.signup-cmnd-pic-back').get(0).files.length > 0) {
+                        $(".warning-pic-cmnd-2").css("display", "none");            
+                    }
+                    else {
+                        $(".warning-pic-cmnd-2").css("display", "block");
+                        return false;
+                    }
+
+                    if($('.signup-cmnd-certification').get(0).files.length > 0) {
+                        $(".warning-signup-cmnd-certification").css("display", "none");
+                    }
+                    else {
+                        $(".warning-signup-cmnd-certification").css("display", "block");
+                        return false;
+                    }
+
+                }
+                else if(curStepBtn == "step-3") {
+
+                }
+                else if(curStepBtn == "step-4") {
+
+                }
+                else {
+
+                }
+
+                
+
+                var nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a");
+                var curInputs = curStep.find("input[type='text'],input[type='url']");
+                var isValid = true;
 
                 $(".form-group").removeClass("has-error");
                 for(var i=0; i<curInputs.length; i++){
@@ -501,11 +621,12 @@
                 }
 
                 if (isValid)
-                    nextStepWizard.removeAttr('disabled').trigger('click');
+                    nextStepWizard.removeClass('disabled-a').trigger('click');
             });
 
             $('div.setup-panel div a.btn-primary').trigger('click');
+
         });
-   
+
     </script>
 {% endblock %}

@@ -3178,8 +3178,6 @@ div#graph1, div#graph4, div#graph5, div#graph6, div#graph7, div#graph8, div#grap
 .help-block {
     display: none;
 }
-
-
 ul.stepper.horizontal {
     min-height: 458px;
  }
@@ -3188,7 +3186,7 @@ ul.stepper.horizontal {
     margin-top:40px;
 }
 .stepwizard-step p {
-    margin-top: 10px;
+    margin: 10px;
 }
 .stepwizard-row {
     display: table-row;
@@ -3226,4 +3224,29 @@ ul.stepper.horizontal {
     line-height: 1.428571429;
     border-radius: 15px;
 }
+.stepwizard-step a {
+    border-radius: 50%;
+}
 
+.disabled-a {
+    background-color: #A9A9A9 !important;
+}
+
+.help-block-signup {
+    display: none;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: bold;
+    color: #a94442;
+    margin-top: -15px;
+}
+.help-block-signup1 {
+    display: none;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: bold;
+    color: #a94442;
+}
+.lable-checkbox {
+    font-size: 13px !important;
+}
