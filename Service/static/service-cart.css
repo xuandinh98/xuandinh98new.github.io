@@ -1,0 +1,129 @@
+body {
+    background: linear-gradient(-45deg, #ffffff, #010e49, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#content-cart {
+    width: 60%;
+    height: max-content;
+    margin: 10%;
+    background-color: white;
+    padding: 10%;
+    border: 1px solid #999;
+}
+
+table {
+    border-collapse: collapse;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+}
+
+td,
+th {
+    border: 1px solid #999;
+    padding: 0.5rem;
+    text-align: center;
+    width: 15%;
+}
+
+table img {
+    width: 50px;
+    height: 50px;
+}
+
+table i {
+    font-style: normal;
+}
+
+table button {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+table #number {
+    width: 50px;
+    text-align: center;
+}
+
+#promo-code {}
+
+#promo-code div {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    padding-top: 10px;
+    border: 1px solid #999;
+    background-color: #cad3ff;
+}
+
+#update-cart {
+    width: 80%;
+    height: 40px;
+    background-color: #2b3047;
+    border: 1px solid #999;
+    box-shadow: 2px 3px #888888;
+    color: white;
+}
+
+#update-cart:active {
+    box-shadow: none;
+}
+
+#all-service {
+    width: 60%;
+    float: right;
+    height: max-content;
+    margin-right: 5%;
+}
+
+.clear {
+    clear: both;
+}
+
+#core-all-service {
+    width: 100%;
+    margin-top: 30px;
+}
+
+#core-all-service h1 {
+    float: left;
+}
+
+#core-all-service p {
+    float: right;
+    font-size: 25px;
+    margin-right: 100px;
+    color: red;
+}
+
+#btn-order {
+    width: 50%;
+    color: white;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #000D24;
+    box-shadow: 2px 3px #888888;
+    font-size: 20px;
+    float: right;
+}
+
+#btn-order:active {
+    box-shadow: none;
+}
