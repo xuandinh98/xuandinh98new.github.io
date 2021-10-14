@@ -239,34 +239,34 @@
                             <div class="form-group">
                                 <label class="control-label">Quốc gia</label>
                                 <select class="form-control m-bot15 select2 select2-hidden-accessible area signup-store-nation" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                                    <option value="" selected disabled hidden>Chọn Quốc Gia</option> 
+                                    <option value="0" selected disabled hidden>Chọn Quốc Gia</option> 
                                     <option value="vietnam">Việt Nam</option>
                                     <option value="trungquoc">Trung Quốc</option>
                                     <option value="my">Mỹ</option>
                                     <option value="lao">Lào</option>
                                 </select>
-                                <p class="warning-signup-store-nation help-block-signup1">Chưa chọn đầy đủ thông tin</p>
+                                <p class="warning-signup-store-nation help-block-signup1">Chưa chọn thông tin Quốc gia</p>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Tỉnh/Thành</label>
                                 <select class="form-control m-bot15 select2 select2-hidden-accessible area signup-store-province" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                                    <option value="" selected disabled hidden>Chọn Tỉnh/Thành</option> 
+                                    <option value="0" selected disabled hidden>Chọn Tỉnh/Thành</option> 
                                 </select>
-                                <p class="warning-signup-store-province help-block-signup1">Chưa chọn đầy đủ thông tin</p>
+                                <p class="warning-signup-store-province help-block-signup1">Chưa chọn thông tin Tỉnh/Thành</p>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Quận/Huyện</label>
                                 <select class="form-control m-bot15 select2 select2-hidden-accessible area signup-store-district" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                                    <option value="" selected disabled hidden>Chọn Quận/Huyện</option> 
+                                    <option value="0" selected disabled hidden>Chọn Quận/Huyện</option> 
                                 </select>
-                                <p class="warning-signup-store-district help-block-signup1">Chưa chọn đầy đủ thông tin</p>
+                                <p class="warning-signup-store-district help-block-signup1">Chưa chọn thông tin Quận/Huyện</p>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Xã/Phường/Thị trấn</label>
                                 <select class="form-control m-bot15 select2 select2-hidden-accessible area signup-store-wards" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                                    <option value="" selected disabled hidden>Chọn Xã/Phường/Thị trấn</option> 
+                                    <option value="0" selected disabled hidden>Chọn Xã/Phường/Thị trấn</option> 
                                 </select>
-                                <p class="warning-signup-store-wards help-block-signup1">Chưa chọn đầy đủ thông tin</p>
+                                <p class="warning-signup-store-wards help-block-signup1">Chưa chọn thông tin Xã/Phường/Thị trấn</p>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Địa chỉ</label>
@@ -274,7 +274,8 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Ảnh cửa hàng</label>
-                                <input maxlength="200" type="file" id="datepicker2" required="required" class="form-control signup-cmnd-certification" placeholder="Enter Company Address" accept="image/png, image/gif, image/jpeg" />
+                                <input maxlength="200" type="file" id="datepicker2" required="required" class="form-control signup-image-store" placeholder="Enter Company Address" accept="image/png, image/gif, image/jpeg" />
+                                <p class="warning-image-store help-block-signup1">Chưa chọn ảnh</p>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Loại phương tiện cung cấp</label>
@@ -374,11 +375,11 @@
 <script>
     $(".signup-store-nation").change(function() {
         $(".signup-store-province option").remove();
-        $(".signup-store-province").append("<option value='' selected disabled hidden>Chọn Tỉnh/Thành</option> ");
+        $(".signup-store-province").append("<option value='0' selected disabled hidden>Chọn Tỉnh/Thành</option> ");
         $(".signup-store-district option").remove();
-        $(".signup-store-district").append("<option value='' selected disabled hidden>Chọn Quận/Huyện</option> ");
+        $(".signup-store-district").append("<option value='0' selected disabled hidden>Chọn Quận/Huyện</option> ");
         $(".signup-store-wards option").remove();
-        $(".signup-store-wards").append("<option value='' selected disabled hidden>Chọn Xã/Phường/Thị trấn</option> ");
+        $(".signup-store-wards").append("<option value='0' selected disabled hidden>Chọn Xã/Phường/Thị trấn</option> ");
         if($(this).val() == "vietnam") {
             // make POST ajax call
             $.ajax({
@@ -401,9 +402,9 @@
 
     $(".signup-store-province").change(function() {
         $(".signup-store-district option").remove();
-        $(".signup-store-district").append("<option value='' selected disabled hidden>Chọn Quận/Huyện</option> ");
+        $(".signup-store-district").append("<option value='0' selected disabled hidden>Chọn Quận/Huyện</option> ");
         $(".signup-store-wards option").remove();
-        $(".signup-store-wards").append("<option value='' selected disabled hidden>Chọn Xã/Phường/Thị trấn</option> ");
+        $(".signup-store-wards").append("<option value='0' selected disabled hidden>Chọn Xã/Phường/Thị trấn</option> ");
         var id = $(this).val();
         // make POST ajax call
         $.ajax({
@@ -425,7 +426,7 @@
 
     $(".signup-store-district").change(function() {
         $(".signup-store-wards option").remove();
-        $(".signup-store-wards").append("<option value='' selected disabled hidden>Chọn Xã/Phường/Thị trấn</option> ");
+        $(".signup-store-wards").append("<option value='0' selected disabled hidden>Chọn Xã/Phường/Thị trấn</option> ");
         
         var id = $(this).val();
         // make POST ajax call
@@ -597,6 +598,50 @@
 
                 }
                 else if(curStepBtn == "step-3") {
+                    var nation = $('.signup-store-nation').find(":selected").val();
+                    var province = $('.signup-store-province').find(":selected").val();
+                    var district = $('.signup-store-district').find(":selected").val();
+                    var wards = $('.signup-store-wards').find(":selected").val();
+                    if(nation == "0") {
+                        $(".warning-signup-store-nation").css("display", "block");
+                        return false;
+                    }
+                    else {
+                        $(".warning-signup-store-nation").css("display", "none");
+                    }
+
+                    if(province == "0") {
+                        $(".warning-signup-store-province").css("display", "block");
+                        return false;
+                    }
+                    else {
+                        $(".warning-signup-store-province").css("display", "none");
+                    }
+
+                    if(district == "0") {
+                        $(".warning-signup-store-district").css("display", "block");
+                        return false;
+                    }
+                    else {
+                        $(".warning-signup-store-district").css("display", "none");
+                    }
+
+                    if(wards == "0") {
+                        $(".warning-signup-store-wards").css("display", "block");
+                        return false;
+                    }
+                    else {
+                        $(".warning-signup-store-wards").css("display", "none");
+                    }
+                    
+                    if($('.signup-image-store').get(0).files.length > 0) {
+                        $(".warning-image-store").css("display", "none");
+                    }
+                    else {
+                        $(".warning-image-store").css("display", "block");
+                        return false;
+                    }
+                    
 
                 }
                 else if(curStepBtn == "step-4") {
