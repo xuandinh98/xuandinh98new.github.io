@@ -1,87 +1,133 @@
-{% extends "pages_home/header_footer.html" %}
-{% load static %}
-{% block title %}Đối tác{% endblock %}
+{% extends "pages_home/header_footer.html" %} {% load static %} {% block title %}Đối tác{% endblock %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/service.css' %}"> {% endblock %} {% block content %}
+<div id="banner">
 
-{% block css %}
-    <link rel="stylesheet" href="{% static 'service.css' %}">
-{% endblock %}
+    <section id="accueil">
 
-{% block content %}
-    <div id="banner">
-
-        <section id="accueil">
-
-            <div class="triangle_rose"></div>
-            <div class="triangle_vert"></div>
-            <!-- // HEADER -->
-            <header>
-                <h1>DỊCH VỤ</h1>
-                <input id="service_input" type="text" placeholder="Dịch vụ bạn cần hổ trợ là gì?">
-            </header>
-        </section>
-    </div>
-    <div id="title-suggestion">
-        Gợi ý cho bạn
-    </div>
-    <div id="service-suggestion">
-        <div id="div-img-suggestion"><img src="img/12-100x100@2x.jpg" alt=""></div>
-        <div id="div-info-suggestion">
-            <h3>Dịch vụ kiểm tra hư hỏng/Xe máy</h3>
-            <p><strong>Giá dịch vụ: </strong> 25.000đ/lít</p>
-            <p><strong>Số lượng: </strong><button id="btn-minus">-</button><input type="text"><button id="btn-add">+</button></p>
-            <p><strong>Mô tả dịch vụ: </strong></p>
-            <div id="detailed-description">
-                <p id="detailed-description-one">Loại xăng: A92</p>
-                <p id="detailed-description-two">Trọng lượng: 1 lít</p>
-                <p class="clear"></p>
+        <div class="triangle_rose"></div>
+        <div class="triangle_vert"></div>
+        <!-- // HEADER -->
+        <header>
+            <h1>DỊCH VỤ</h1>
+            <input id="service_input" type="text" placeholder="Dịch vụ bạn cần hổ trợ là gì?">
+        </header>
+    </section>
+</div>
+<div id="title-suggestion">
+    Gợi ý cho bạn
+</div>
+<div class="home-slideshow">
+    <div class="item-slideshow fade">
+        <div id="service-suggestion">
+            <div id="div-img-suggestion"><img src="{% static 'img/kinh-nghiem-mo-cua-hang-sua-chua-xe-may-tiet-kiem-von-1.jpg' %}" alt=""></div>
+            <div id="div-info-suggestion">
+                <h3>Dịch vụ kiểm tra hư hỏng/Xe máy</h3>
+                <p><strong>Giá dịch vụ: </strong> 25.000đ/lít</p>
+                <p><strong>Số lượng: </strong><button id="btn-minus">-</button><input type="text"><button id="btn-add">+</button></p>
+                <p><strong>Mô tả dịch vụ: </strong></p>
+                <div id="detailed-description">
+                    <p id="detailed-description-one">Loại xăng: A92</p>
+                    <p id="detailed-description-two">Trọng lượng: 1 lít</p>
+                    <p class="clear"></p>
+                </div>
+                <button id="add-suggestion">Thêm vào giỏ hàng</button>
             </div>
-            <button id="add-suggestion">Thêm vào giỏ hàng</button>
-        </div>
-        <div class="clear"></div>
+            <div class="clear"></div>
 
+        </div>
     </div>
-    <h2>Sản phẩm bạn tìm kiếm</h2>
-    <div class="line"></div>
-    <div id="distinguish">
-        <div id="control_result">
-            <p>Hiển thị 1 kết quả <select name="display order">
+    <div class="item-slideshow fade">
+        <div id="service-suggestion">
+            <div id="div-img-suggestion"><img src="{% static 'img/download.jfif' %}" alt=""></div>
+            <div id="div-info-suggestion">
+                <h3>Dịch vụ kiểm tra hư hỏng/Xe máy</h3>
+                <p><strong>Giá dịch vụ: </strong> 25.000đ/lít</p>
+                <p><strong>Số lượng: </strong><button id="btn-minus">-</button><input type="text"><button id="btn-add">+</button></p>
+                <p><strong>Mô tả dịch vụ: </strong></p>
+                <div id="detailed-description">
+                    <p id="detailed-description-one">Loại xăng: A92</p>
+                    <p id="detailed-description-two">Trọng lượng: 1 lít</p>
+                    <p class="clear"></p>
+                </div>
+                <button id="add-suggestion">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="clear"></div>
+
+        </div>
+    </div>
+    <div class="item-slideshow fade">
+        <div id="service-suggestion">
+            <div id="div-img-suggestion"><img src="{% static 'img/image.jfif' %}" alt=""></div>
+            <div id="div-info-suggestion">
+                <h3>Dịch vụ kiểm tra hư hỏng/Xe máy</h3>
+                <p><strong>Giá dịch vụ: </strong> 25.000đ/lít</p>
+                <p><strong>Số lượng: </strong><button id="btn-minus">-</button><input type="text"><button id="btn-add">+</button></p>
+                <p><strong>Mô tả dịch vụ: </strong></p>
+                <div id="detailed-description">
+                    <p id="detailed-description-one">Loại xăng: A92</p>
+                    <p id="detailed-description-two">Trọng lượng: 1 lít</p>
+                    <p class="clear"></p>
+                </div>
+                <button id="add-suggestion">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="clear"></div>
+
+        </div>
+    </div>
+</div>
+
+<br>
+<!-- Nút điều chỉnh slide -->
+<div style="text-align: center;">
+    <span class="dot" onclick="currentSlide(0)"></span>
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+</div>
+<h2>Sản phẩm bạn tìm kiếm</h2>
+<div class="line"></div>
+<div id="distinguish">
+    <div id="control_result">
+        <p>Hiển thị 1 kết quả <select name="display order">
             <option value="high-to-low">Giá từ cao đến thấp</option>
             <option value="low-to-high">Giá từ thấp tới cao</option>
           </select>
-            </p>
-        </div>
-        <div class="clear"></div>
+        </p>
     </div>
+    <div class="clear"></div>
+</div>
 
-    <div id="list-product">
-        <div>
-            <img src="img/xu-ly5.jpg" alt="">
+<div id="list-product">
+    <div>
+        <img src="{% static 'img/20150908_e28f12d72bc7aa153f67d92ae8ef5c94_1441696053.jpg' %}" alt="">
 
-            <h3>Dịch vụ vá xe/Xe máy</h3><br>
-            <p><strong>Giá dịch vụ:</strong>
-                <p class="gia">60000</p>đ</p><br>
-            <p><strong>Mô tả dịch vụ</strong></p><br>
-            <p>Dịch vụ áp dụng cho xe máy có bao gồm lốp xe.</p><br>
-            <button>Thêm vào giỏ hàng</button>
-        </div>
-        <div>
-            <img src="img/maxresdefault.jpg" alt="">
-            <h3>Dịch vụ vá xe/Xe máy</h3><br>
-            <p><strong>Giá dịch vụ:</strong>
-                <p class="gia">60000</p>đ</p><br>
-            <p><strong>Mô tả dịch vụ</strong></p><br>
-            <p>Dịch vụ áp dụng cho xe máy có bao gồm lốp xe.</p><br>
-            <button>Thêm vào giỏ hàng</button>
-        </div>
-        <div>
-            <img src="img/20190304_67b6f0a6dc70e8bcca23e18df5af3a70_1551686907.jpg" alt="">
-            <h3>Dịch vụ vá xe/Xe máy</h3><br>
-            <p><strong>Giá dịch vụ:</strong>
-                <p class="gia">60000</p>đ</p><br>
-            <p><strong>Mô tả dịch vụ</strong></p><br>
-            <p>Dịch vụ áp dụng cho xe máy có bao gồm lốp xe.</p><br>
-            <button>Thêm vào giỏ hàng</button>
-        </div>
+        <h3>Dịch vụ vá xe/Xe máy</h3><br>
+        <p><strong>Giá dịch vụ:</strong>
+            <p class="gia">60000</p>đ</p><br>
+        <p><strong>Mô tả dịch vụ</strong></p><br>
+        <p>Dịch vụ áp dụng cho xe máy có bao gồm lốp xe.</p><br>
+        <button>Thêm vào giỏ hàng</button>
     </div>
+    <div>
+        <img src="{% static 'img/20150908_e28f12d72bc7aa153f67d92ae8ef5c94_1441696053.jpg' %}" alt="">
+        <h3>Dịch vụ vá xe/Xe máy</h3><br>
+        <p><strong>Giá dịch vụ:</strong>
+            <p class="gia">60000</p>đ</p><br>
+        <p><strong>Mô tả dịch vụ</strong></p><br>
+        <p>Dịch vụ áp dụng cho xe máy có bao gồm lốp xe.</p><br>
+        <button>Thêm vào giỏ hàng</button>
+    </div>
+    <div>
+        <img src="{% static 'img/20150908_e28f12d72bc7aa153f67d92ae8ef5c94_1441696053.jpg' %}" alt="">
+        <h3>Dịch vụ vá xe/Xe máy</h3><br>
+        <p><strong>Giá dịch vụ:</strong>
+            <p class="gia">60000</p>đ</p><br>
+        <p><strong>Mô tả dịch vụ</strong></p><br>
+        <p>Dịch vụ áp dụng cho xe máy có bao gồm lốp xe.</p><br>
+        <button>Thêm vào giỏ hàng</button>
+    </div>
+</div>
 
+{% endblock %} {% block js %}
+<script src="{% static 'js/service.js' %}">
+</script>
 {% endblock %}

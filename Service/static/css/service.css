@@ -233,8 +233,8 @@ section#accueil header>h1 {
 
 #service_input {
     margin-top: 30px;
-    width: 70%;
-    height: 30px;
+    width: 30%;
+    height: 40px;
     border-radius: 20px;
 }
 
@@ -291,6 +291,7 @@ section#accueil header>h1 {
 
 #div-img-suggestion img {
     width: 80%;
+    height: 80%;
     margin: 30px;
 }
 
@@ -364,6 +365,7 @@ h2 {
     height: max-content;
     margin-left: 5%;
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 #list-product div {
@@ -382,7 +384,7 @@ h2 {
 }
 
 #list-product img:hover {
-    opacity: 0.3;
+    transform: scale(1.2);
     cursor: pointer;
 }
 
@@ -409,4 +411,84 @@ h2 {
 
 #list-product button:hover {
     cursor: pointer;
+}
+
+
+/* slide show */
+
+* {
+    box-sizing: border-box
+}
+
+
+/* Slideshow container */
+
+.home-slideshow {
+    max-width: 90%;
+    margin-left: 5%;
+    margin-top: 30px;
+}
+
+
+/* Ẩn các slider */
+
+.item-slideshow {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+
+.item-slideshow img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* định dạng các chấm chuyển đổi các slide */
+
+.dot {
+    cursor: pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+
+/* khi được hover, active đổi màu nền */
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+
+/* Thêm hiệu ứng khi chuyển đổi các slide */
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 3s;
+    animation-name: fade;
+    animation-duration: 3s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
 }
