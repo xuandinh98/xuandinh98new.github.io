@@ -3231,6 +3231,9 @@ ul.stepper.horizontal {
 .disabled-a {
     background-color: #A9A9A9 !important;
 }
+.disabled-final {
+    background-color: #26a69a !important;
+}
 
 .help-block-signup {
     display: none;
@@ -3249,4 +3252,27 @@ ul.stepper.horizontal {
 }
 .lable-checkbox {
     font-size: 13px !important;
+}
+
+.pass-weak {
+    color: red;
+    display: none;
+}
+
+.pass-strong {
+    color: #ffc107;
+    display: none;
+}
+
+.pass-strong i {
+    color: #ffc107;
+}
+
+.pass-very-strong {
+    color: rgb(25, 0, 255);
+    display: none;
+}
+
+.pass-very-strong i {
+    color: rgb(25, 0, 255);
 }

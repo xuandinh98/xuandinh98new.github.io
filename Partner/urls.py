@@ -4,9 +4,11 @@ from . import views
 from Partner.views import (
     index,
     postProvinces, 
+    addPartner,
 )
 
 urlpatterns = [
     path('', index),
-    path('post/ajax/postProvinces', postProvinces, name = 'postProvinces'),
+    path('post/postProvinces', postProvinces, name = 'postProvinces'),
+    path('post/addPartner', addPartner, name = 'addPartner'),
 ]

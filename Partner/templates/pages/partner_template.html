@@ -48,6 +48,8 @@
 <!-- select 2 -->
 <link rel="stylesheet" href="{% static 'css/select2.min.css' %}">
 <script src="{% static 'js/select2.min.js' %}"></script>
+
+
 {% endblock %}
 
 {% block content %}
@@ -69,28 +71,28 @@
                                 <div class="form-group has-success">
                                     <label class="col-lg-3 control-label">sample 1</label>
                                     <div class="col-lg-6">
-                                        <input type="text" placeholder="" class="form-control">
+                                        <input type="text" class="form-control">
                                         <p class="help-block">Successfully done</p>
                                     </div>
                                 </div>
                                 <div class="form-group has-error">
                                     <label class="col-lg-3 control-label">sample 2</label>
                                     <div class="col-lg-6">
-                                        <input type="text" placeholder="" id="l-name" class="form-control">
+                                        <input type="text" id="l-name" class="form-control">
                                         <p class="help-block">You gave a wrong info</p>
                                     </div>
                                 </div>
                                 <div class="form-group has-warning">
                                     <label class="col-lg-3 control-label">sample 3</label>
                                     <div class="col-lg-6">
-                                        <input type="email" placeholder="" id="email2" class="form-control">
+                                        <input type="email" id="email2" class="form-control">
                                         <p class="help-block">Something went wrong</p>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <div class="col-lg-offset-3 col-lg-6">
-                                        <button class="btn btn-primary btn-partner btn-partner0" type="submit">Submit</button>
+                                        <button class="btn btn-primary btn-partner btn-partner0 " type="submit">Submit</button>
                                     </div>
                                 </div>
                             </form>
@@ -150,8 +152,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Giới tính: </label>
-                                    <input type="radio" name="signup-sex" id="nam" value="nam" checked="checked"><label class="lable-checkbox" for="nam">Nam</label>
-                                    <input type="radio" name="signup-sex" id="nu" value="nam" checked="checked"><label class="lable-checkbox" for="nu">Nữ</label>
+                                    <input type="radio" name="signup-sex" id="nam" value="1" checked="checked"><label class="lable-checkbox" for="nam">Nam</label>
+                                    <input type="radio" name="signup-sex" id="nu" value="2"><label class="lable-checkbox" for="nu">Nữ</label>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Email *</label>
@@ -171,6 +173,7 @@
                                 <div class="form-group">
                                     <label class="control-label">Ảnh hồ sơ</label>
                                     <input type="file" class="form-control signup-avatar" accept="image/png, image/gif, image/jpeg" accept="image/png, image/gif, image/jpeg">
+                                    <p class="warning-avatar help-block-signup1">Chưa chọn ảnh hồ sơ</p>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Nguồn tuyển dụng</label>
@@ -191,37 +194,37 @@
                             <h3>Xác thực cá nhân</h3>
                             <div class="form-group">
                                 <label class="control-label">Số CMND/CCCD</label>
-                                <input maxlength="200" type="text" required="required" class="form-control signup-cmnd-number" placeholder="Enter Company Name" />
+                                <input maxlength="200" type="text" required="required" class="form-control signup-cmnd-number" />
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Ngày cấp</label>
-                                <input maxlength="200" type="text" id="datepicker" required="required" class="form-control  signup-cmnd-date-issue" placeholder="Enter Company Address"  />
+                                <input maxlength="200" type="text" id="datepicker" required="required" class="form-control  signup-cmnd-date-issue"/>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Nơi cấp</label>
-                                <input maxlength="200" type="text" required="required" class="form-control signup-cmnd-place-issue" placeholder="Enter Company Name" />
+                                <input maxlength="200" type="text" required="required" class="form-control signup-cmnd-place-issue" />
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Địa chỉ CMND</label>
-                                <input maxlength="200" type="text" required="required" class="form-control signup-cmnd-address" placeholder="Enter Company Address"  />
+                                <input maxlength="200" type="text" required="required" class="form-control signup-cmnd-address"/>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Ngày sinh</label>
-                                <input maxlength="200" type="text" id="datepicker2" required="required" class="form-control signup-cmnd-birthday" placeholder="Enter Company Address"  />
+                                <input maxlength="200" type="text" id="datepicker2" required="required" class="form-control signup-cmnd-birthday"/>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Ảnh mặt trước</label>
-                                <input maxlength="200" type="file" id="datepicker2" class="form-control signup-cmnd-pic-front" accept="image/png, image/gif, image/jpeg" required/>
+                                <input maxlength="200" type="file" class="form-control signup-cmnd-pic-front" accept="image/png, image/gif, image/jpeg" required/>
                                 <p class="warning-pic-cmnd-1 help-block-signup1">Chưa chọn ảnh</p>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Ảnh mặt sau</label>
-                                <input maxlength="200" type="file" id="datepicker2" class="form-control signup-cmnd-pic-back" accept="image/png, image/gif, image/jpeg" required/>
+                                <input maxlength="200" type="file" class="form-control signup-cmnd-pic-back" accept="image/png, image/gif, image/jpeg" required/>
                                 <p class="warning-pic-cmnd-2 help-block-signup1">Chưa chọn ảnh</p>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Giấy xác nhận công an</label>
-                                <input maxlength="200" type="file" id="datepicker2" class="form-control signup-cmnd-certification" required/>
+                                <input maxlength="200" type="file" class="form-control signup-cmnd-certification" required/>
                                 <p class="warning-signup-cmnd-certification help-block-signup1">Chưa chọn file xác nhận</p>
                             </div>
                             <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
@@ -234,7 +237,7 @@
                             <h3>Thông tin cửa hàng</h3>
                             <div class="form-group">
                                 <label class="control-label">Tên cửa hàng</label>
-                                <input maxlength="200" type="text" required="required" class="form-control signup-store-name" placeholder="Enter Company Name" />
+                                <input maxlength="200" type="text" required="required" class="form-control signup-store-name" />
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Quốc gia</label>
@@ -270,29 +273,29 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Địa chỉ</label>
-                                <input maxlength="200" type="text" id="datepicker2" required="required" class="form-control signup-store-address" placeholder="Enter Company Address"  />
+                                <input maxlength="200" type="text" required="required" class="form-control signup-store-address"/>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Ảnh cửa hàng</label>
-                                <input maxlength="200" type="file" id="datepicker2" required="required" class="form-control signup-image-store" placeholder="Enter Company Address" accept="image/png, image/gif, image/jpeg" />
+                                <input maxlength="200" type="file" required="required" class="form-control signup-image-store" accept="image/png, image/gif, image/jpeg" />
                                 <p class="warning-image-store help-block-signup1">Chưa chọn ảnh</p>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Loại phương tiện cung cấp</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                    <input class="form-check-input signup-bicycle" type="checkbox" id="inlineCheckbox1" value="option1">
                                     <label class="form-check-label" for="inlineCheckbox1">Xe đạp</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                    <input class="form-check-input signup-motorcycle" type="checkbox" id="inlineCheckbox2" value="option2">
                                     <label class="form-check-label" for="inlineCheckbox2">Xe máy</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                    <input class="form-check-input signup-car" type="checkbox" id="inlineCheckbox3" value="option3">
                                     <label class="form-check-label" for="inlineCheckbox3">Xe hơi</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input signup-store-vehicle3" type="checkbox" id="inlineCheckbox4" value="option4">
+                                    <input class="form-check-input signup-tow-truck" type="checkbox" id="inlineCheckbox4" value="option4">
                                     <label class="form-check-label" for="inlineCheckbox4">Xe kéo</label>
                                 </div>
                                 <p class="warning-signup-store-vehicle help-block-signup1">Chưa chọn loại phương tiện cung cấp</p>
@@ -309,19 +312,26 @@
                             <h3>Thông tin ngân hàng</h3>
                             <div class="form-group">
                                 <label class="control-label">Tên ngân hàng</label>
-                                <input maxlength="200" type="text" required="required" class="form-control signup-store-name" placeholder="Enter Company Name" />
+                                <select class="form-control m-bot15 select2 select2-hidden-accessible area signup-bank" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                    <option value="0" selected disabled hidden>Chọn Ngân Hàng</option> 
+                                    <option value="ACB">ACB</option>
+                                    <option value="Sacombank">Sacombank</option>
+                                    <option value="BIDV">BIDV</option>
+                                    <option value="Agribank">Agribank</option>
+                                </select>
+                                <p class="warning-signup-bank help-block-signup1">Chưa chọn ngân hàng</p>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Số tài khoản</label>
-                                <input maxlength="200" type="text" id="datepicker2" required="required" class="form-control signup-bank-number" placeholder="Enter Company Address"  />
+                                <input maxlength="200" type="text" required="required" class="form-control signup-bank-number"/>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Tên chủ thẻ</label>
-                                <input maxlength="200" type="text" id="datepicker2" required="required" class="form-control signup-bank-name" placeholder="Enter Company Address"  />
+                                <input maxlength="200" type="text" required="required" class="form-control signup-bank-name" />
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Chi nhánh</label>
-                                <input maxlength="200" type="text" id="datepicker2" required="required" class="form-control signup-bank-branch" placeholder="Enter Company Address"  />
+                                <input maxlength="200" type="text" required="required" class="form-control signup-bank-branch"/>
                             </div>
                             <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
                             </div>
@@ -333,19 +343,21 @@
                             <div class="col-md-12">
                             <h3>Thông tin tài khoản</h3>
                             <div class="form-group">
-                                <label class="control-label">Tên đăng nhập</label>
-                                <input maxlength="200" type="text" required="required" class="form-control signup-account-username" placeholder="Enter Company Name" />
+                                <label class="control-label">Tên tài khoản</label>
+                                <input maxlength="200" type="text" required="required" class="form-control signup-account-username" />
                             </div>
                             <div class="form-group">
-                                <label class="control-labeMật khẩu">Mật khẩu</label>
-                                <input maxlength="200" type="text" id="datepicker2" required="required" class="form-control signup-account-password" placeholder="Enter Company Address"  />
+                                <label class="control-label">Mật khẩu</label>
+                                <input maxlength="200" type="password" required="required" class="form-control signup-account-password"/>
+                                <span class="pass-weak"><i class="fa fa-times text-danger text"></i> Yếu</span><span class="pass-strong"><i class="fa fa-check text-check"></i> Mạnh</span><span class="pass-very-strong"><i class="fa fa-check-circle"></i> Rất mạnh</span>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Nhập lại mật khẩu</label>
-                                <input maxlength="200" type="text" id="datepicker2" required="required" class="form-control signup-account-repassword" placeholder="Enter Company Address"  />
+                                <input maxlength="200" type="password" required="required" class="form-control signup-account-repassword"/>
+                                <p class="warning-signup-passwork help-block-signup1">Nhập lại mật khẩu không trùng khớp</p>
                             </div>
-                            
-                            <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Submit</button>
+                            <input type="hidden" class="check-password" val="1"/>
+                            <button class="btn btn-primary nextBtn btn-lg pull-right btn-submit-partner" type="button" >Submit</button>
                             </div>
                         </div>
                     </div>
@@ -446,6 +458,142 @@
             }
         })
     })
+    $(".signup-account-password").keyup(function() {
+
+        var strength = 1;
+
+        /*length 5 characters or more*/
+        if(this.value.length >= 5) {
+            strength++;
+        }
+
+        /*contains lowercase characters*/
+        if(this.value.match(/[a-z]+/)) {
+            strength++;
+        }
+
+        /*contains digits*/
+        if(this.value.match(/[0-9]+/)) {
+            strength++;
+        }
+
+        /*contains uppercase characters*/
+        if(this.value.match(/[A-Z]+/)) {
+            strength++;
+        }
+
+        if(strength == 5) {
+            $(".pass-weak").css("display", "none");
+            $(".pass-strong").css("display", "none");
+            $(".pass-very-strong").css("display", "block");
+        }
+        else if(strength < 3 || this.value.length < 5){
+            $(".pass-weak").css("display", "block");
+            $(".pass-strong").css("display", "none");
+            $(".pass-very-strong").css("display", "none");
+        }
+        else {
+            $(".pass-weak").css("display", "none");
+            $(".pass-strong").css("display", "block");
+            $(".pass-very-strong").css("display", "none");
+        }
+
+        $(".check-password").val(strength);
+    });
+
+    $(".btn-submit-partner").click(function() {
+            var form_data = new FormData();
+
+            form_data.append("csrfmiddlewaretoken", '{{csrf_token}}'); 
+            form_data.append("firstname" , $(".signup-firstname").val());
+            form_data.append("lastname" , $(".signup-lastname").val());
+            form_data.append("sex" , $('input[name="signup-sex"]:checked').val());
+            form_data.append("email" , $(".signup-email").val());
+            form_data.append("phone1" , $(".signup-phone1").val());
+            form_data.append("phone2" , $(".signup-phone2").val());
+            form_data.append("avatar" , $('.signup-avatar').get(0).files[0]);
+            form_data.append("recruitment-source" , $(".signup-recruitment-source").val());
+            form_data.append("cmnd" , $(".signup-cmnd-number").val());
+            form_data.append("cmnd_date_issue" , $(".signup-cmnd-date-issue").val());
+            form_data.append("cmnd_place_issue" , $(".signup-cmnd-place-issue").val());
+            form_data.append("cmnd_address" , $(".signup-cmnd-address").val());
+            form_data.append("cmnd_birthday" , $(".signup-cmnd-birthday").val());
+            form_data.append("cmnd_pic_front" , $('.signup-cmnd-pic-front').get(0).files[0]);
+            form_data.append("cmnd_pic_back" , $('.signup-cmnd-pic-back').get(0).files[0]);
+            form_data.append("certification" , $('.signup-cmnd-certification').get(0).files[0]);
+            form_data.append("store_name" , $(".signup-store-name").val());
+            form_data.append("store_nation" , $(".signup-store-nation option:selected").text());
+            form_data.append("bank" , $(".signup-bank").val());
+            form_data.append("store_province" , $(".signup-store-province option:selected").text());
+            form_data.append("bank_number" , $(".signup-bank-number").val());
+            form_data.append("bank_name" , $(".signup-bank-name").val());
+            form_data.append("bank_branch" , $(".signup-bank-branch").val());
+            form_data.append("username" , $(".signup-account-username").val());
+            form_data.append("password" , $(".signup-account-password").val());
+            form_data.append("store_district" , $(".signup-store-district option:selected").text());
+            form_data.append("store_wards" , $(".signup-store-wards option:selected").text());
+            form_data.append("store_address" , $(".signup-store-address").val());
+            form_data.append("image_store" , $('.signup-image-store').get(0).files[0]);
+
+            var xedap, xemay, xehoi, xakeo;
+
+            if($(".signup-bicycle").attr('checked')) {
+                xedap = 1;
+            }
+            else {
+                xedap = 0;
+            }
+
+            if($(".signup-motorcycle").attr('checked')) {
+                xemay = 1;
+            }
+            else {
+                xemay = 0;
+            }
+
+            if($(".signup-tow-truck").attr('checked')) {
+                xekeo = 1;
+            }
+            else {
+                xekeo = 0;
+            }
+            
+            if($(".signup-car").attr('checked')) {
+                xehoi = 1;
+            }
+            else {
+                xehoi = 0;
+            }
+            
+            form_data.append("xedap" , xedap);
+            form_data.append("xemay" , xemay);
+            form_data.append("xekeo" , xekeo);
+            form_data.append("xehoi" , xehoi);
+
+
+            
+                            
+            // make POST ajax call
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'addPartner' %}",
+                dataType: 'json',
+                cache : false,
+                processData: false,
+                contentType: false,
+                data:form_data,
+                success: function (response) {
+                    a=0;
+                    $('div.setup-panel div a').addClass("disabled-final");
+                   // var response = jQuery.parseJSON( response );
+                    
+                },
+                error: function (response) {
+                    // alert the error if any error occured
+                    alert(response["responseJSON"]["error"]);
+                }
+            })
+        });
 </script>
 <script src="{% static 'js/bootstrap.js' %}"></script>
 <script src="{% static 'js/jquery.dcjqaccordion.2.7.js' %}"></script>
@@ -494,12 +642,16 @@
             allWells.hide();
 
             navListItems.click(function (e) {
-                // if(a==1 || !$(this).hasClass('disabled-a')) {
-                //     a=0;
-                // }
-                // else {
-                //     return false;
-                // }
+                if(a==1 || !$(this).hasClass('disabled-a')) {
+                    a=0;
+                }
+                else {
+                    return false;
+                }
+
+                if($(this).hasClass('disabled-final')) {
+                    return false;
+                }
                 e.preventDefault();
                 var $target = $($(this).attr('href')),
                         $item = $(this);
@@ -568,6 +720,14 @@
                     }
                     else {
                         $(".warning-phone2").css("display", "none");
+                    }
+
+                    if($('.signup-avatar').get(0).files.length > 0) {
+                        $(".warning-avatar").css("display", "none");
+                    }
+                    else {
+                        $(".warning-avatar").css("display", "block");
+                        return false;
                     }
 
                 }
@@ -641,14 +801,46 @@
                         $(".warning-image-store").css("display", "block");
                         return false;
                     }
-                    
+
+                    if($(".signup-bicycle").attr('checked') || $(".signup-motorcycle").attr('checked') || $(".signup-tow-truck").attr('checked') || $(".signup-car").attr('checked') )
+                    {
+                        $(".warning-signup-store-vehicle").css("display", "none");
+                        
+                    }
+                    else {
+                        
+                        $(".warning-signup-store-vehicle").css("display", "block");
+                        return false;
+                    }
 
                 }
                 else if(curStepBtn == "step-4") {
-
+                    if($('.signup-bank').find(":selected").val() == "0") {
+                        $(".warning-signup-bank").css("display", "block");
+                        return false;
+                    }
+                    else {
+                        $(".warning-signup-bank").css("display", "none");
+                    }
+                    
                 }
                 else {
+                    if( parseInt($(".check-password").val()) < 3 ||  $(".signup-account-password").val().length < 5) {
+                        $(".signup-account-password").focus();
+                        $(".pass-weak").css("display", "block");
+                        return false;
+                    }
+                    else {
+                        $(".pass-weak").css("display", "none");
+                    }
 
+                    if($(".signup-account-password").val() != $(".signup-account-repassword").val()) {
+                        $(".warning-signup-passwork").css("display", "block");
+                        return false;
+                    }
+                    else {
+                        $(".warning-signup-passwork").css("display", "none");
+                    }
                 }
 
                 
@@ -672,6 +864,9 @@
             $('div.setup-panel div a.btn-primary').trigger('click');
 
         });
+
+
+        
 
     </script>
 {% endblock %}
