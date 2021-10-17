@@ -54,36 +54,31 @@ def addPartner(request):
         avatar = request.FILES.get('avatar')
         fss = FileSystemStorage()
         filename = fss.save(avatar.name, avatar)
-        url = fss.url(filename)
-        partner.partner_image = url
+        partner.partner_image = filename
         
         # add image store_image
         store_image = request.FILES.get('image_store')
         fss = FileSystemStorage()
         filename = fss.save(store_image.name, store_image)
-        url = fss.url(filename)
-        partner.store_image = url
+        partner.store_image = filename
 
         # add image partner_CMND_image_front
         partner_CMND_image_front = request.FILES.get('cmnd_pic_front')
         fss = FileSystemStorage()
         filename = fss.save(partner_CMND_image_front.name, partner_CMND_image_front)
-        url = fss.url(filename)
-        partner.partner_CMND_image_front = url
+        partner.partner_CMND_image_front = filename
 
         # add image partner_CMND_image_back
         partner_CMND_image_back = request.FILES.get('cmnd_pic_back')
         fss = FileSystemStorage()
         filename = fss.save(partner_CMND_image_back.name, partner_CMND_image_back)
-        url = fss.url(filename)
-        partner.partner_CMND_image_back = url
+        partner.partner_CMND_image_back = filename
 
         # add image police_certificate
         police_certificate = request.FILES.get('certification')
         fss = FileSystemStorage()
         filename = fss.save(police_certificate.name, police_certificate)
-        url = fss.url(filename)
-        partner.police_certificate = url
+        partner.police_certificate = filename
 
         partner.username = request.POST['username']
         partner.password = request.POST['password']

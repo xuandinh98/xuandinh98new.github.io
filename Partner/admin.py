@@ -2,8 +2,8 @@ from django.contrib import admin
 from .models import Partner
 
 class PostPartner(admin.ModelAdmin):
-    # files = ('admin_photo')
-    list_display = ['STT', 'partner_id', 'partner_image','partner_firstname', 'partner_lastname']
+    files = ('admin_photo')
+    list_display = ['STT', 'partner_id', 'admin_photo','partner_firstname', 'partner_lastname']
 
     list_display_links = ['partner_id']
 
@@ -11,7 +11,7 @@ class PostPartner(admin.ModelAdmin):
 
     search_fields = ['partner_firstname', 'partner_lastname']
 
-    # readonly_fields = ('partner_firstname', 'admin_photo')
+    readonly_fields = ('partner_firstname', 'admin_photo')
 
 # Register your models here.
 admin.site.register(Partner, PostPartner)
