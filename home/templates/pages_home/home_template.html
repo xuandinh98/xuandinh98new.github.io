@@ -1,20 +1,164 @@
-{% extends "pages_home/header_footer.html" %}
-{% load static %}
-{% block title %}Đối tác{% endblock %}
+{% extends "pages_home/header_footer.html" %} {% load static %} {% block title %}Gongfix{% endblock %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}"> {% endblock %} {% block content %} {% comment %} main Banner {% endcomment %}
+<div id="home_banner">
 
-{% block css %}
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
-{% endblock %}
+    <div class="d-flex flex-column justify-content-center w-100 h-100">
+        <svg viewBox="0 0 960 300">
+  <symbol id="s-text">
+  {% comment %} Brand name {% endcomment %}
+    <text text-anchor="middle" x="50%" y="80%">GONGFIX</text>
+  </symbol>
 
-{% block content %}
-<video id="video_background" preload="auto" autoplay="true" loop="loop" muted volume="0">
-    <source src="{% static 'video/background.mp4' %}" type="video/webm"/>
-    </video>
-<div id="btn-anchor">
-    <button>GONGFIX</button>
-    <button>DỊCH VỤ</button>
-    <button>SỰ KIỆN</button>
-    <button>LIÊN HỆ</button>
+  <g class = "g-ants">
+    <use xlink:href="#s-text" class="text-copy"></use>
+    <use xlink:href="#s-text" class="text-copy"></use>
+    <use xlink:href="#s-text" class="text-copy"></use>
+    <use xlink:href="#s-text" class="text-copy"></use>
+    <use xlink:href="#s-text" class="text-copy"></use>
+  </g>
+</svg> {% comment %} Button main banner {% endcomment %}
+        <div id="btn-anchor">
+            <a href="#" class="animated-button1">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span> GONGFIX
+            </a>
+            <a href="#" class="animated-button1">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span> DỊCH VỤ
+            </a>
+            <a href="#" class="animated-button1">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span> SỰ KIỆN
+            </a>
+            <a href="#" class="animated-button1">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span> LIÊN HỆ
+            </a>
+        </div>
+    </div>
+
 </div>
 
+{% comment %} Sale hot {% endcomment %}
+<div id="Sale-hot">
+    <div id="title-sale-hot">
+        Khuyến mãi <strong>50%</strong> cho lần đặt hàng đầu tiên?
+    </div>
+    <!-- slide -->
+    <div class="home-slideshow">
+        <div class="item-slideshow fade">
+            <img src="{% static 'img/km.jpg' %}" alt="">
+        </div>
+        <div class="item-slideshow fade">
+            <img src="{% static 'img/main_side_image2.png' %}" alt="">
+        </div>
+        <div class="item-slideshow fade">
+            <img src="{% static 'img/banner.jpg' %}" alt="">
+        </div>
+    </div>
+
+    <br>
+    <!-- Nút điều chỉnh slide -->
+    <div style="text-align: center;">
+        <span class="dot" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+    </div>
+    <!-- caption silde -->
+    <div id="caption-silde-center">Gongfix giảm ngay 50% cho đơn đặt hàng đầu tiên khi quý khách nhập mã ‘xinchaoGONGFIX’</div>
+</div>
+<!-- info business -->
+<div id="info-business">
+    <div id="title-info">
+        GONGFIX
+    </div>
+    <div id="content-info">
+        <div>
+            <img src="{% static 'img/7be57345f71144464c0eea68ca7a0ad8.png' %}" alt="">
+            <h3>Cứu Hộ Xe máy, Ô tô</h3>
+            <p>Khi tham gia giao thông, Gongfix sẽ tìm kiếm những hiệu sửa xe gần nhất để hỗ trợ bạn. Gongfix có hỗ trợ tất cả các loại xe bao gồm xe cơ giới.</p>
+        </div>
+        <div>
+            <img src="{% static 'img/20408186e8a7ba6b849ecf0a67deeec6.png' %}" alt="">
+            <h3>Hỗ trợ 24 giờ</h3>
+            <p>GongFix luôn phục vụ khách hàng 24/24 để có thể kịp thời hỗ trợ khách hàng khi cần thiết. Đồng hành với khách hàng trên mọi tuyến đường.</p>
+        </div>
+        <div>
+            <img src="{% static 'img/f5c4a01a664b398fa402a06fa3ed0ede.png' %}" alt="">
+            <h3>Cung cấp phụ tùng xe</h3>
+            <p>Chúng tôi cung cấp các loại phụ tùng xe máy, xe ô tô chính hãng chất lượng. Bảo đảm kịp thời cung cấp phụ tùng cho việc sửa chữa 24/24.</p>
+        </div>
+
+    </div>
+</div>
+<!-- service introduction -->
+<div id="service-introduction">
+    <div id="title-service-introduction">
+        DỊCH VỤ
+    </div>
+    <div id="content-service-introduction">
+        <div style="float: left;">
+            <img src="{% static 'img/7a13ffc13a694a8aeb77e7a640d8d539.png' %}" alt="">
+        </div>
+        <div style="float:right;background-color:rgba(51, 51, 51, 0.3);">
+            <h3>Dịch vụ sửa chữa xe lưu động</h3>
+            <p>Gongfix sẽ là trung gian kết nối các hiệu sửa xe trên toàn thành phố với người dùng, khi xe bị hư hỏng tại nhà hoặc khi tham gia giao thông, chỉ cần liên hệ với Gongfix, Gongfix sẽ tìm kiếm những hiệu sửa xe gần nhất để hỗ trợ bạn, gongfix
+                có hỗ trợ tất cả các loại xe bao gồm xe cơ giới.</p>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<!-- why choose? -->
+<div id="choose-gongfix">
+    <div id="title-choose-gongfix">
+        Tại sao bạn chọn GongFix?
+    </div>
+    <div id="content-choose-gongfix">
+        <div>
+            <img src="{% static 'img/d5abae914267b9f60d89f9d0783376e0.jfif' %}">
+            <p>Tiết kiệm thời gian và công sức di chuyển</p>
+        </div>
+        <div>
+            <img src="{% static 'img/f24558d199697ea03355cbdbe97a1828.jfif' %}">
+            <p>Cứu trợ trong những điều kiện không thuận lợi</p>
+        </div>
+        <div>
+            <img src="{% static 'img/53fc1f7184af75b37c3043e972022e1c.png' %}">
+            <p>Kỹ thuật viên được bố trí theo giờ hẹn của quý khách.</p>
+        </div>
+        <div>
+            <img src="{% static 'img/cdd307d0a3d9d2dc7a948e6d693175e2.jfif' %}">
+            <p>Vật tư và phụ tùng thay thế được chuẩn bị sẵn sàng.</p>
+        </div>
+    </div>
+</div>
+<!-- customerreviews -->
+<div id="customer-review">
+    <h2>Khách hàng nói gì về chúng tôi</h2>
+    <div class="content-review">
+        <img src="{% static 'img/images.jfif' %}" alt="">
+        <p><strong>Ngoc</strong><br>ngocle@gmail.com</p>
+        <div class="line"></div>
+        <p>Hổ trợ rất nhanh. Hài lòng!</p>
+    </div>
+
+</div>
+<!-- motto business -->
+<div id="motto-business">
+    <div><img src="{% static 'img/0ce14f722a76419b90a6e161faea86db.jfif' %}" alt=""></div>
+    <div>
+        <p>Đồng hành cùng Gongfix trên những hành trình an toàn và thuận lợi</p>
+    </div>
+</div>
+{% endblock %} {% block js %}
+<script src="{% static 'js/home.js' %}">
+</script>
 {% endblock %}
