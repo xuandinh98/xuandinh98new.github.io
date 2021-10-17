@@ -2058,7 +2058,7 @@ svg {
     width: 100%;
     height: 80vh;
     background-attachment: fixed;
-    background: linear-gradient(0deg, rgba(55, 0, 255, 0.3), rgba(255, 0, 150, 0.3)), url("../img/fb-1555052502-806-width1200height628-watermark.jpg") no-repeat;
+    background: linear-gradient(0deg, rgba(55, 0, 255, 0.3), rgba(255, 0, 150, 0.3)), url("../img/fb-1555052502-806-width1200height628-watermark.jpg") no-repeat fixed;
     background-size: cover;
     color: white;
 }

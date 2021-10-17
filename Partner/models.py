@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.utils.safestring import mark_safe
 
 import hashlib
 
@@ -16,7 +17,7 @@ class Partner(models.Model):
     partner_firstname = models.TextField() # Họ và chữ lót
     partner_lastname = models.TextField(null=True) # Tên đối tác
     partner_sex = models.IntegerField(null=True) # Giới tính 1=>Nam / 2=>Nữ
-    partner_image = models.ImageField(upload_to='static/fileupload/', blank=True) # ảnh hồ sơ
+    partner_image = models.ImageField(upload_to='static/fileupload/', null=True, blank=True) # ảnh hồ sơ
     store_name = models.TextField() # tên cửa hàng
     store_image = models.ImageField(upload_to='static/fileupload/', blank=True) # ảnh cửa hàng
     partner_phone = models.CharField(max_length=11)
@@ -58,7 +59,7 @@ class Partner(models.Model):
         return self.STT
     
     def admin_photo(self):
-        return mark_safe('<img src="{}" style="width: 45px; height:45px;" />'.format(self.partner_image.url))
+        return mark_safe('<img src="%s" style="width: 45px; height:45px;" />' % (self.partner_image.url))
     admin_photo.short_description = 'Image'
     admin_photo.alow_tags = True
 
