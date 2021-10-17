@@ -16,9 +16,9 @@ class Partner(models.Model):
     partner_firstname = models.TextField() # Họ và chữ lót
     partner_lastname = models.TextField(null=True) # Tên đối tác
     partner_sex = models.IntegerField(null=True) # Giới tính 1=>Nam / 2=>Nữ
-    partner_image = models.FileField(upload_to='static/fileupload/') # ảnh hồ sơ
+    partner_image = models.ImageField(upload_to='static/fileupload/', blank=True) # ảnh hồ sơ
     store_name = models.TextField() # tên cửa hàng
-    store_image = models.FileField(upload_to='static/fileupload/') # ảnh cửa hàng
+    store_image = models.ImageField(upload_to='static/fileupload/', blank=True) # ảnh cửa hàng
     partner_phone = models.CharField(max_length=11)
     partner_phone2 = models.CharField(max_length=11)
     partner_CMND = models.CharField(max_length=20)
@@ -26,8 +26,8 @@ class Partner(models.Model):
     partner_CMND_address = models.TextField() # địa chỉ trên CMND
     partner_CMND_issued = models.TextField() # nơi cấp CMND
     partner_birthday = models.DateField()
-    partner_CMND_image_front = models.FileField(upload_to='static/fileupload/') # ảnh mặt trước CMND
-    partner_CMND_image_back = models.FileField(upload_to='static/fileupload/') # ảnh mặt sau CMND
+    partner_CMND_image_front = models.ImageField(upload_to='static/fileupload/', blank=True) # ảnh mặt trước CMND
+    partner_CMND_image_back = models.ImageField(upload_to='static/fileupload/', blank=True) # ảnh mặt sau CMND
     partner_email = models.TextField()
     partner_address = models.TextField()
     partner_area = models.TextField() # quốc gia
@@ -35,7 +35,7 @@ class Partner(models.Model):
     partner_district = models.TextField() # quận/huyện
     partner_wards = models.TextField() # phường/xã/thị trấn
     partner_recruitment_source = models.TextField() # nguồn tuyển dụng
-    police_certificate = models.FileField(upload_to='static/fileupload/') # giấy xác nhận của công an như sơ yếu lý lịch,... nếu nhiều để chung 1 file
+    police_certificate = models.FileField(upload_to='static/fileupload/', blank=True) # giấy xác nhận của công an như sơ yếu lý lịch,... nếu nhiều để chung 1 file
     partner_bank_account = models.TextField() # tài khoản ngân hàng
     bank_name = models.TextField() # tên ngân hàng
     bank_account_holder_name = models.CharField(max_length=255) # tên tài khoản ngân hàng, viết hoa không dấu
@@ -53,6 +53,14 @@ class Partner(models.Model):
     typerepair_xekeo = models.IntegerField(null=True) # xe kéo. 1=> có, 0=> không
     created_at = models.DateTimeField()
     updated_at = models.DateTimeField()
+
+    def __int__(self):
+        return self.STT
+    
+    def admin_photo(self):
+        return mark_safe('<img src="{}" style="width: 45px; height:45px;" />'.format(self.partner_image.url))
+    admin_photo.short_description = 'Image'
+    admin_photo.alow_tags = True
 
 
 class Provinces(models.Model):
