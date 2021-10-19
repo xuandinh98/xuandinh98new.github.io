@@ -20,6 +20,21 @@ def index(request):
     Data = {'Provinces' : Provinces.objects.all().order_by('name')}
     return render(request, 'pages/partner_template.html', Data)
 
+def partner_admin(request):
+    return render(request, 'pages/admin/dashboard.html')
+
+def partner_ticket(request):
+    return render(request, 'pages/admin/partner_ticket.html')
+
+def partner_order(request):
+    return render(request, 'pages/admin/partner_order.html')
+
+def partner_info(request):
+    return render(request, 'pages/admin/partner_info.html')
+
+def statistics_revenue(request):
+    return render(request, 'pages/admin/statistics_revenue.html')
+
 def postProvinces(request):
     # request should be ajax and method should be POST.
     if request.is_ajax and request.method == "POST":

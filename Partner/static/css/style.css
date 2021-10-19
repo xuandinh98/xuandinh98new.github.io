@@ -217,6 +217,7 @@ ul.sidebar-menu li a.active i {
 .header {
     left:0;
     right:0;
+    top: -4px;
     z-index:1002;
     background:rgb(240, 188, 180);
     -webkit-transition:all .3s ease-in-out;
@@ -3275,4 +3276,51 @@ ul.stepper.horizontal {
 
 .pass-very-strong i {
     color: rgb(25, 0, 255);
+}
+
+.btn-export-pdf {
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.btn-gr-add p {
+    color: #999;
+    padding: 10px;
+}
+
+.btn-gr-add p:hover {
+    background-color: #DCDCDC;
+    cursor: pointer;
+}
+
+.list-menu-info {
+    position: fixed;
+    right: 0;
+}
+
+
+.list-menu-info a {
+    padding: 5px;
+    width: 100%;
+    background:#A9A9A9;
+    margin-top: 5px;
+    color: black;
+}
+
+.list-menu-info a:hover {
+    background:#808080;
+    color: white;
+    cursor: pointer;
+}
+
+.left-margin {
+    margin-left: -2%;
+}
+
+.content-text {
+    height: 34px;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
 }

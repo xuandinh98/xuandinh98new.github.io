@@ -1,0 +1,278 @@
+
+{% extends "pages/admin/admin_template.html" %}
+{% load static %}
+{% block partner_admin_content %}
+<style>
+    .panel-group {
+        border: 1px solid #337ab7;
+    }
+
+    .mail-nav li img {
+        width: 80%;
+        height: 80%;
+        margin: 0 auto;
+        margin-left: 10%;
+    }
+
+    .list-menu-info {
+        margin-left: -11%;
+    }
+
+    
+
+</style>
+<section class="wrapper" id="a1">
+    <!-- page start-->
+    <div class="row">
+        <div class="col-sm-4 com-w3ls">
+            <section class="panel">
+                <div class="col-sm-12 gallery-grids-left">
+                    <div class="gallery-grid">
+                        <a class="example-image-link" href="" data-lightbox="example-set" data-title="">
+                            <img src="{% static 'images/g1.jpg' %}" alt="" />
+                            <div class="captn">
+                                <h4>Lê Thị Hồng Ngọc</h4>
+                                <p>GongFix</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <a href="" class="btn btn-compose">
+                        Thông tin chung
+                    </a>
+                    <ul class="nav nav-pills nav-stacked mail-nav">
+                        <li><a href=""> <i class="fa fa-inbox"></i> Coin: 9.000.000  <span class="label label-danger pull-right inbox-notification">Lịch sử</span></a></li>
+                        <li><a href="#"> <i class="fa fa-envelope-o"></i> Tin nhắn</a></li>
+                        <li><a href="#"> <i class="fa fa-certificate"></i> Đổi mật khẩu</a></li>
+                        <li><img src="{% static 'images/qr.jpg' %}" alt="" /></li>
+                        <li><a href="#"> <i class="glyphicon glyphicon-download-alt"></i> Tải hồ sơ <span class="pull-right">Tải hợp đồng <i class="glyphicon glyphicon-download-alt"></i></span></a></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <div class="col-sm-8 mail-w3agile">
+            <section class="panel">
+                <form class="form-horizontal bucket-form" action="" method="post">
+
+                    <div class="form-group">
+                        <div class="col-sm-10 left-margin">
+                            <div class="form-group">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label"></label>
+                                <div class="col-sm-10">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading group-heading">Thông tin cá nhân</div>
+                                        <div class="panel-body panel-group">
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Mã đối tác</label>
+                                                <p class="lable-group content-text">PN001</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Trạng thái</label>
+                                                <p class="lable-group content-text">Đang hoạt động</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Họ và chữ lót</label>
+                                                <p class="lable-group content-text">Lê Thị Hồng</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Tên</label>
+                                                <p class="lable-group content-text">Ngọc</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Số CMND/CCCD</label>
+                                                <p class="lable-group content-text">341958726</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Ngày cấp</label>
+                                                <p class="lable-group content-text">25/09/2016</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Nơi cấp</label>
+                                                <p class="lable-group content-text">CA Đồng Tháp</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Địa chỉ</label>
+                                                <p class="lable-group content-text">Lai Vung, Đồng Tháp</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Ảnh CMND/CCCD mặt trước</label>
+                                                <img src="{% static 'images/g6.jpg' %}" alt="Ảnh CMND/CCCD mặt trước" style="width: 100%; height: 100%; margin-bottom: 10px;">
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Ảnh CMND/CCCD mặt sau</label>
+                                                <img src="{% static 'images/g6.jpg' %}" alt="Ảnh CMND/CCCD mặt sau" style="width: 100%; height: 100%; margin-bottom: 10px;">
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Giới tính</label>
+                                                <p class="lable-group content-text">Nữ</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Ngày sinh</label>
+                                                <p class="lable-group content-text">25/09/2000</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Số điện thoại 1</label>
+                                                <p class="lable-group content-text">Nữ</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Số điện thoại 2</label>
+                                                <p class="lable-group content-text">25/09/2000</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Email</label>
+                                                <p class="lable-group content-text">18521155@gm.uit.edu.vn</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Nguồn tuyển dụng</label>
+                                                <p class="lable-group content-text">Facebook</p>
+                                            </div>
+                                            <div class="col-sm-12" id="a2">
+                                                <label class="lable-group">Giấy xác thức CA: <a href="">giayxacthuc.pdf</a></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label"></label>
+                                <div class="col-sm-10">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading group-heading">Thông tin cửa hàng</div>
+                                        <div class="panel-body panel-group">
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Tên cửa hàng</label>
+                                                <p class="lable-group content-text">Gongfic</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Loại hình cung cấp</label>
+                                                <p class="lable-group content-text">Xe máy, xe đạp</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Quốc gia</label>
+                                                <p class="lable-group content-text">Việt Nam</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Tỉnh/Thành</label>
+                                                <p class="lable-group content-text">Hồ Chí Minh</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Quận/Huyện</label>
+                                                <p class="lable-group content-text">Thủ Đức</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Xã/Phường/Thị trấn</label>
+                                                <p class="lable-group content-text">Linh Trung</p>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <label class="lable-group">Địa chỉ</label>
+                                                <p class="lable-group content-text">KTX Khu B, ĐHQG Thành phố HCM</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Ảnh cửa hàng</label>
+                                                <img src="{% static 'images/g6.jpg' %}" alt="Ảnh cửa hàng" style="width: 100%; height: 100%; margin-bottom: 10px;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group" id="a3">
+                                <label class="col-sm-1 control-label"></label>
+                                <div class="col-sm-10">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading group-heading">Thông tin ngân hàng</div>
+                                        <div class="panel-body panel-group">
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Tên ngân hàng</label>
+                                                <p class="lable-group content-text">Agribank</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Số tài khoản</label>
+                                                <p class="lable-group content-text">0123456789</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Tên chủ thẻ</label>
+                                                <p class="lable-group content-text">LE THI HONG NGOC</p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="lable-group">Chi nhánh</label>
+                                                <p class="lable-group content-text">Lai Vung, Đồng Tháp</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group" id="a4">
+                                <label class="col-sm-1 control-label"></label>
+                                <div class="col-sm-10">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading group-heading">Thông tin tài khoản</div>
+                                        <div class="panel-body panel-group">
+                                            <div class="col-sm-12">
+                                                <label class="lable-group">Tên tài khoản</label>
+                                                <p class="lable-group content-text">NgocLe2509</p>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <label class="lable-group">Mật khẩu</label>
+                                                <!-- Password field -->
+                                                <input type="password" value="FakePSW" id="myInput" class="form-control" readonly>
+
+                                                <!-- An element to toggle between password visibility -->
+                                                <input type="checkbox" onclick="myFunction()">Show Password
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-2 list-menu-info">
+                            <div class="form-group">
+                            </div>
+                            <div class="col-sm-12">
+                                <a href="#a1" class="btn">THÔNG TIN CÁ NHÂN</a>
+                            </div>
+                            <div class="col-sm-12">
+                                <a href="#a2" class="btn">THÔNG TIN CỬA HÀNG</a>
+                            </div>
+                            <div class="col-sm-12">
+                                <a href="#a3" class="btn">THÔNG TIN NGÂN HÀNG</a>
+                            </div>
+                            <div class="col-sm-12">
+                                <a href="#a4" class="btn">THÔNG TIN TÀI KHOẢN</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-7 control-label"></label>
+                        <div class="col-sm-1">
+                            <button type="submit" name="add_physical" class="btn btn-info">Lưu thay đổi</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <!-- page end-->
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+</section>
+{% endblock %}

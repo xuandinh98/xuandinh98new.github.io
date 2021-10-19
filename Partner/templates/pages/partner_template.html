@@ -377,6 +377,10 @@
 
 {% block js %}
 <script>
+    $('.select2').select2({
+        closeOnSelect: false
+    });
+
     $(".signup-store-nation").change(function() {
         $(".signup-store-province option").remove();
         $(".signup-store-province").append("<option value='0' selected disabled hidden>Chọn Tỉnh/Thành</option> ");
