@@ -1,0 +1,130 @@
+
+{% extends "pages/admin/admin_template.html" %}
+{% load static %}
+{% block partner_admin_content %}
+<style>
+  .coin {
+    padding-top: 7px;
+  }
+  .help-block {
+    color: #a94442;
+  }
+  .alert-success {
+    color: #41464b;
+    background-color: #e2e3e5;
+    border-color: #d3d6d8;
+  }
+  
+</style>
+<section class="wrapper">
+		
+  <div class="table-agile-info">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Phiếu hủy đối tác
+      </div>
+      <span class="text-alert"></span>
+      <div class="row w3-res-tb">
+        <div class="col-sm-3 m-b-xs">
+        </div>
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-5"></div>
+    </div>
+    
+    <form class="form-horizontal bucket-form" action="" method="post">
+  
+          <div class="form-group">
+            <label class="col-sm-2 control-label"></label>
+            <div class="col-sm-8">
+              <div class="alert alert-success">
+                <strong>Đối tác Gongfix</strong> nếu có nhu cầu chấm dứt thỏa thuận hợp tác với GongFix, Quý Đối Tác có thể điền đầy đủ thông tin vào biểu mẫu bên dưới để đội ngũ GongFix sẽ kiểm tra và hỗ trợ trong thời gian sớm nhất.. </br>
+              </br>
+                Vui lòng điền mục Email là địa chỉ email mà quý Đối tác đã đăng ký với GongFix. Mong Đối tác kiểm tra email thường xuyên để cập nhật hướng xử lý hoặc các yêu cầu bổ sung thông tin nếu cần từ GongFix.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label"></label>
+              <div class="col-sm-6">
+                  <label class="col-sm-6">Họ tên</label>
+                  <input type="text" class="form-control withdraw-money">
+              </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label"></label>
+            <div class="col-sm-6">
+              <label class="col-sm-6">Số điện thoại đăng kí tài khoản</label>
+                <input type="text" class="form-control" name="physical_name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label"></label>
+            <div class="col-sm-6">
+              <label class="col-sm-6">Email đăng kí tài khoản</label>
+                <input type="text" class="form-control" name="physical_name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label"></label>
+            <div class="col-sm-6">
+              <label class="col-sm-6">Số CMND/CCCD</label>
+                <input type="text" class="form-control" name="physical_name">
+            </div>
+          </div>
+          <div class="form-group">
+              <label class="col-sm-3 control-label"></label>
+              <div class="col-sm-6">
+                <label class="col-sm-6">Yêu cầu chấm dứt hợp tác từ ngày</label>
+                <input maxlength="200" type="text" id="datepicker" required="required" class="form-control"/>
+              </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label"></label>
+            <div class="col-sm-6">
+              <strong>Lưu ý: </strong>Số dư ví sẽ đươc chuyển vào tài khoản ngân hàng mặc định đối tác đã cung cấp, nếu đối tác muốn thay đổi tài khoản ngân hàng, vui lòng chỉnh sửa trước khi gửi yêu cầu hủy đối tác.
+              <div class="checkbox">
+                <label><input type="checkbox" value="">Tôi cam kết tất cả thông tin cung cấp trên đây là đúng, đầy đủ và chính xác trên mọi phương diện. GongFix sẽ không chịu trách nhiệm nếu thông tin được cung cấp bị sai lệch ảnh hưởng đến quá trình chuyển khoản.</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="">Tôi đồng ý với Đề Nghị Chấm Dứt Thỏa Thuận Hợp Tác này</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+              <input type="hidden" value="add" name="type">
+              <label class="col-sm-7 control-label" for="exampleInputEmail1"></label>
+              <a href="{% url 'partner_ticket' %}" class="btn btn-secondary">Trở lại</a>
+              <button type="submit" name="add_physical" class="btn btn-info">Đăng ký</button>
+          </div>
+      </form>      
+    <footer class="panel-footer">
+      <div class="row">
+      </div>
+    </footer>
+  </div>
+</section>
+<script src="{% static 'datepicker/jquery.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'datepicker/jquery-ui.min.js' %}" type="text/javascript"></script>
+    <link href="{% static 'datepicker/jquery-ui.css' %}" rel="Stylesheet" type="text/css" />
+    
+
+    <script>
+        $( "#datepicker" ).datepicker({
+            prevText:"Tháng trước",
+            nextText:"Tháng sau",
+            dateFormat:"yy-mm-dd",
+            dayNamesMin: [ "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "Chủ nhật" ],
+            duration: "slow"
+        });
+
+        $( "#datepicker2" ).datepicker({
+            prevText:"Tháng trước",
+            nextText:"Tháng sau",
+            dateFormat:"yy-mm-dd",
+            dayNamesMin: [ "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "Chủ nhật" ],
+            duration: "slow"
+        });
+  
+</script>
+{% endblock %}

@@ -9,7 +9,13 @@ from Partner.views import (
     partner_ticket,
     partner_order,
     partner_info,
-    statistics_revenue
+    statistics_revenue,
+    phieu_rut_tien,
+    phieu_thay_doi_thong_tin,
+    phieu_huy_doi_tac,
+    order_receive,
+    chat
+    
 )
 
 urlpatterns = [
@@ -21,4 +27,9 @@ urlpatterns = [
     path('partner_order', partner_order, name = 'partner_order'),
     path('partner_info', partner_info, name = 'partner_info'),
     path('statistics_revenue', statistics_revenue, name = 'statistics_revenue'),
+    path('phieu_rut_tien', phieu_rut_tien, name = 'phieu_rut_tien'),
+    path('phieu_thay_doi_thong_tin', phieu_thay_doi_thong_tin, name = 'phieu_thay_doi_thong_tin'),
+    path('phieu_huy_doi_tac', phieu_huy_doi_tac, name = 'phieu_huy_doi_tac'),
+    path('order_receive', order_receive, name = 'order_receive'),
+    path('chat', chat, name = 'chat'),
 ]

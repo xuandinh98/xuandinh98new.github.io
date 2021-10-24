@@ -55,7 +55,6 @@ body:after {
 }
 
 .lb-outerContainer:after {
-  content: "";
   display: table;
   clear: both;
 }
@@ -155,7 +154,6 @@ body:after {
 }
 
 .lb-dataContainer:after {
-  content: "";
   display: table;
   clear: both;
 }

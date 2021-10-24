@@ -35,6 +35,21 @@ def partner_info(request):
 def statistics_revenue(request):
     return render(request, 'pages/admin/statistics_revenue.html')
 
+def phieu_rut_tien(request):
+    return render(request, 'pages/admin/phieu_rut_tien.html')
+
+def phieu_thay_doi_thong_tin(request):
+    return render(request, 'pages/admin/phieu_thay_doi_thong_tin.html')
+
+def phieu_huy_doi_tac(request):
+    return render(request, 'pages/admin/phieu_huy_doi_tac.html')
+    
+def order_receive(request):
+    return render(request, 'pages/admin/order_receive.html')
+
+def chat(request):
+    return render(request, 'pages/admin/chat.html')
+
 def postProvinces(request):
     # request should be ajax and method should be POST.
     if request.is_ajax and request.method == "POST":

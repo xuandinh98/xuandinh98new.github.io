@@ -14,6 +14,7 @@
         table td {
           text-align: center;
         }
+
       </style>
       <div class="table-agile-info">
         <div class="panel panel-default">
@@ -52,7 +53,7 @@
                   <td>150.000</td>
                   <td>Bể bánh</td>
                   <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter">Xem chi tiết</button></td>
-                  <td><button type="button" class="btn btn-primary">Nhận</button></td>
+                  <td><button type="button" class="btn btn-primary"><a href="{% url 'order_receive' %}" style="color: white;">Nhận</a></button></td>
                 </tr>
                 <tr>
                   <td>DH01</td>
@@ -61,7 +62,7 @@
                   <td>150.000</td>
                   <td>Bể bánh</td>
                   <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter">Xem chi tiết</button></td>
-                  <td><button type="button" class="btn btn-primary">Nhận</button></td>
+                  <td><button type="button" class="btn btn-primary"><a href="{% url 'order_receive' %}" style="color: white;">Nhận</a></button></td>
                 </tr>
               </tbody>
             </table>
@@ -72,17 +73,64 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                  <h5 class="modal-title" id="exampleModalLongTitle">Thông tin chi tiết đơn hàng</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                  ...
+                  <h4>Thông tin đơn hàng</h4>
+                  <table class="borderless">
+                    <thead>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>Mã đơn hàng</th>
+                        <td>A123</td>
+                        <th>Đơn hàng</th>
+                        <td>Thay lốp xe</td>
+                      </tr>
+                      <tr>
+                        <th>Loại xe</th>
+                        <td>Xe máy</td>
+                        <th>Tên xe</th>
+                        <td>Yamaha</td>
+                      </tr>
+                      <tr>
+                        <th>Loại lốp</th>
+                        <td>Lốp Michelin</td>
+                        <th>Giá ước tính</th>
+                        <td>700.000đ</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <hr>
+                  <h4>Thông tin khách hàng</h4>
+                  <table class="borderless">
+                    <thead>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>Địa chỉ</th>
+                        <td>Dĩ An, Bình Dương</td>
+                        <th>Số điện thoại</th>
+                        <td>*******208</td>
+                      </tr>
+                      <tr>
+                        <th>Khoảng cách</th>
+                        <td>5km</td>
+                        <th>Ghi chú</th>
+                        <td>Đến lẹ, cần gấp ạ</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <hr>
+                  <h4>Hình ảnh xe</h4>
+                  <img src="{% static 'images/g2.jpg' %}" alt="Paris" style="width: 50%; height: 50%; margin-top: 10px;">
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                  <button type="button" class="btn btn-primary"><a href="{% url 'order_receive' %}" style="color: white;">Nhận</a></button>
                 </div>
               </div>
             </div>

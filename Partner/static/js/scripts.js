@@ -1,6 +1,30 @@
 (function ($) {
     "use strict";
     $(document).ready(function () {
+
+        if($('#dtHorizontalVerticalExample').length) {
+            $('#dtHorizontalVerticalExample').DataTable({
+                "scrollX": false,
+                "scrollY": 400,
+                
+    
+                
+    
+                // "bPaginate": false,
+                // "bLengthChange": false,
+                // "bFilter": true,
+                // "bInfo": false,
+                // "bAutoWidth": false 
+            });
+            $('.dataTables_length').addClass('bs-select');
+    
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
+                $($.fn.dataTable.tables(true)).DataTable()
+                   .columns.adjust();
+             });
+        }
+        
+
         
 
         /*==Left Navigation Accordion ==*/
@@ -288,7 +312,18 @@
 
     });
 
-   
+    $('.withdraw-money').keypress(function(event){
+        var coin = parseInt($(".coin").text().replaceAll(".", ""));
+        var keycode = parseInt((event.keyCode ? event.keyCode : event.which)) - 48;
+        var next_coin = parseInt($(this).val() + keycode);
+        if(next_coin > coin) {
+            $(".warning-coin").css("display", "block");
+            return false;
+        }
+        else {
+            $(".warning-coin").css("display", "none");
+        }
+    });
 
 
 })(jQuery);

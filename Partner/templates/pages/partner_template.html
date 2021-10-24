@@ -4,8 +4,10 @@
 
 {% block css %}
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
 <!-- bootstrap-css -->
 <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+ 
 <!-- //bootstrap-css -->
 <!-- Custom CSS -->
 <link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
@@ -69,7 +71,7 @@
                         <div class="panel-body">
                             <form role="form" class="form-horizontal ">
                                 <div class="form-group has-success">
-                                    <label class="col-lg-3 control-label">Email</label>
+                                    <label class="col-lg-3 control-label" >Email / Số điện thoại</label>
                                     <div class="col-lg-6">
                                         <input type="text" class="form-control">
                                         <p class="help-block">Successfully done</p>
@@ -84,7 +86,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-lg-offset-3 col-lg-6">
-                                        <button class="btn btn-primary btn-partner btn-partner0 " type="submit">Submit</button>
+                                        <a class="btn btn-primary btn-partner btn-partner0" href="{% url 'partner_admin' %}">Submit</a>
                                     </div>
                                 </div>
                             </form>
@@ -197,7 +199,7 @@
                                 <input maxlength="200" type="text" required="required" class="form-control signup-cmnd-place-issue" />
                             </div>
                             <div class="form-group">
-                                <label class="control-label">Địa chỉ CMND</label>
+                                <label class="control-label">Địa chỉ thường trú</label>
                                 <input maxlength="200" type="text" required="required" class="form-control signup-cmnd-address"/>
                             </div>
                             <div class="form-group">
@@ -707,7 +709,7 @@
                         return false;
                     }
                     else {
-                        $(".warning-phone1").css("display", "none");
+                        $(".warning-phone2").css("display", "none");
                     }
 
                     if (phone2.length != 0) {

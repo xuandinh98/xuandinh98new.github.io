@@ -1,0 +1,212 @@
+
+{% extends "pages/admin/admin_template.html" %}
+{% load static %}
+{% block partner_admin_content %}
+<style>
+    .table-responsive ul{
+        float: left !important;
+    }
+    .datatable-margin {
+        margin-top: 5%;
+    }
+    #data-table-basic_wrapper .dataTable, #data-table-basic_wrapper .dataTables_scrollHeadInner {
+        width: 100% !important;
+    }
+    .bs-select {
+        margin-bottom: 20px;
+    }
+    .map {
+        margin-left: -30%;
+    }
+    .margin-top-content {
+        margin-top: 50px;
+    }
+</style>
+<section class="wrapper">
+      <div class="table-agile-info">
+        <header class="panel-heading">
+            Nhận đơn hàng
+        </header>
+        <div class="panel panel-default">
+            
+        </div>
+        
+          <div class="table-responsive">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">Thông tin</a></li>
+                <li><a class="detail" data-toggle="tab" href="#menu1">Điều hướng</a></li>
+                <li><a class="detail" data-toggle="tab" href="#menu3">Bảng báo giá</a></li>
+            </ul>
+              
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                    <div class="form-w3layouts">
+                        <!-- page start-->
+                        <h4 class="margin-top-content">Thông tin đơn hàng</h4>
+                        <table class="borderless">
+                            <thead>
+                            </thead>
+                            <tbody>
+                                
+                              <tr>
+                                <th>Mã đơn hàng</th>
+                                <td>A123</td>
+                                <th>Đơn hàng</th>
+                                <td>Thay lốp xe</td>
+                              </tr>
+                              <tr>
+                                <th>Loại xe</th>
+                                <td>Xe máy</td>
+                                <th>Tên xe</th>
+                                <td>Yamaha</td>
+                              </tr>
+                              <tr>
+                                <th>Loại lốp</th>
+                                <td>Lốp Michelin</td>
+                                <th>Giá ước tính</th>
+                                <td>700.000đ</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <hr>
+                          <h4>Thông tin khách hàng</h4>
+                          <table class="borderless">
+                            <thead>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th>Địa chỉ</th>
+                                <td>Dĩ An, Bình Dương</td>
+                                <th>Số điện thoại</th>
+                                <td>0123456789</td>
+                              </tr>
+                              <tr>
+                                <th>Khoảng cách</th>
+                                <td>5km</td>
+                                <th>Ghi chú</th>
+                                <td>Đến lẹ, cần gấp ạ</td>
+                              </tr>
+                              <tr>
+                                <td>Chat với khách hàng</td>
+                                <td><button class="show-chat">Chat</button></td>
+                            </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+            
+                <div id="menu1" class="tab-pane fade">
+                    <div class="form-w3layouts">
+
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.2311711967063!2d106.8008600503435!3d10.870014160393731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2sUniversity%20of%20Information%20Technology%20VNU-HCM!5e0!3m2!1sen!2s!4v1634997207210!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" class="map margin-top-content"></iframe>
+                    </div>
+                </div>
+                <div id="menu3" class="tab-pane fade">
+                    <div class="form-w3layouts">
+                    <p>Mã đơn: ABC</p>
+                    <p>Tên khách hàng: Lê Thị Hồng Ngọc</p>
+                    <p>Tên người báo giá: Mai Thị QUỳnh Như</p>
+                    <p>Nội dung báo giá: Báo giá dịch vụ sửa chữa xe tại GongFix</p>
+                    <p>Ghi chú: không có nha</p>
+                    <p>Loại sửa chữa: Sửa chữa vá lốp</p>
+                    <p>Loại xe: xe máy</p>
+                    <p>Phụ tùng sửa chữa</p>
+                    <p>chỗ này để table</p>
+                    <p>chỗ nay để bảng báo giá phụ tùng</p>
+                    <p>Phí dịch vụ: 5.000đ</p>
+                    <p>Tổng cộng: 150.000đ</p>
+                    <button>Gửi cho khách hàng</button>
+                    </div>
+                </div>
+            </div>
+
+          <footer class="panel-footer">
+            <div class="row">
+            </div>
+          </footer>
+        </div>
+      </div>
+</section>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/jquery.dcjqaccordion.2.7.js' %}"></script>
+<script src="{% static 'js/scripts.js' %}"></script>
+<script src="{% static 'js/jquery.slimscroll.js' %}"></script>
+<script src="{% static 'js/jquery.nicescroll.js' %}"></script>
+
+<script src="{% static 'datepicker/jquery.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'datepicker/jquery-ui.min.js' %}" type="text/javascript"></script>
+    <link href="{% static 'datepicker/jquery-ui.css' %}" rel="Stylesheet" type="text/css" />
+    
+
+    <script>
+        $( "#datepicker" ).datepicker({
+            prevText:"Tháng trước",
+            nextText:"Tháng sau",
+            dateFormat:"yy-mm-dd",
+            dayNamesMin: [ "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "Chủ nhật" ],
+            duration: "slow"
+        });
+
+        $( "#datepicker2" ).datepicker({
+            prevText:"Tháng trước",
+            nextText:"Tháng sau",
+            dateFormat:"yy-mm-dd",
+            dayNamesMin: [ "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "Chủ nhật" ],
+            duration: "slow"
+        });
+
+        
+        var donut = Morris.Donut({
+            element: 'donut',
+            resize: true,
+            colors: [
+                '#a8328e',
+                '#61a1ce',
+                '#ce8f61',
+                '#f5b942',
+                '#4842f5'
+                
+            ],
+            labelColor:"#cccccc", // text color
+            backgroundColor: '#333333', // border color
+            data: [
+                {label:"Tổng doanh thu", value:30},
+                {label:"Trong vốn", value:40},
+                {label:"Tổng lợi nhuận", value:50},
+                {label:"Tổng đơn hàng", value:60},
+
+            ]
+        });
+
+        $(".detail").click(function() {
+            $('table th').trigger('click');
+        })
+
+        $('#dtHorizontalVerticalExample').DataTable({
+            "scrollX": false,
+            "scrollY": 400,
+            
+
+            
+
+            // "bPaginate": false,
+            // "bLengthChange": false,
+            // "bFilter": true,
+            // "bInfo": false,
+            // "bAutoWidth": false 
+        });
+        $('.dataTables_length').addClass('bs-select');
+
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
+            $($.fn.dataTable.tables(true)).DataTable()
+               .columns.adjust();
+         });
+
+
+        
+        
+
+        // $('#dtHorizontalVerticalExample').DataTable().api().ajax.reload();
+        
+    </script>
+{% endblock %}
