@@ -47,8 +47,13 @@ table img {
     height: 50px;
 }
 
-table i {
+table img:hover {
+    transform: scale(8);
+}
+
+#content-cart table i {
     font-style: normal;
+    color: #000;
 }
 
 table button {
@@ -126,4 +131,8 @@ table #number {
 
 #btn-order:active {
     box-shadow: none;
+}
+
+#content-cart #core-all-service i {
+    color: red;
 }

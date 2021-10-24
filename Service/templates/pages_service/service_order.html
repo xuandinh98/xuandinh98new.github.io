@@ -1,0 +1,80 @@
+{% extends "pages_home/header_footer.html" %} {% load static %} {% block title %}Dịch vụ{% endblock %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/service_order.css' %}"> {% endblock %} {% block content %}
+<div id="content-service-order">
+    <div id="info-list-product">
+        <h2>Thông tin hóa đơn</h2>
+        <table>
+            <tr>
+                <th>Hình ảnh</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Tạm tính</th>
+            </tr>
+            <tr>
+                <td><img src="{% static 'img/kinh-nghiem-mo-cua-hang-sua-chua-xe-may-tiet-kiem-von-1.jpg' %}" alt=""></td>
+                <td>Dịch vụ vá xe / Xe máy</td>
+                <td><i>60000</i>đ</td>
+                <td><i>1</i></td>
+                <td><i>60000</i>đ</td>
+            </tr>
+        </table>
+        <h3>Tổng giỏ hàng</h3>
+        <table id="cost-all-product">
+            <tr>
+                <td>Tổng dịch vụ</td>
+                <td>1 dịch vụ</td>
+            </tr>
+            <tr>
+                <td>Tạm tính</td>
+                <td><i>60000</i>đ</td>
+            </tr>
+        </table>
+        <div id="total-all-product">
+            <h3>Tổng: </h3>
+            <p><i>60000</i>đ</p>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div id="info-order">
+        <h2>Thông tin đơn hàng</h2>
+        <div class="two-col">
+            <div>
+                <p>Họ:</p> <input type="text" required="Họ không được để trống"> </div>
+            <div>
+                <p>Tên:</p> <input type="text" name="" id="" required="Tên không được để trống"></div>
+            <div>
+                <p>Quốc gia:</p> <input type="text"></div>
+            <div>
+                <p>Thành phố:</p> <input type="text"></div>
+        </div>
+        <div class="one-col">
+            <div>
+                <p>Địa chỉ:</p> <input type="text" required="Địa chỉ không được để trống"> </div>
+        </div>
+        <div class="two-col">
+            <div>
+                <p>Mã bưu điện:</p> <input type="text" required="Họ không được để trống"> </div>
+            <div>
+                <p>SDT:</p> <input type="text" name="" id="" required="Số điện thoại không được để trống"></div>
+        </div>
+        <div class="one-col">
+            <div>
+                <p>Email:</p> <input type="text" required="Địa chỉ không được để trống"> </div>
+        </div>
+        <div class="one-col">
+            <div>
+                <input class="check" type="checkbox">Tạo tài khoản mới </div>
+        </div>
+
+        <p>Chọn hình thức thanh toán</p>
+        <div class="one-col">
+            <div>
+                <input class="check" type="checkbox">Thanh toán bằng ví GONGFIX </div>
+            <div>
+                <input class="check" type="checkbox">Thanh toán bằng ví MOMO</div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

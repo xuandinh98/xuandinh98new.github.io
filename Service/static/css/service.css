@@ -492,3 +492,21 @@ h2 {
         opacity: 1
     }
 }
+
+.ti-shopping-cart {
+    font-size: 30;
+    margin-left: 70%;
+}
+
+#link-cart i {
+    background-color: red;
+    border-radius: 180px;
+    padding: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#link-cart {
+    text-decoration: none;
+    color: #000D24;
+}

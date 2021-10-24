@@ -1,0 +1,132 @@
+body {
+    background-color: white;
+}
+
+#content-service-order {
+    margin-top: 150px;
+    width: 100%;
+    height: max-content;
+    background-color: white;
+    margin-bottom: 150px;
+}
+
+#content-service-order div {
+    width: 80%;
+    height: max-content;
+    border: 1px solid #ccc;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#info-list-product table {
+    border-collapse: collapse;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#info-list-product table td,
+#info-list-product table th {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    text-align: center;
+    width: 15%;
+}
+
+#footer {
+    background-color: #000D24;
+    color: white;
+}
+
+#content-service-order h2 {
+    text-align: center;
+    width: 100%;
+}
+
+#info-list-product table img {
+    width: 100px;
+    height: 100px;
+}
+
+#info-list-product table img:hover {
+    transform: scale(2)
+}
+
+#content-service-order i {
+    color: #000D24;
+    font-style: normal;
+}
+
+#content-service-order h3 {
+    margin-left: 10%;
+}
+
+#content-service-order #total-all-product {
+    border: 0;
+    margin: 0;
+    font-size: 40px;
+}
+
+#total-all-product h3 {
+    float: left;
+    width: 30%;
+}
+
+#total-all-product p {
+    float: right;
+    width: 55%;
+    padding-top: 10px;
+}
+
+.clear {
+    clear: both;
+}
+
+#total-all-product div {
+    border: 0px;
+}
+
+#info-list-product #cost-all-product {
+    width: 50%;
+}
+
+#info-order {
+    width: 80%;
+    margin: 10%;
+}
+
+#content-service-order #info-order .two-col,
+#content-service-order #info-order .one-col {
+    width: 100%;
+    height: max-content;
+    border: 0;
+    margin: 0;
+    padding-top: 30px;
+}
+
+#content-service-order #info-order .two-col div {
+    border: 0;
+    display: inline-block;
+    width: 25%;
+    padding-left: 4%;
+}
+
+#content-service-order #info-order div input {
+    width: 100%;
+}
+
+#content-service-order #info-order .one-col div {
+    width: 74%;
+    border: 0;
+    padding-left: 4.2%;
+}
+
+#content-service-order #info-order .one-col .check {
+    width: 20px;
+}
+
+#content-service-order #info-order p {
+    padding-left: 14%;
+}
