@@ -91,8 +91,9 @@ class Ticket(models.Model):
     id = models.BigAutoField(primary_key = True)
     partner_id = models.IntegerField()
     desc = models.TextField()
-    status = models.IntegerField() # 1: đang chờ, 2: xác nhận, 3: không xác nhận
-    confirm_at = models.DateTimeField()
+    status = models.IntegerField(default=1) # 1: đang chờ, 2: đã xác nhận, 3: không xác nhận
+    type_ticket = models.TextField(null=True)
+    confirm_at = models.DateTimeField(null=True)
     created_at = models.DateTimeField()
     updated_at = models.DateTimeField()
 

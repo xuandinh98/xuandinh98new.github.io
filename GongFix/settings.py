@@ -58,6 +58,8 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware'
 ]
 
+
+
 ROOT_URLCONF = 'GongFix.urls'
 
 TEMPLATES = [

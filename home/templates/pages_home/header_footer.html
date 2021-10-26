@@ -17,25 +17,50 @@
     </head>
     <body>
         <!-- header -->
-        <div id="header">
-        <div id="nav-line">
-        <div id="icon"></div>
-        <div id="menu">
-        <ul>
-            <li>HOME</li>
-            <li>GIỚI THIỆU</li>
-            <li>CỬA HÀNG</li>
-            <li>SỰ KIỆN</li>
-            <li>ĐỐI TÁC</li>
-        </ul>
-        </div>
-        </div>
-        <div id="button-line">
-        <input id="search" type="text" placeholder="Search"><i class="ti-search" style="margin-right:50px;   cursor: pointer;"></i>
-        <button class="snip1582">Đăng nhập</button>
-        <button class="snip1582">Đăng ký</button>
-        </div>
-        <div class="clear"></div>
+        <div id="main_header">
+            <div id="left-main_header">
+                <div id="main_icon_header">
+                    <img src="{% static 'img/LOGO-removebg-preview.png' %}" alt="">
+                </div>
+                <div id="menu_main_header">
+                    <ul>
+                        <li>
+                            <a href="">
+                                <div>HOME</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div>ABOUT US</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div>DỊCH VỤ</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div>SỰ KIỆN</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div>ĐỐI TÁC</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="clear"></div>
+            </div>
+            <div id="right-main_header">
+                <div id="button_main_header">
+                    <button class="snip1582">Đăng ký</button>
+                    <button class="snip1582">Đăng nhập</button>
+                </div>
+                <div id="cart_main_header"><i class="ti-shopping-cart"></i><span>0</span></div>
+            </div>
+            <div class="clear"></div>
         </div>
 
         <!-- content -->

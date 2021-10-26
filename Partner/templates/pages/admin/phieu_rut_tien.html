@@ -27,7 +27,7 @@
         <div class="col-sm-5"></div>
     </div>
     <form class="form-horizontal bucket-form" action="" method="post">
-  
+      {% csrf_token %}
           <div class="form-group">
               <label class="col-sm-3 control-label">Coin: </label>
               <div class="col-sm-6">
@@ -44,32 +44,38 @@
           <div class="form-group">
             <label class="col-sm-3 control-label">Ngân hàng</label>
             <div class="col-sm-6">
-                <input type="text" class="form-control bank" name="physical_name" value="Agribank - Chi nhánh h.Lai Vung, Đồng Tháp">
+                <input type="text" class="form-control bank" name="physical_name" value="Agribank - Chi nhánh h.Lai Vung, Đồng Tháp" readonly>
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-3 control-label">Số tài khoản</label>
             <div class="col-sm-6">
-                <input type="text" class="form-control" name="physical_name" value="0123456789">
+                <input type="text" class="form-control bank-account" name="physical_name" value="0123456789" readonly>
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-3 control-label">Tên chủ tài khoản</label>
             <div class="col-sm-6">
-                <input type="text" class="form-control" name="physical_name" value="LE THI HONG NGOC">
+                <input type="text" class="form-control bank-owner" name="physical_name" value="LE THI HONG NGOC" readonly>
             </div>
           </div>
           <div class="form-group">
               <label class="col-sm-3 control-label">Ghi chú</label>
               <div class="col-sm-6">
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="physical_description"></textarea>
+                  <textarea class="form-control desc-withdraw" id="exampleFormControlTextarea1" rows="3" name="physical_description"></textarea>
               </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label"></label>
+            <div class="col-sm-6">
+              <strong>Lưu ý: </strong>Nếu đối tác muốn thay đổi tài khoản ngân hàng, vui lòng chỉnh sửa trước khi gửi yêu cầu rút tiền.
+            </div>
           </div>
           <div class="form-group">
               <input type="hidden" value="add" name="type">
               <label class="col-sm-7 control-label" for="exampleInputEmail1"></label>
               <a href="{% url 'partner_ticket' %}" class="btn btn-secondary">Trở lại</a>
-              <button type="submit" name="add_physical" class="btn btn-info btn-register">Đăng ký</button>
+              <button name="add_physical" class="btn btn-info btn-register">Đăng ký</button>
           </div>
       </form>      
     <footer class="panel-footer">
@@ -82,19 +88,39 @@
   $(".btn-register").click(function() {
       var withdraw_money = $(".withdraw-money").val();
       var bank = $(".bank").val();
-    // make POST ajax call
-    $.ajax({
-        type: 'POST',
-        url: "{% url 'registerWithdrawal' %}",
-        data: {"csrfmiddlewaretoken": '{{csrf_token}}', 'type' : "1", 'data' : ''},
-        success: function (response) {
-            
-        },
-        error: function (response) {
-            // alert the error if any error occured
-            alert(response["responseJSON"]["error"]);
-        }
-    })
+      var bank_account = $(".bank-account").val();
+      var bank_owner = $(".bank-owner").val();
+      var desc = $(".desc-withdraw").val();
+
+      if(withdraw_money.length != 0) {
+        // make POST ajax call
+        $.ajax({
+          type: 'POST',
+          url: "{% url 'registerWithdrawal' %}",
+          data: {
+            "csrfmiddlewaretoken": '{{csrf_token}}', 
+            'withdraw_money' : withdraw_money, 
+            'bank' : bank,
+            'bank_account' : bank_account,
+            'bank_owner' : bank_owner,
+            'desc' : desc,
+            'type_ticket' : "Phiếu rút tiền"
+          },
+          success: function (response) {
+              
+          },
+          error: function (response) {
+              // alert the error if any error occured
+              alert(response["responseJSON"]["error"]);
+          }
+        })
+      }
+      else {
+
+      }
+
+      return false;
+    
   });
 </script>
 {% endblock %}

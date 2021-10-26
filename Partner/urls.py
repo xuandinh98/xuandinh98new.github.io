@@ -15,7 +15,8 @@ from Partner.views import (
     phieu_huy_doi_tac,
     order_receive,
     chat,
-    registerWithdrawal
+    registerWithdrawal,
+    showDetailTicket
     
 )
 
@@ -34,5 +35,6 @@ urlpatterns = [
     path('order_receive', order_receive, name = 'order_receive'),
     path('chat', chat, name = 'chat'),
     path('registerWithdrawal', registerWithdrawal, name = 'registerWithdrawal'),
+    path('showDetailTicket', showDetailTicket, name = 'showDetailTicket'),
     
 ]
