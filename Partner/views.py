@@ -3,6 +3,8 @@ from .models import Provinces
 from .models import Districts
 from .models import Wards
 from .models import Partner
+from .models import Ticket
+from .models import WithdrawalSlip
 from django.views.decorators.csrf import csrf_protect
 from django.http import JsonResponse
 from django.core import serializers
@@ -17,6 +19,7 @@ from django.http import HttpResponse, response
 
 @csrf_protect
 def index(request):
+    
     Data = {'Provinces' : Provinces.objects.all().order_by('name')}
     return render(request, 'pages/partner_template.html', Data)
 
@@ -24,7 +27,8 @@ def partner_admin(request):
     return render(request, 'pages/admin/dashboard.html')
 
 def partner_ticket(request):
-    return render(request, 'pages/admin/partner_ticket.html')
+    Data = {'Tickets' : Ticket.objects.all().order_by('created_at')}
+    return render(request, 'pages/admin/partner_ticket.html', Data)
 
 def partner_order(request):
     return render(request, 'pages/admin/partner_order.html')
@@ -34,6 +38,21 @@ def partner_info(request):
 
 def statistics_revenue(request):
     return render(request, 'pages/admin/statistics_revenue.html')
+
+def phieu_rut_tien(request):
+    return render(request, 'pages/admin/phieu_rut_tien.html')
+
+def phieu_thay_doi_thong_tin(request):
+    return render(request, 'pages/admin/phieu_thay_doi_thong_tin.html')
+
+def phieu_huy_doi_tac(request):
+    return render(request, 'pages/admin/phieu_huy_doi_tac.html')
+    
+def order_receive(request):
+    return render(request, 'pages/admin/order_receive.html')
+
+def chat(request):
+    return render(request, 'pages/admin/chat.html')
 
 def postProvinces(request):
     # request should be ajax and method should be POST.
@@ -137,7 +156,51 @@ def addPartner(request):
         partner.save()
 
         return JsonResponse({"error": "false"})
-            
+
+def registerWithdrawal(request):
+    # request should be ajax and method should be POST.
+    if request.is_ajax and request.method == "POST":
+
+        request.session['userid'] = "1"
+        request.session['typeuser'] = "partner"
+
+        today = date.today()
+        ticket = Ticket()
+
+        ticket.partner_id = request.session['userid']
+        ticket.desc = request.POST['desc']
+        ticket.type_ticket = request.POST['type_ticket']
+        ticket.created_at = today
+        ticket.updated_at = today
+        ticket.save()
+
+        ticket_get = Ticket.objects.all().order_by('-id')[:1]
+
+        withdrawal_slip = WithdrawalSlip()
+
+        withdrawal_slip.ticket_id = ticket_get[0].id
+        withdrawal_slip.money_withdraw = request.POST['withdraw_money']
+        withdrawal_slip.bank = request.POST['bank']
+        withdrawal_slip.bank_account = request.POST['bank_account']
+        withdrawal_slip.bank_owner = request.POST['bank_owner']
+        withdrawal_slip.created_at = today
+        withdrawal_slip.updated_at = today
+
+        withdrawal_slip.save()
+
+        return JsonResponse({"error": "false"})
+
+def showDetailTicket(request):
+     # request should be ajax and method should be POST.
+    if request.is_ajax and request.method == "POST":
+        requestType = request.POST['type']
+        parameterId = request.POST['id']
+
+        if requestType == "1":
+            Data = WithdrawalSlip.objects.filter(ticket_id=parameterId)
+            qs_json = serializers.serialize('json', Data)
+            return JsonResponse(qs_json, content_type='application/json', safe=False)
+        
     # some error occured
     return JsonResponse({"error": "ahihi"}, status=400)
 

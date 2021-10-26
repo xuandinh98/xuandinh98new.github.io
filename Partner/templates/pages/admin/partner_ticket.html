@@ -40,10 +40,9 @@
                 Thêm phiếu đăng ký <i class="fa fa-caret-down" aria-hidden="true"></i>
               </button>
               <div class="dropdown-menu">
-                <p class="dropdown-item">Phiếu rút tiền</p>
-                <p class="dropdown-item">Thay đổi thông tin</p>
-                <p class="dropdown-item">Phiếu hủy đối tác</p>
-                <p class="dropdown-item">Chứng nhận nhân viên</p>
+                <p class="dropdown-item"><a href="{% url 'phieu_rut_tien' %}">Phiếu rút tiền</a></p>
+                <p class="dropdown-item"><a href="{% url 'phieu_thay_doi_thong_tin' %}">Thay đổi thông tin</a></p>
+                <p class="dropdown-item"><a href="{% url 'phieu_huy_doi_tac' %}">Phiếu hủy đối tác</a></p>
               </div>
             </div>
           </div>
@@ -79,42 +78,34 @@
                 </tr>
               </thead>
               <tbody>
-                <tr id="1">
-                  <td style="width:20px;">
-                    <label class="i-checks m-b-none">
-                      <input type="checkbox"><i></i>
-                    </label>
-                  </td>
-                  <td>1</td>
-                  <td>TK01</td>
-                  <td>Đăng ký đối tác</td>
-                  <td>Chờ xác nhận</td>
-                  <td>Không có</td>
-                  <td>25/09/2000</td>
-                  <td>25/09/2021</td>
-                  <td>
-                    <button type="button" class="btn btn-info add-col"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                    <button type="button" class="btn btn-info delete-col"><i class="fa fa-minus" aria-hidden="true"></i></button>
-                  </td>
-                </tr>
-                <tr id="2">
-                  <td style="width:20px;">
-                    <label class="i-checks m-b-none">
-                      <input type="checkbox"><i></i>
-                    </label>
-                  </td>
-                  <td>2</td>
-                  <td>TK02</td>
-                  <td>Đăng ký rút tiền</td>
-                  <td>Chờ xác nhận</td>
-                  <td>Không có</td>
-                  <td>25/09/2000</td>
-                  <td>25/09/2021</td>
-                  <td>
-                    <button type="button" class="btn btn-info add-col"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                    <button type="button" class="btn btn-info delete-col"><i class="fa fa-minus" aria-hidden="true"></i></button>
-                  </td>
-                </tr>
+                {% for ticket in Tickets %}
+                  <tr id="{{ ticket.id }}">
+                    <td style="width:20px;">
+                      <label class="i-checks m-b-none">
+                        <input type="checkbox"><i></i>
+                      </label>
+                    </td>
+                    <td>1</td>
+                    <td>{{ ticket.id }}</td>
+                    <td class="type">{{ ticket.type_ticket }}</td>
+
+                    {% if ticket.status == 1 %}
+                      <td>Chờ xác nhận</td>
+                    {% elif ticket.status == 2 %}
+                      <td>Đã xác nhận</td>
+                    {% else %}
+                      <td>Không xác nhận</td>
+                    {% endif %}
+                    
+                    <td>{{ ticket.desc }}</td>
+                    <td>{{ ticket.created_at|date:"d-m-y" }}</td>
+                    <td>{{ ticket.confirm_at }}</td>
+                    <td>
+                      <button type="button" class="btn btn-info add-col"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-info delete-col"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                {% endfor %}
               </tbody>
             </table>
             <!-- import and export excel  -->
@@ -138,9 +129,45 @@
 <script>
   $(".add-col").click(function() {
     var id_tr = $(this).closest("tr").attr("id");
-    $("<tr id='content-"+id_tr+"' rowcol='9'><td>ahihi</td></tr>").insertAfter("tr#" + id_tr);
+    var type = $("tr#"+id_tr+" .type").text();
+    if(type == "Phiếu rút tiền") {
+      type = "1";
+    }
+    else if (type == "Phiếu thay đổi thông tin") {
+      type = "2";
+    }
+    else {
+      type = "3";
+    }
+
+    $.ajax({
+      type: 'POST',
+      url: "{% url 'showDetailTicket' %}",
+      data: {
+        "csrfmiddlewaretoken": '{{csrf_token}}', 
+        'id' : id_tr, 
+        'type' : type
+      },
+      success: function (response) {
+        var response = jQuery.parseJSON( response );
+        $.each( response, function( key, value ) {
+            if(type == "1") {
+              var str = "<tr id='content-"+id_tr+"' rowcol='9'><td>ahihi</td></tr>";
+            }
+
+            
+        });
+        $(str).insertAfter("tr#" + id_tr);
+      },
+      error: function (response) {
+          // alert the error if any error occured
+          alert(response["responseJSON"]["error"]);
+      }
+    })
+    
     $(this).css("display", "none");
     $("tr#" + id_tr + " .delete-col").css("display", "block");
+
   })
 
   $(".delete-col").click(function() {

@@ -1,0 +1,427 @@
+
+{% extends "pages/admin/admin_template.html" %}
+{% load static %}
+{% block partner_admin_content %}
+<style>
+  .coin {
+    padding-top: 7px;
+  }
+  .help-block {
+    color: #a94442;
+  }
+  .img-wraps {
+    position: relative;
+    display: inline-block;
+    
+    font-size: 0;
+}
+.img-wraps .closes {
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    z-index: 100;
+    background-color: #FFF;
+    padding: 4px 3px;
+     
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    
+    text-align: center;
+    font-size: 22px;
+    line-height: 10px;
+    border-radius: 50%;
+    border:1px solid red;
+}
+.img-wraps:hover .closes {
+    opacity: 1;
+}
+.edit-avatar {
+    display: none;
+}
+.review-img {
+    display: none;
+    width: 100%;
+}
+
+.group-heading {
+    background-color: #343a40;
+    color: white;
+}
+.help-block-signup {
+    margin-top: 5px;
+}
+.edit-store {
+    display: none;
+}
+  
+</style>
+<section class="wrapper">
+		
+  <div class="table-agile-info">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Phiếu thay đổi thông tin
+      </div>
+      <span class="text-alert"></span>
+      <div class="row w3-res-tb">
+        <div class="col-sm-3 m-b-xs">
+        </div>
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-5"></div>
+    </div>
+    <form class="form-horizontal bucket-form" action="" method="post">
+      </form>
+      <div class="row">
+        <label class="col-sm-2 control-label"></label>
+        <div class="col-lg-8">
+            <section class="panel">
+                <header class="panel-heading group-heading">
+                    Thông tin cá nhân
+                    <span class="tools pull-right">
+                        <a class="fa fa-chevron-down" href="javascript:;"></a>
+                     </span>
+                </header>
+                <div class="panel-body">
+                    <form role="form" class="form-horizontal ">
+                        <div class="panel-body panel-group">
+                            <div class="col-sm-6">
+                                <label class="lable-group">Ảnh hồ sơ</label>
+                                <div class="img-wraps" id="img-wraps-avatar">
+                                    <span class="closes" title="Delete" id="img-avatar">×</span>
+                                    <img class="img-responsive" src="{% static 'images/g7.jpg' %}">
+                                </div>
+                                
+                                <input accept="image/*" type='file' id="imgInp" class="form-control edit-avatar"/>
+                                <img class="review-img" id="blah" src="#" alt="your image" class="img-responsive"/>
+                                <p class="warning-avatar help-block-signup1">Chưa chọn ảnh hồ sơ</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="lable-group">Họ và chữ lót</label>
+                                <input maxlength="100" type="text" required="required" class="form-control signup-firstname" value="Lê Thị Hồng"/>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="lable-group">Tên</label>
+                                <input maxlength="100" type="text" required="required" class="form-control signup-lastname" value="Ngọc"/>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="lable-group">Giới tính</label></br>
+                                <input type="radio" name="signup-sex" id="nam" value="1" checked="checked"><label class="lable-checkbox" for="nam">Nam</label>
+                                <input type="radio" name="signup-sex" id="nu" value="2"><label class="lable-checkbox" for="nu">Nữ</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="control-label">Ngày sinh</label>
+                                <input maxlength="200" type="text" id="datepicker2" required="required" class="form-control signup-cmnd-birthday"/>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="lable-group">Số điện thoại 1</label>
+                                <input maxlength="100" type="text" required="required" class="form-control signup-phone1"/>
+                                <p class="warning-phone1 help-block-signup">Số điện thoại không hợp lệ</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="lable-group">Số điện thoại 2</label>
+                                <input maxlength="100" type="text" class="form-control signup-phone2"/>
+                                <p class="warning-phone2 help-block-signup">Số điện thoại không hợp lệ</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="lable-group">Email</label>
+                                <input maxlength="100" type="text" required="required" class="form-control signup-email"/>
+                                <p class="warning-email help-block-signup">Email không hợp lệ</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="control-label">Số CMND/CCCD</label>
+                                <input maxlength="200" type="text" required="required" class="form-control signup-cmnd-number" />
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="control-label">Ngày cấp</label>
+                                <input maxlength="200" type="text" id="datepicker" required="required" class="form-control  signup-cmnd-date-issue"/>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="control-label">Nơi cấp</label>
+                                <input maxlength="200" type="text" required="required" class="form-control signup-cmnd-place-issue" />
+                            </div>
+                            
+                            <div class="col-sm-6">
+                                <label class="lable-group">Địa chỉ thường trú</label>
+                                <input type="text" value="Lai Vung, Đồng Tháp" class="form-control"/>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="lable-group">Nguồn tuyển dụng</label>
+                                <input type="text" value="Facebook" class="form-control"/>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="lable-group">Ảnh CMND/CCCD mặt trước</label>
+                                <img src="{% static 'images/g6.jpg' %}" alt="Ảnh CMND/CCCD mặt trước" style="width: 100%; height: 100%; margin-bottom: 10px;">
+                                <p class="warning-pic-cmnd-1 help-block-signup1">Chưa chọn ảnh</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="lable-group">Ảnh CMND/CCCD mặt sau</label>
+                                <img src="{% static 'images/g6.jpg' %}" alt="Ảnh CMND/CCCD mặt sau" style="width: 100%; height: 100%; margin-bottom: 10px;">
+                                <p class="warning-pic-cmnd-2 help-block-signup1">Chưa chọn ảnh</p>
+                            </div>
+                            <div class="col-sm-12" id="a2">
+                                <label class="lable-group">Giấy xác thức CA: <a href="">giayxacthuc.pdf</a></label>
+                                <input maxlength="200" type="file" class="form-control signup-cmnd-certification" required/>
+                                <p class="warning-signup-cmnd-certification help-block-signup1">Chưa chọn file xác nhận</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="row">
+        <label class="col-sm-2 control-label"></label>
+        <div class="col-lg-8">
+            <section class="panel">
+                <header class="panel-heading group-heading">
+                    Thông tin cửa hàng
+                    <span class="tools pull-right">
+                        <a class="fa fa-chevron-down" href="javascript:;"></a>
+                     </span>
+                </header>
+                <div class="panel-body">
+                    <div class=" form">
+                        <form class="cmxform form-horizontal " id="commentForm" method="get" action="" novalidate="novalidate">
+                            <div class="panel-body panel-group">
+                                <div class="col-sm-6">
+                                    <label class="lable-group">Tên cửa hàng</label>
+                                    <input maxlength="200" type="text" required="required" class="form-control signup-store-name" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="lable-group">Quốc gia</label>
+                                    <select class="form-control m-bot15 select2 select2-hidden-accessible area signup-store-nation" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                        <option value="0" selected disabled hidden>Chọn Quốc Gia</option> 
+                                        <option value="vietnam">Việt Nam</option>
+                                        <option value="trungquoc">Trung Quốc</option>
+                                        <option value="my">Mỹ</option>
+                                        <option value="lao">Lào</option>
+                                    </select>
+                                    <p class="warning-signup-store-nation help-block-signup1">Chưa chọn thông tin Quốc gia</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="lable-group">Tỉnh/Thành</label>
+                                    <select class="form-control m-bot15 select2 select2-hidden-accessible area signup-store-province" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                        <option value="0" selected disabled hidden>Chọn Tỉnh/Thành</option> 
+                                    </select>
+                                    <p class="warning-signup-store-province help-block-signup1">Chưa chọn thông tin Tỉnh/Thành</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="lable-group">Quận/Huyện</label>
+                                    <select class="form-control m-bot15 select2 select2-hidden-accessible area signup-store-district" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                        <option value="0" selected disabled hidden>Chọn Quận/Huyện</option> 
+                                    </select>
+                                    <p class="warning-signup-store-district help-block-signup1">Chưa chọn thông tin Quận/Huyện</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="lable-group">Xã/Phường/Thị trấn</label>
+                                    <select class="form-control m-bot15 select2 select2-hidden-accessible area signup-store-wards" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                        <option value="0" selected disabled hidden>Chọn Xã/Phường/Thị trấn</option> 
+                                    </select>
+                                    <p class="warning-signup-store-wards help-block-signup1">Chưa chọn thông tin Xã/Phường/Thị trấn</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="lable-group">Địa chỉ</label>
+                                    <input maxlength="200" type="text" required="required" class="form-control signup-store-address"/>
+                                    
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="lable-group">Loại hình cung cấp</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input signup-bicycle" type="checkbox" id="inlineCheckbox1" value="option1">
+                                        <label class="form-check-label" for="inlineCheckbox1">Xe đạp</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input signup-motorcycle" type="checkbox" id="inlineCheckbox2" value="option2">
+                                        <label class="form-check-label" for="inlineCheckbox2">Xe máy</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input signup-car" type="checkbox" id="inlineCheckbox3" value="option3">
+                                        <label class="form-check-label" for="inlineCheckbox3">Xe hơi</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input signup-tow-truck" type="checkbox" id="inlineCheckbox4" value="option4">
+                                        <label class="form-check-label" for="inlineCheckbox4">Xe kéo</label>
+                                    </div>
+                                    <p class="warning-signup-store-vehicle help-block-signup1">Chưa chọn loại phương tiện cung cấp</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="lable-group">Ảnh cửa hàng</label>
+                                    <div class="img-wraps" id="img-wraps-store">
+                                        <span class="closes" title="Delete" id="img-store">×</span>
+                                        <img class="img-responsive" src="{% static 'images/g7.jpg' %}">
+                                    </div>
+                                    <input accept="image/*" type='file' id="imgInp1" class="form-control edit-store"/>
+                                    <img class="review-img" id="blah1" src="#" alt="your image" class="img-responsive"/>
+                                    <p class="warning-image-store help-block-signup1">Chưa chọn ảnh</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="row">
+        <label class="col-sm-2 control-label"></label>
+        <div class="col-lg-8">
+            <section class="panel">
+                <header class="panel-heading group-heading">
+                    Thông tin ngân hàng
+                    <span class="tools pull-right">
+                        <a class="fa fa-chevron-down" href="javascript:;"></a>
+                     </span>
+                </header>
+                <div class="panel-body">
+                    <div class="form">
+                        <form class="cmxform form-horizontal " id="signupForm" method="get" action="" novalidate="novalidate">
+                            <div class="panel-body panel-group">
+                                <div class="col-sm-6">
+                                    <label class="lable-group">Tên ngân hàng</label>
+                                    <select class="form-control m-bot15 select2 select2-hidden-accessible area signup-bank" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                        <option value="0" selected disabled hidden>Chọn Ngân Hàng</option> 
+                                        <option value="ACB">ACB</option>
+                                        <option value="Sacombank">Sacombank</option>
+                                        <option value="BIDV">BIDV</option>
+                                        <option value="Agribank">Agribank</option>
+                                    </select>
+                                    <p class="warning-signup-bank help-block-signup1">Chưa chọn ngân hàng</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="lable-group">Số tài khoản</label>
+                                    <input maxlength="200" type="text" required="required" class="form-control signup-bank-number"/>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="lable-group">Tên chủ thẻ</label>
+                                    <input maxlength="200" type="text" required="required" class="form-control signup-bank-name" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="lable-group">Chi nhánh</label>
+                                    <input maxlength="200" type="text" required="required" class="form-control signup-bank-branch"/>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>    
+    <div class="form-group">
+        <input type="hidden" value="add" name="type">
+        <label class="col-sm-8 control-label" for="exampleInputEmail1"></label>
+        <a href="{% url 'partner_ticket' %}" class="btn btn-secondary">Trở lại</a>
+        <button type="submit" name="add_physical" class="btn btn-info btn-register">Đăng ký</button>
+    </div>  
+    <footer class="panel-footer">
+      <div class="row">
+      </div>
+    </footer>
+  </div>
+
+</section>
+<script src="{% static 'datepicker/jquery.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'datepicker/jquery-ui.min.js' %}" type="text/javascript"></script>
+    <link href="{% static 'datepicker/jquery-ui.css' %}" rel="Stylesheet" type="text/css" />
+    
+
+    <script>
+        $( "#datepicker" ).datepicker({
+            prevText:"Tháng trước",
+            nextText:"Tháng sau",
+            dateFormat:"yy-mm-dd",
+            dayNamesMin: [ "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "Chủ nhật" ],
+            duration: "slow"
+        });
+
+        $( "#datepicker2" ).datepicker({
+            prevText:"Tháng trước",
+            nextText:"Tháng sau",
+            dateFormat:"yy-mm-dd",
+            dayNamesMin: [ "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "Chủ nhật" ],
+            duration: "slow"
+        });
+  
+</script>
+<script>
+  $("#img-avatar").click(function() {
+      $("#img-wraps-avatar").css("display", "none");
+      $(".edit-avatar").css("display", "block");
+  })
+
+    imgInp.onchange = evt => {
+        const [file] = imgInp.files
+        if (file) {
+            $("#blah").css("display", "block");
+            blah.src = URL.createObjectURL(file)
+        }
+    }
+
+$("#img-store").click(function() {
+      $("#img-wraps-store").css("display", "none");
+    $(".edit-store").css("display", "block");
+  })
+
+    imgInp1.onchange = evt => {
+        const [file] = imgInp1.files
+        if (file) {
+            $("#blah1").css("display", "block");
+            blah1.src = URL.createObjectURL(file)
+        }
+    }
+
+$(".signup-phone1").blur(function() {
+    var phone1 = $(this).val();
+    var checkphone1 = checkNumberPhone(phone1);
+    if (checkphone1 == 0) {
+        $(".warning-phone1").css("display", "block");
+        $(".signup-phone1").focus();
+    }
+    else {
+        $(".warning-phone1").css("display", "none");
+    }
+})
+
+$(".signup-phone2").blur(function() {
+    var phone1 = $(this).val();
+    var phone2 = $(this).val();
+    var checkphone2 = checkNumberPhone(phone2);
+    if (phone2.length != 0) {
+        if(phone1.length != 0 && phone1 == phone2) {
+            $(".warning-phone2").text("Số điện thoại 2 bị trùng với số điện thoại 1");
+            $(".warning-phone2").css("display", "block");
+            $(".signup-phone2").focus();
+        }
+        else if (checkphone2 == 0) {
+            $(".warning-phone2").text("Số điện thoại không hợp lệ");
+            $(".warning-phone2").css("display", "block");
+            $(".signup-phone2").focus();
+        }
+        else {
+            $(".warning-phone2").css("display", "none");
+        }
+    }
+    else {
+        $(".warning-phone2").css("display", "none");
+    }
+})
+
+
+    // $(".btn-register").click(function() {
+    //     // make POST ajax call
+    //     $.ajax({
+    //         type: 'POST',
+    //         url: "{% url 'registerChangeInfo' %}",
+    //         data: {"csrfmiddlewaretoken": '{{csrf_token}}', 'type' : "1", 'data' : ''},
+    //         success: function (response) {
+                
+    //         },
+    //         error: function (response) {
+    //             // alert the error if any error occured
+    //             alert(response["responseJSON"]["error"]);
+    //         }
+    //     })
+    // });
+</script>
+{% endblock %}

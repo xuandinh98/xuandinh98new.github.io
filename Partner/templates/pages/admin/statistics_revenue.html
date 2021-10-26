@@ -2,91 +2,311 @@
 {% extends "pages/admin/admin_template.html" %}
 {% load static %}
 {% block partner_admin_content %}
+<style>
+    .table-responsive ul{
+        float: left !important;
+    }
+    .datatable-margin {
+        margin-top: 5%;
+    }
+    #data-table-basic_wrapper .dataTable, #data-table-basic_wrapper .dataTables_scrollHeadInner {
+        width: 100% !important;
+    }
+    .bs-select {
+        margin-bottom: 20px;
+    }
+</style>
 <section class="wrapper">
 		
-    <style>
-        .btn-danger {
-          float: right;
-        }
-        table th {
-          text-align: center;
-        }
-        table td {
-          text-align: center;
-        }
-      </style>
+    
+    <section class="panel">
+        <header class="panel-heading">
+            Thống kê doanh thu
+        </header>
+        <div class="panel-body">
+        
+            <form class="form-horizontal bucket-form" action="." method="post">
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Loại thời gian</label>
+                    <div class="col-sm-3">
+                        <select class="form-control input-lg select2 select2-hidden-accessible area" style="width: 100%;" tabindex="-1" aria-hidden="true" name="physical_group"> 
+                            <option value="" selected>Theo ngày</option>    
+                            <option value="">Theo tháng</option>    
+                            <option value="">Theo năm</option>    
+                            <option value="">Theo quý</option>    
+                        </select> 
+                    </div>
+                    <label class="col-sm-2 control-label">Lọc tất cả</label>
+                    <div class="col-sm-3">
+                        <select class="form-control input-lg select2 select2-hidden-accessible area" style="width: 100%;" tabindex="-1" aria-hidden="true" name="physical_group"> 
+                            <option value="" selected>Tất cả</option>    
+                        </select> 
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Ngày bắt đầu</label>
+                    <div class="col-sm-3">
+                        <input type="text" id="datepicker" class="form-control">
+                    </div>
+                    <label class="col-sm-2 control-label">Ngày kết thúc</label>
+                    <div class="col-sm-3">
+                        <input type="text" id="datepicker2" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    
+                    <label class="col-sm-1 control-label" for="exampleInputEmail1"></label>
+                    <button type="submit" name="add_physical" class="btn btn-info">Xem</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
       <div class="table-agile-info">
         <div class="panel panel-default">
-          <div class="panel-heading">
-            Thống kê doanh thu
-          </div>
-          <span class="text-alert"></span>
-          <div class="row w3-res-tb">
-          
-            <div class="col-sm-3 m-b-xs">
-            </div>
-            <div class="col-sm-4">
-            </div>
-            <div class="col-sm-5">
             
-          </div>
-          </div>
+        </div>
+        
           <div class="table-responsive">
-            <table class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
-              <thead>
-                <tr>
-                  <th>Mã đơn hàng</th>
-                  <th>Địa chỉ</th>
-                  <th>Khoảng cách (km)</th>
-                  <th>Giá ước tính (đ)</th>
-                  <th>Loại hư hỏng</th>
-                  <th>Xem chi tiết</th>
-                  <th>Nhận</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>DH01</td>
-                  <td>Linh Trung, Thủ Đức</td>
-                  <td>15</td>
-                  <td>150.000</td>
-                  <td>Bể bánh</td>
-                  <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter">Xem chi tiết</button></td>
-                  <td><button type="button" class="btn btn-primary">Nhận</button></td>
-                </tr>
-                <tr>
-                  <td>DH01</td>
-                  <td>Linh Trung, Thủ Đức</td>
-                  <td>15</td>
-                  <td>150.000</td>
-                  <td>Bể bánh</td>
-                  <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter">Xem chi tiết</button></td>
-                  <td><button type="button" class="btn btn-primary">Nhận</button></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">TỔNG QUAN</a></li>
+                <li><a class="detail" data-toggle="tab" href="#menu1">CHI TIẾT</a></li>
+            </ul>
+              
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                    <div class="form-w3layouts">
+                        <!-- page start-->
+                        <div class="col-md-9 summary1">
+                            <div class="agile-last-grid">
+                                <div class="area-grids-heading">
+                                    <h3>Doanh thu và vốn theo thời gian</h3>
+                                    <button id="doanhthu-color"></button> Doanh thu
+                                    <button id="von-color"></button> Vốn
+                                </div>
+                                <div id="graph8"></div>
+                                <script>
+                                var day_data = [
+                                  {"period": "2016-10-01", "licensed": 3407, "sorned": 660},
+                                  {"period": "2016-09-30", "licensed": 3351, "sorned": 629},
+                                  {"period": "2016-09-29", "licensed": 3269, "sorned": 618},
+                                  {"period": "2016-09-20", "licensed": 3246, "sorned": 661},
+                                  {"period": "2016-09-19", "licensed": 3257, "sorned": 667},
+                                  {"period": "2016-09-18", "licensed": 3248, "sorned": 627},
+                                  {"period": "2016-09-17", "licensed": 3171, "sorned": 660},
+                                  {"period": "2016-09-16", "licensed": 3171, "sorned": 676},
+                                  {"period": "2016-09-15", "licensed": 3201, "sorned": 656},
+                                  {"period": "2016-09-10", "licensed": 3215, "sorned": 622}
+                                ];
+                                Morris.Bar({
+                                  element: 'graph8',
+                                  data: day_data,
+                                  xkey: 'period',
+                                  ykeys: ['licensed', 'sorned'],
+                                  labels: ['Licensed', 'SORN'],
+                                  xLabelAngle: 60
+                                });
+                                </script>
+                            </div>
+                        </div>
 
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+                        <div class="col-md-3 summary2">
+                            <div class="area-grids-heading">
+                                <h3>Biểu đồ tổng quát</h3>
+                            </div>
+                            <div id="donut"></div>	
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-body">
-                  ...
+            
+                <div id="menu1" class="tab-pane fade">
+                    <div class="form-w3layouts">
+
+                        <div class="table-responsive datatable-margin">
+                            <table id="dtHorizontalVerticalExample" class="table table-bordered table-sm" width="100%">
+                              <thead>
+                                <tr>
+                                    <th style="white-space: nowrap;">STT</th>
+                                    <th style="white-space: nowrap;">ĐƠN HÀNG</th>
+                                    <th style="white-space: nowrap;">LOẠI SỬA</th>
+                                    <th style="white-space: nowrap;">VỐN</th>
+                                    <th style="white-space: nowrap;">THUẾ</th>
+                                    <th style="white-space: nowrap;">HOA HỒNG</th>
+                                    <th style="white-space: nowrap;">DOANH THU</th>
+                                    <th style="white-space: nowrap;">LỢI NHUẬN</th>
+                                  </tr>
+                                  
+                              </thead>
+                              <tbody>
+                                <tr>
+                                    <td style="width: 50px !important">STT</td>
+                                    <td>Mã đơn hàng</td>
+                                    <td>Loại sửa</td>
+                                    <td>Vốn</td>
+                                    <td>Thuế</td>
+                                    <td>Hoa hồng</td>
+                                    <td>Doanh thu</td>
+                                    <td>Lợi nhuận</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 50px !important">STT</td>
+                                    <td>Mã đơn hàng</td>
+                                    <td>Loại sửa</td>
+                                    <td>Vốn</td>
+                                    <td>Thuế</td>
+                                    <td>Hoa hồng</td>
+                                    <td>Doanh thu</td>
+                                    <td>Lợi nhuận</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 50px !important">STT</td>
+                                    <td>Mã đơn hàng</td>
+                                    <td>Loại sửa</td>
+                                    <td>Vốn</td>
+                                    <td>Thuế</td>
+                                    <td>Hoa hồng</td>
+                                    <td>Doanh thu</td>
+                                    <td>Lợi nhuận</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 50px !important">STT</td>
+                                    <td>Mã đơn hàng</td>
+                                    <td>Loại sửa</td>
+                                    <td>Vốn</td>
+                                    <td>Thuế</td>
+                                    <td>Hoa hồng</td>
+                                    <td>Doanh thu</td>
+                                    <td>Lợi nhuận</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 50px !important">STT</td>
+                                    <td>Mã đơn hàng</td>
+                                    <td>Loại sửa</td>
+                                    <td>Vốn</td>
+                                    <td>Thuế</td>
+                                    <td>Hoa hồng</td>
+                                    <td>Doanh thu</td>
+                                    <td>Lợi nhuận</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 50px !important">STT</td>
+                                    <td>Mã đơn hàng</td>
+                                    <td>Loại sửa</td>
+                                    <td>Vốn</td>
+                                    <td>Thuế</td>
+                                    <td>Hoa hồng</td>
+                                    <td>Doanh thu</td>
+                                    <td>Lợi nhuận</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 50px !important">STT</td>
+                                    <td>Mã đơn hàng</td>
+                                    <td>Loại sửa</td>
+                                    <td>Vốn</td>
+                                    <td>Thuế</td>
+                                    <td>Hoa hồng</td>
+                                    <td>Doanh thu</td>
+                                    <td>Lợi nhuận</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 50px !important">STT</td>
+                                    <td>Mã đơn hàng</td>
+                                    <td>Loại sửa</td>
+                                    <td>Vốn</td>
+                                    <td>Thuế</td>
+                                    <td>Hoa hồng</td>
+                                    <td>Doanh thu</td>
+                                    <td>Lợi nhuận</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 50px !important">STT</td>
+                                    <td>Mã đơn hàng</td>
+                                    <td>Loại sửa</td>
+                                    <td>Vốn</td>
+                                    <td>Thuế</td>
+                                    <td>Hoa hồng</td>
+                                    <td>Doanh thu</td>
+                                    <td>Lợi nhuận</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 50px !important">STT</td>
+                                    <td>Mã đơn hàng</td>
+                                    <td>Loại sửa</td>
+                                    <td>Vốn</td>
+                                    <td>Thuế</td>
+                                    <td>Hoa hồng</td>
+                                    <td>Doanh thu</td>
+                                    <td>Lợi nhuận</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 50px !important">STT</td>
+                                    <td>Mã đơn hàng</td>
+                                    <td>Loại sửa</td>
+                                    <td>Vốn</td>
+                                    <td>Thuế</td>
+                                    <td>Hoa hồng</td>
+                                    <td>Doanh thu</td>
+                                    <td>Lợi nhuận</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 50px !important">STT</td>
+                                    <td>Mã đơn hàng</td>
+                                    <td>Loại sửa</td>
+                                    <td>Vốn</td>
+                                    <td>Thuế</td>
+                                    <td>Hoa hồng</td>
+                                    <td>Doanh thu</td>
+                                    <td>Lợi nhuận</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 50px !important">STT</td>
+                                    <td>Mã đơn hàng</td>
+                                    <td>Loại sửa</td>
+                                    <td>Vốn</td>
+                                    <td>Thuế</td>
+                                    <td>Hoa hồng</td>
+                                    <td>Doanh thu</td>
+                                    <td>Lợi nhuận</td>
+                                </tr>
+                              </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Tổng số</th>
+                                    <th>15</th>
+                                    <th></th>
+                                    <th>500.000</th>
+                                    <th>0</th>
+                                    <th>50.000</th>
+                                    <th>1.050.000</th>
+                                    <th>500.000</th>
+                                  </tr>
+                            </tfoot>
+                            </table>
+                            <!-- import and export excel  -->
+                            <footer class="panel-footer">
+                                <div class="row">
+                                  
+                                  <div class="col-sm-5 text-left">
+                                    <form action="" method="POST" enctype="multipart/form-data">
+                                      <button class="btn btn-warning"><i class="fa fa-print"></i> In báo cáo</button>
+                                    </form>
+                                  </div>
+                                  
+                                  <div class="col-sm-7 text-right text-center-xs">                
+                                    <form action="" method="POST">
+                                        <button class="btn btn-success"><i class="fa fa-file-export"></i> Xuất excel</button>
+                                    </form>
+                                    
+                                  </div>
+                                </div>
+                              </footer>
+                      
+                          </div>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-              </div>
             </div>
-          </div>
+
           <footer class="panel-footer">
             <div class="row">
             </div>
@@ -94,4 +314,86 @@
         </div>
       </div>
 </section>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/jquery.dcjqaccordion.2.7.js' %}"></script>
+<script src="{% static 'js/scripts.js' %}"></script>
+<script src="{% static 'js/jquery.slimscroll.js' %}"></script>
+<script src="{% static 'js/jquery.nicescroll.js' %}"></script>
+
+<script src="{% static 'datepicker/jquery.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'datepicker/jquery-ui.min.js' %}" type="text/javascript"></script>
+    <link href="{% static 'datepicker/jquery-ui.css' %}" rel="Stylesheet" type="text/css" />
+    
+
+    <script>
+        $( "#datepicker" ).datepicker({
+            prevText:"Tháng trước",
+            nextText:"Tháng sau",
+            dateFormat:"yy-mm-dd",
+            dayNamesMin: [ "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "Chủ nhật" ],
+            duration: "slow"
+        });
+
+        $( "#datepicker2" ).datepicker({
+            prevText:"Tháng trước",
+            nextText:"Tháng sau",
+            dateFormat:"yy-mm-dd",
+            dayNamesMin: [ "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "Chủ nhật" ],
+            duration: "slow"
+        });
+
+        
+        var donut = Morris.Donut({
+            element: 'donut',
+            resize: true,
+            colors: [
+                '#a8328e',
+                '#61a1ce',
+                '#ce8f61',
+                '#f5b942',
+                '#4842f5'
+                
+            ],
+            labelColor:"#cccccc", // text color
+            backgroundColor: '#333333', // border color
+            data: [
+                {label:"Tổng doanh thu", value:30},
+                {label:"Trong vốn", value:40},
+                {label:"Tổng lợi nhuận", value:50},
+                {label:"Tổng đơn hàng", value:60},
+
+            ]
+        });
+
+        $(".detail").click(function() {
+            $('table th').trigger('click');
+        })
+
+        $('#dtHorizontalVerticalExample').DataTable({
+            "scrollX": false,
+            "scrollY": 400,
+            
+
+            
+
+            // "bPaginate": false,
+            // "bLengthChange": false,
+            // "bFilter": true,
+            // "bInfo": false,
+            // "bAutoWidth": false 
+        });
+        $('.dataTables_length').addClass('bs-select');
+
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
+            $($.fn.dataTable.tables(true)).DataTable()
+               .columns.adjust();
+         });
+
+
+        
+        
+
+        // $('#dtHorizontalVerticalExample').DataTable().api().ajax.reload();
+        
+    </script>
 {% endblock %}

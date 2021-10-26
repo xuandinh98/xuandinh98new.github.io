@@ -1,12 +1,13 @@
-body {
-    margin: 0px;
-    border: 0px;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-#header {
+#main_header {
     width: 100%;
     height: 80px;
     background-color: #000D24;
+    color: white;
     position: fixed;
     z-index: 1000;
     top: 0;
@@ -14,28 +15,36 @@ body {
     left: 0;
 }
 
-#nav-line {
-    width: 60%;
+#left-main_header {
+    width: 70%;
+    height: 80px;
     float: left;
 }
 
-#icon {
-    width: 50px;
-    height: 50px;
-    margin: 15px;
-    margin-left: 30px;
-    background-image: url(../img/LOGO-removebg-preview.png);
-    background-color: white;
-    background-position: center;
-    background-size: cover;
+#main_header #main_icon_header {
+    width: 10%;
+    height: 80px;
+    float: left;
+}
+
+#main_header div img {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
+    background-color: white;
+    margin: 7%;
     display: inline-block;
 }
 
-#menu {
+#main_header #menu_main_header {
+    width: 90%;
+    height: 80px;
+    background-color: #000D24;
     float: right;
+    color: white;
 }
 
+<<<<<<< HEAD
 #menu a {
     text-decoration: none;
 }
@@ -45,37 +54,72 @@ body {
     width: 750px;
     padding: 0px;
     margin: 0;
+=======
+#main_header #menu_main_header ul {
+    list-style: none;
+    height: 80px;
+>>>>>>> bc37015470dba7ff8e6f9db7a43cb312e67e355f
 }
 
-#menu ul li {
-    width: 17%;
+#main_header #menu_main_header li {
     display: inline-block;
-    color: white;
-    padding-right: 15px;
+    width: 15%;
+    height: max-content;
     text-align: center;
+}
+
+.clear {
+    clear: both;
+}
+
+#main_header #menu_main_header a {
+    text-decoration: none;
+    width: 100%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    height: 80px;
+    text-align: center;
+}
+
+#main_header #menu_main_header div {
+    color: white;
+    text-align: center;
+<<<<<<< HEAD
     height: max-content;
     padding-bottom: 30px;
     padding-top: 30px;
     padding-left: 15px;
+=======
+    font-size: 20px;
+    display: inline-block;
+    height: 53px;
+    width: 100px;
+    padding-top: 27px;
+>>>>>>> bc37015470dba7ff8e6f9db7a43cb312e67e355f
 }
 
-#menu ul li:hover {
-    background-color: #00235fbe;
+#main_header #menu_main_header div:hover {
     box-shadow: 1px 1px 1px 1px #000D24;
 }
 
-#button-line {
-    width: 40%;
+#right-main_header {
+    width: 30%;
+    height: 80px;
     float: right;
 }
 
+#right-main_header #button_main_header {
+    width: 80%;
+    height: 80px;
+}
 
-/* Nút đăng nhập đăng ký */
-
-#button-line button:active {
-    -webkit-box-shadow: 0px 2px 0px #c47135, 0px 2px 2px #000000;
-    box-shadow: 0px 2px 0px #c47135, 0px 2px 2px #000000;
-    top: 2px;
+#right-main_header #button_main_header button {
+    width: 30%;
+    height: 40px;
+    margin-top: 15px;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 @import url(https://fonts.googleapis.com/css?family=BenchNine:700);
@@ -85,15 +129,13 @@ body {
     color: #ffffff;
     cursor: pointer;
     display: inline-block;
+    font-family: 'BenchNine', Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1em;
     outline: none;
     position: relative;
+    text-transform: uppercase;
     font-weight: 700;
-    width: 100px;
-    height: 30px;
-    font-size: 15px;
-    margin-top: 25px;
-    margin-right: 15px;
-    margin-left: 15px;
 }
 
 .snip1582:before,
@@ -136,29 +178,27 @@ body {
     width: 100%;
 }
 
+#right-main_header #cart_main_header {
+    width: 15%;
+    height: 80%;
+    display: inline;
+    margin-top: 10px;
+}
 
-/* input search */
-
-#search {
-    width: 200px;
-    background-color: #000D24;
-    border: none;
-    outline: none;
+#right-main_header #cart_main_header .ti-shopping-cart {
     color: white;
-    border-bottom: 1px solid #ffffff;
+    font-size: 30px;
+    padding-top: 10px;
+    padding-left: 40px;
 }
 
-#search::placeholder {
-    /* chạy tốt trên Chrome, Firefox, Opera, Safari 10.1+ */
-    color: white;
-    opacity: 1;
-    /* Firefox */
+#right-main_header div {
+    display: inline;
 }
 
-.clear {
-    clear: both;
-}
-
-i {
+#right-main_header #cart_main_header span {
+    padding: 5px;
+    border-radius: 40%;
+    background-color: red;
     color: white;
 }
