@@ -23,8 +23,16 @@
             </tr>
             <tr>
                 <td colspan="5" id="promo-code">Chọn mã ưu đãi bạn muốn sử dụng:
-                    <div>VNUK</div>
-                    <div>KSHW</div>
+                    <button onclick="choose_ticket('one')">VNUK</button>
+                    <dialog onclick="close_dialog()" id="one">
+                        <p>Giảm 50% đơn hàng đầu tiên! Lưu ý: Mã giảm giá không áp dụng chung với các chương trình khuyến mãi khác.</p>
+
+                    </dialog>
+                    <button onclick="choose_ticket('two')">KSHW</button>
+                    <dialog onclick="close_dialog()" id="two">
+                        <p>Free phí vận chuyển! Lưu ý: Mã giảm giá không áp dụng chung với các chương trình khuyến mãi khác.</p>
+
+                    </dialog>
                 </td>
                 <td><button id="update-cart">Cập nhật giỏ hàng</button></td>
             </tr>
@@ -52,4 +60,15 @@
     </div>
 </div>
 
+{% endblock %} {%block js%}
+<script>
+    function choose_ticket(a) {
+        document.getElementById(a).open = true;
+    }
+
+    function close_dialog() {
+        document.getElementById("one").open = false;
+        document.getElementById("two").open = false;
+    }
+</script>
 {% endblock %}

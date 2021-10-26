@@ -67,9 +67,7 @@ table #number {
     text-align: center;
 }
 
-#promo-code {}
-
-#promo-code div {
+#promo-code button {
     display: inline-block;
     width: 100px;
     height: 30px;
@@ -135,4 +133,17 @@ table #number {
 
 #content-cart #core-all-service i {
     color: red;
+}
+
+dialog {
+    width: 100%;
+    position: relative;
+    height: 100vh;
+    background-color: #000d247a;
+}
+
+dialog p {
+    position: relative;
+    top: 45%;
+    left: 30%;
 }
