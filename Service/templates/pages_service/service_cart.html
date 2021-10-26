@@ -1,63 +1,55 @@
-{% extends "pages_home/header_footer.html" %}
-{% load static %}
-{% block title %}Đối tác{% endblock %}
-
-{% block css %}
-    <link rel="stylesheet" href="{% static 'css/service-cart.css' %}">
-{% endblock %}
-
-{% block content %}
-       <div class="d-flex flex-column justify-content-center w-100 h-100">
-        <div id="content-cart">
+{% extends "pages_service/header_footer.html" %} {% load static %} {% block title %}Dịch vụ{% endblock %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/service-cart.css' %}"> {% endblock %} {% block content %}
+<div class="d-flex flex-column justify-content-center w-100 h-100">
+    <div id="content-cart">
+        <table>
+            <tr>
+                <th><input type="checkbox"> Chọn tất cả</th>
+                <th>Hình mô tả</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Tạm tính</th>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td><img src="{% static 'img/kinh-nghiem-mo-cua-hang-sua-chua-xe-may-tiet-kiem-von-1.jpg' %}" alt=""></td>
+                <td>Dịch vụ vá xe/Xe máy</td>
+                <td>
+                    <i>60000</i>đ</td>
+                <td><button id="btn-minus">-</button><input id="number" type="text" value="1"><button id="btn-add">+</button></td>
+                <td>
+                    <i>60000</i> đ</td>
+            </tr>
+            <tr>
+                <td colspan="5" id="promo-code">Chọn mã ưu đãi bạn muốn sử dụng:
+                    <div>VNUK</div>
+                    <div>KSHW</div>
+                </td>
+                <td><button id="update-cart">Cập nhật giỏ hàng</button></td>
+            </tr>
+        </table>
+        <div id="all-service">
+            <h2>Tổng giỏ hàng:</h2>
             <table>
                 <tr>
-                    <th><input type="checkbox"> Chọn tất cả</th>
-                    <th>Hình mô tả</th>
-                    <th>Tên sản phẩm</th>
-                    <th>Giá</th>
-                    <th>Số lượng</th>
-                    <th>Tạm tính</th>
+                    <td>Tổng dịch vụ:</td>
+                    <td><i>1</i> Dịch vụ</td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox"></td>
-                    <td><img src="{% static 'img/kinh-nghiem-mo-cua-hang-sua-chua-xe-may-tiet-kiem-von-1.jpg' %}" alt=""></td>
-                    <td>Dịch vụ vá xe/Xe máy</td>
-                    <td>
-                        <i>60000</i>đ</td>
-                    <td><button id="btn-minus">-</button><input id="number" type="text" value="1"><button id="btn-add">+</button></td>
-                    <td>
-                        <i>60000</i> đ</td>
-                </tr>
-                <tr>
-                    <td colspan="5" id="promo-code">Chọn mã ưu đãi bạn muốn sử dụng:
-                        <div>VNUK</div>
-                        <div>KSHW</div>
-                    </td>
-                    <td><button id="update-cart">Cập nhật giỏ hàng</button></td>
+                    <td>Tạm tính:</td>
+                    <td><i>60000</i> đ</td>
                 </tr>
             </table>
-            <div id="all-service">
-                <h2>Tổng giỏ hàng:</h2>
-                <table>
-                    <tr>
-                        <td>Tổng dịch vụ:</td>
-                        <td><i>1</i> Dịch vụ</td>
-                    </tr>
-                    <tr>
-                        <td>Tạm tính:</td>
-                        <td><i>60000</i> đ</td>
-                    </tr>
-                </table>
-                <div id="core-all-service">
-                    <h1>Tổng:</h1>
-                    <p><i>60000</i> đ</p>
-                    <div class="clear"></div>
-                </div>
-                <button onclick="window.location.href='service_order'" id="btn-order">Tiến hành đặt hàng</button>
+            <div id="core-all-service">
+                <h1>Tổng:</h1>
+                <p><i>60000</i> đ</p>
+                <div class="clear"></div>
             </div>
-            <div class="clear"></div>
+            <button onclick="window.location.href='service_order'" id="btn-order">Tiến hành đặt hàng</button>
         </div>
+        <div class="clear"></div>
     </div>
-    </div>
+</div>
 
 {% endblock %}

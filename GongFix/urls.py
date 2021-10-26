@@ -23,6 +23,8 @@ urlpatterns = [
     path('partner/', include('Partner.urls')),
     path('home/', include('home.urls')),
     path('service/', include('Service.urls')),
+    path('event/', include('event.urls')),
+    path('aboutus/', include('aboutus.urls')),
 ]
 
 if settings.DEBUG:

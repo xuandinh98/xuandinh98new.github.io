@@ -1,9 +1,11 @@
-{% extends "pages_home/header_footer.html" %} {% load static %} {% block title %}Đối tác{% endblock %} {% block css %}
-<link rel="stylesheet" href="{% static 'css/service.css' %}"> {% endblock %} {% block content %}
+{% extends "pages_service/header_footer.html" %} {% load static %} {% block title %}Dịch vụ{% endblock %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/css_service.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> {% endblock %} {% block content %}
 <div id="banner">
 
     <section id="accueil">
-
         <div class="triangle_rose"></div>
         <div class="triangle_vert"></div>
         <!-- // HEADER -->
@@ -17,118 +19,160 @@
 <div id="title-suggestion">
     Gợi ý cho bạn
 </div>
-<div class="home-slideshow">
-    <div class="item-slideshow fade">
-        <div id="service-suggestion">
-            <div id="div-img-suggestion"><img src="{% static 'img/kinh-nghiem-mo-cua-hang-sua-chua-xe-may-tiet-kiem-von-1.jpg' %}" alt=""></div>
-            <div id="div-info-suggestion">
-                <h3>Dịch vụ kiểm tra hư hỏng/Xe máy</h3>
-                <p><strong>Giá dịch vụ: </strong> 25.000đ/lít</p>
-                <p><strong>Số lượng: </strong><button id="btn-minus">-</button><input type="text"><button id="btn-add">+</button></p>
-                <p><strong>Mô tả dịch vụ: </strong></p>
-                <div id="detailed-description">
-                    <p id="detailed-description-one">Loại xăng: A92</p>
-                    <p id="detailed-description-two">Trọng lượng: 1 lít</p>
-                    <p class="clear"></p>
-                </div>
-                <button id="add-suggestion">Thêm vào giỏ hàng</button>
-            </div>
-            <div class="clear"></div>
+<!-- slide -->
+<div id="slide">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
 
-        </div>
-    </div>
-    <div class="item-slideshow fade">
-        <div id="service-suggestion">
-            <div id="div-img-suggestion"><img src="{% static 'img/download.jfif' %}" alt=""></div>
-            <div id="div-info-suggestion">
-                <h3>Dịch vụ kiểm tra hư hỏng/Xe máy</h3>
-                <p><strong>Giá dịch vụ: </strong> 25.000đ/lít</p>
-                <p><strong>Số lượng: </strong><button id="btn-minus">-</button><input type="text"><button id="btn-add">+</button></p>
-                <p><strong>Mô tả dịch vụ: </strong></p>
-                <div id="detailed-description">
-                    <p id="detailed-description-one">Loại xăng: A92</p>
-                    <p id="detailed-description-two">Trọng lượng: 1 lít</p>
-                    <p class="clear"></p>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="service_main-img-item">
+                    <img src="{% static 'img/kinh-nghiem-mo-cua-hang-sua-chua-xe-may-tiet-kiem-von-1.jpg' %}" alt="">
                 </div>
-                <button id="add-suggestion">Thêm vào giỏ hàng</button>
-            </div>
-            <div class="clear"></div>
-
-        </div>
-    </div>
-    <div class="item-slideshow fade">
-        <div id="service-suggestion">
-            <div id="div-img-suggestion"><img src="{% static 'img/image.jfif' %}" alt=""></div>
-            <div id="div-info-suggestion">
-                <h3>Dịch vụ kiểm tra hư hỏng/Xe máy</h3>
-                <p><strong>Giá dịch vụ: </strong> 25.000đ/lít</p>
-                <p><strong>Số lượng: </strong><button id="btn-minus">-</button><input type="text"><button id="btn-add">+</button></p>
-                <p><strong>Mô tả dịch vụ: </strong></p>
-                <div id="detailed-description">
-                    <p id="detailed-description-one">Loại xăng: A92</p>
-                    <p id="detailed-description-two">Trọng lượng: 1 lít</p>
-                    <p class="clear"></p>
+                <div class="service_main-info-item">
+                    <div style="width:100%; height:30px"></div>
+                    <strong class="name-service-item" style="margin-top: 50px;">DỊCH VỤ CỨU HỘ VÁ LỐP / XE MÁY</strong>
+                    <p class="info-service-item" style="margin-top: 10px;">Giá dịch vụ <i>60000</i>đ</p>
+                    <p class="info-service-item" style="margin-top: 10px;">Số lượng <button>-</button><input type="number" name="" id="" value="1"><button>+</button></p>
+                    <p class="info-service-item" style="margin-top: 10px;">Mô tả dịch vụ</p>
+                    <p class="mini-info-class-service-item" style="margin-top: 10px;">Dịch vụ áp dụng cho xe máy có bao gồm lốp xe</p>
+                    <button style="background-color: rgb(155, 155, 155); color:white;" class="button-add-card">Thêm vào giỏ hàng</button>
                 </div>
-                <button id="add-suggestion">Thêm vào giỏ hàng</button>
+                <div class="clear"></div>
             </div>
-            <div class="clear"></div>
 
+            <div class="item">
+                <div class="service_main-img-item">
+                    <img src="{% static 'img/kinh-nghiem-mo-cua-hang-sua-chua-xe-may-tiet-kiem-von-1.jpg' %}" alt="">
+                </div>
+                <div class="service_main-info-item">
+                    <div style="width:100%; height:30px"></div>
+                    <strong class="name-service-item" style="margin-top: 50px;">DỊCH VỤ CỨU HỘ VÁ LỐP / XE MÁY</strong>
+                    <p class="info-service-item" style="margin-top: 10px;">Giá dịch vụ <i>60000</i>đ</p>
+                    <p class="info-service-item" style="margin-top: 10px;">Số lượng <button>-</button><input type="number" name="" id="" value="1"><button>+</button></p>
+                    <p class="info-service-item" style="margin-top: 10px;">Mô tả dịch vụ</p>
+                    <p class="mini-info-class-service-item" style="margin-top: 10px;">Dịch vụ áp dụng cho xe máy có bao gồm lốp xe</p>
+                    <button style="background-color: rgb(155, 155, 155); color:white;" class="button-add-card">Thêm vào giỏ hàng</button>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="item">
+                <div class="service_main-img-item">
+                    <img src="{% static 'img/kinh-nghiem-mo-cua-hang-sua-chua-xe-may-tiet-kiem-von-1.jpg' %}" alt="">
+                </div>
+                <div class="service_main-info-item">
+                    <div style="width:100%; height:30px"></div>
+                    <strong class="name-service-item" style="margin-top: 50px;">DỊCH VỤ CỨU HỘ VÁ LỐP / XE MÁY</strong>
+                    <p class="info-service-item" style="margin-top: 10px;">Giá dịch vụ <i>60000</i>đ</p>
+                    <p class="info-service-item" style="margin-top: 10px;">Số lượng <button>-</button><input type="number" name="" id="" value="1"><button>+</button></p>
+                    <p class="info-service-item" style="margin-top: 10px;">Mô tả dịch vụ</p>
+                    <p class="mini-info-class-service-item" style="margin-top: 10px;">Dịch vụ áp dụng cho xe máy có bao gồm lốp xe</p>
+                    <button style="background-color: rgb(155, 155, 155); color:white;" class="button-add-card">Thêm vào giỏ hàng</button>
+                </div>
+                <div class="clear"></div>
+
+            </div>
         </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
 </div>
-
-<br>
-<!-- Nút điều chỉnh slide -->
-<div style="text-align: center;">
-    <span class="dot" onclick="currentSlide(0)"></span>
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-</div>
+<!-- end slide -->
 <h2>Sản phẩm bạn tìm kiếm</h2>
 <div class="line"></div>
-<div id="distinguish">
-    <div id="control_result">
-        <p>Hiển thị 1 kết quả <select name="display order">
+<div id="content_search_service">
+    <div id="list_service_search">
+        <div id="distinguish">
+            <div id="control_result">
+                <p>Hiển thị 1 kết quả <select name="display order">
             <option value="high-to-low">Giá từ cao đến thấp</option>
             <option value="low-to-high">Giá từ thấp tới cao</option>
           </select>
-        </p>
+                </p>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div id="list-product">
+            <div>
+                <img src="{% static 'img/20150908_e28f12d72bc7aa153f67d92ae8ef5c94_1441696053.jpg' %}" alt="">
+
+                <h3>Dịch vụ vá xe/Xe máy</h3><br>
+                <p><strong>Giá dịch vụ:</strong>
+                    <p class="gia">60000</p>đ</p><br>
+                <p><strong>Mô tả dịch vụ</strong></p><br>
+                <p>Dịch vụ áp dụng cho xe máy có bao gồm lốp xe.</p><br>
+                <button>Thêm vào giỏ hàng</button>
+            </div>
+            <div>
+                <img src="{% static 'img/20150908_e28f12d72bc7aa153f67d92ae8ef5c94_1441696053.jpg' %}" alt="">
+                <h3>Dịch vụ vá xe/Xe máy</h3><br>
+                <p><strong>Giá dịch vụ:</strong>
+                    <p class="gia">60000</p>đ</p><br>
+                <p><strong>Mô tả dịch vụ</strong></p><br>
+                <p>Dịch vụ áp dụng cho xe máy có bao gồm lốp xe.</p><br>
+                <button>Thêm vào giỏ hàng</button>
+            </div>
+            <div>
+                <img src="{% static 'img/20150908_e28f12d72bc7aa153f67d92ae8ef5c94_1441696053.jpg' %}" alt="">
+                <h3>Dịch vụ vá xe/Xe máy</h3><br>
+                <p><strong>Giá dịch vụ:</strong>
+                    <p class="gia">60000</p>đ</p><br>
+                <p><strong>Mô tả dịch vụ</strong></p><br>
+                <p>Dịch vụ áp dụng cho xe máy có bao gồm lốp xe.</p><br>
+                <button>Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+    </div>
+    <div id="control-withget_service">
+        <div class="control-cost-service">
+            <strong>LỌC SẢN PHẨM THEO GIÁ</strong>
+            <input style="margin-top: 20px;" type="range" id="cowbell" name="cowbell" min="0" max="100" value="90" step="10">
+            <p style="float: left;">MIN</p>
+            <p style="float: right;">MAX</p>
+            <button>LỌC</button>
+        </div>
+        <div>
+            <div class="control-cost-service">
+                <strong>LỌC SẢN PHẨM THEO LOẠI HÌNH</strong>
+                <p style="margin-top: 20px;">Loại xe:</p>
+                <select style="width:90%" name="cars" id="cars">
+                    <option value="motorcycle">Xe máy</option>
+                    <option value="car">Xe hơi</option>
+                  </select>
+                <p style="margin-top: 20px;">Loại hư hỏng</p>
+                <select style="width:90%" name="cars" id="cars">
+                    <option value="off-car">Chớp máy</option>
+                    <option value="boom-car">Bể bánh</option>
+                    <option value="none-energy">Hết xăng</option>
+                    <option value="led-none">Hỏng đèn</option>
+                  </select>
+                <button>LỌC</button>
+            </div>
+        </div>
     </div>
     <div class="clear"></div>
 </div>
 
-<div id="list-product">
-    <div>
-        <img src="{% static 'img/20150908_e28f12d72bc7aa153f67d92ae8ef5c94_1441696053.jpg' %}" alt="">
-
-        <h3>Dịch vụ vá xe/Xe máy</h3><br>
-        <p><strong>Giá dịch vụ:</strong>
-            <p class="gia">60000</p>đ</p><br>
-        <p><strong>Mô tả dịch vụ</strong></p><br>
-        <p>Dịch vụ áp dụng cho xe máy có bao gồm lốp xe.</p><br>
-        <button>Thêm vào giỏ hàng</button>
-    </div>
-    <div>
-        <img src="{% static 'img/20150908_e28f12d72bc7aa153f67d92ae8ef5c94_1441696053.jpg' %}" alt="">
-        <h3>Dịch vụ vá xe/Xe máy</h3><br>
-        <p><strong>Giá dịch vụ:</strong>
-            <p class="gia">60000</p>đ</p><br>
-        <p><strong>Mô tả dịch vụ</strong></p><br>
-        <p>Dịch vụ áp dụng cho xe máy có bao gồm lốp xe.</p><br>
-        <button>Thêm vào giỏ hàng</button>
-    </div>
-    <div>
-        <img src="{% static 'img/20150908_e28f12d72bc7aa153f67d92ae8ef5c94_1441696053.jpg' %}" alt="">
-        <h3>Dịch vụ vá xe/Xe máy</h3><br>
-        <p><strong>Giá dịch vụ:</strong>
-            <p class="gia">60000</p>đ</p><br>
-        <p><strong>Mô tả dịch vụ</strong></p><br>
-        <p>Dịch vụ áp dụng cho xe máy có bao gồm lốp xe.</p><br>
-        <button>Thêm vào giỏ hàng</button>
-    </div>
-</div>
 
 {% endblock %} {% block js %}
 <script src="{% static 'js/service.js' %}">
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 {% endblock %}

@@ -1,4 +1,30 @@
 body {
+    background: white;
+}
+
+#footer {
+    background-color: #000D24;
+    color: white;
+}
+
+#content-event {
+    width: 100%;
+    height: max-content;
+}
+
+@keyframes circle {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(6)
+    }
+}
+
+
+/* title banner */
+
+body {
     padding: 0;
     margin: 0;
     background-color: #e7f6ff;
@@ -244,269 +270,124 @@ section#accueil header>h1 {
     color: #1d1d1d;
 }
 
-#control_result {
-    float: right;
-    margin-top: 50px;
-    margin-right: 20%;
-    border-radius: 15;
-    width: 30%;
-}
 
-#distinguish {
+/* content event */
+
+#content-event {
     width: 100%;
-}
-
-#title-suggestion {
-    background-color: #000D24;
-    color: #fff;
-    height: 50px;
-    margin-top: 50px;
-    text-align: center;
-    font-size: 30px;
-    padding-top: 10px;
-}
-
-#service-suggestion {
-    margin-top: 50px;
-    width: 70%;
-    height: 300px;
-    margin-left: 15%;
-    border: 1px solid rgb(161, 161, 161)88;
-    box-shadow: 5px 10px #888888;
-    border-radius: 20px;
-    background-color: #fff;
-}
-
-#control_result select {
-    width: 200px;
-    height: 30px;
-    margin-left: 30px;
-}
-
-#div-img-suggestion {
-    float: left;
-    width: 28%;
-    height: 100%;
-}
-
-#div-img-suggestion img {
-    width: 80%;
-    height: 80%;
-    margin: 30px;
-}
-
-#div-info-suggestion {
-    float: right;
-    width: 70%;
-    height: 100%;
-    padding-top: 20px;
-}
-
-#div-info-suggestion button {
-    background-color: #fff;
-    border: 0px;
-}
-
-#div-info-suggestion button:hover {
-    cursor: pointer;
-}
-
-#div-info-suggestion input {
-    width: 50px;
-    height: 20px;
-}
-
-.clear {
-    clear: both;
-}
-
-#detailed-description-one {
-    width: 45%;
-    float: left;
-}
-
-#detailed-description-two {
-    width: 45%;
-    float: right;
-}
-
-#service-suggestion #add-suggestion {
-    float: right;
-    margin: 5px;
-    margin-right: 50px;
-    background-color: rgb(184, 184, 184);
-    border-radius: 20;
-    padding: 10px;
-    height: 30px;
-    color: white;
-    box-shadow: 2px 3px #888888;
-}
-
-#service-suggestion #add-suggestion:active {
-    box-shadow: none;
-}
-
-.line {
-    margin-top: 10px;
-    width: 100%;
-    height: 0px;
-    border-top: 2px solid #000D24;
-}
-
-h2 {
-    margin-top: 100px;
-    width: 100%;
-    text-align: center;
-    font-size: 30px;
-}
-
-#list-product {
-    width: 95%;
     height: max-content;
-    margin-left: 5%;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    padding-bottom: 50px;
+    background: linear-gradient(0deg, rgba(0, 140, 255, 0.1), rgba(25, 0, 255, 0.1)), url(../img/background.PNG);
 }
 
-#list-product div {
-    width: 20%;
-    height: 500px;
-    display: inline-block;
-    margin-left: 5%;
-    margin-right: 5%;
-    box-shadow: 5px 10px #888888;
-    background-color: #fff;
-}
-
-#list-product img {
+#title-content-event h2,
+#title-content-event p {
     width: 100%;
-    height: 250px;
+    text-align: center;
 }
 
-#list-product img:hover {
-    transform: scale(1.2);
-    cursor: pointer;
+#title-content-event h2 {
+    font-size: 50px;
+    color: #0a2657;
 }
 
-#list-product h3,
-#list-product p {
-    width: 90%;
-    margin-left: 7px;
-    display: inline;
-    line-height: 2em;
+#title-content-event p {
+    font-size: 35px;
 }
 
-#list-product button {
-    width: 90%;
-    height: 30px;
-    margin-left: 5%;
-    margin-top: 20px;
-    border: 0px;
-    box-shadow: 2px 3px #888888;
+#title-content-event i {
+    color: red;
 }
 
-#list-product button:active {
-    box-shadow: none;
-}
-
-#list-product button:hover {
-    cursor: pointer;
-}
-
-
-/* slide show */
-
-* {
-    box-sizing: border-box
-}
-
-
-/* Slideshow container */
-
-.home-slideshow {
-    max-width: 90%;
-    margin-left: 5%;
-    margin-top: 30px;
-}
-
-
-/* Ẩn các slider */
-
-.item-slideshow {
-    display: none;
-    width: 100%;
-    height: auto;
-}
-
-.item-slideshow img {
-    width: 100%;
-    height: auto;
-}
-
-
-/* định dạng các chấm chuyển đổi các slide */
-
-.dot {
-    cursor: pointer;
-    height: 13px;
-    width: 13px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
-
-/* khi được hover, active đổi màu nền */
-
-.active,
-.dot:hover {
-    background-color: #717171;
-}
-
-
-/* Thêm hiệu ứng khi chuyển đổi các slide */
-
-.fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 3s;
-    animation-name: fade;
-    animation-duration: 3s;
-}
-
-@-webkit-keyframes fade {
-    from {
-        opacity: .4
-    }
-    to {
-        opacity: 1
-    }
-}
-
-@keyframes fade {
-    from {
-        opacity: .4
-    }
-    to {
-        opacity: 1
-    }
-}
-
-.ti-shopping-cart {
-    font-size: 30;
-    margin-left: 70%;
-}
-
-#link-cart i {
-    background-color: red;
-    border-radius: 180px;
-    padding: 5px;
-    padding-left: 8px;
-    padding-right: 8px;
-}
-
-#link-cart {
-    text-decoration: none;
+#title-content-event .item-event-left {
+    width: 40%;
+    height: max-content;
+    background-color: white;
     color: #000D24;
+    position: relative;
+    padding-bottom: 20px;
+    margin-top: 50px;
+    border: 10px solid #914DFF;
+    border-radius: 10px;
+    left: 10%;
+    -webkit-animation-name: example;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-delay: 2s;
+    /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 4s;
+    animation-delay: 1s;
+    animation-direction: reverse;
+}
+
+
+/* Safari 4.0 - 8.0 */
+
+@-webkit-keyframes example {
+    0% {
+        left: 10%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+
+/* Standard syntax */
+
+@keyframes example {
+    0% {
+        left: 10%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+#title-content-event .item-event-right {
+    width: 40%;
+    height: max-content;
+    background-color: white;
+    color: #000D24;
+    position: relative;
+    padding-bottom: 20px;
+    margin-top: 50px;
+    border: 10px solid #4DFF91;
+    border-radius: 10px;
+    left: 50%;
+    -webkit-animation-name: exampleright;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-delay: 2s;
+    /* Safari 4.0 - 8.0 */
+    animation-name: exampleright;
+    animation-duration: 4s;
+    animation-delay: 1s;
+}
+
+
+/* Safari 4.0 - 8.0 */
+
+@-webkit-keyframes exampleright {
+    0% {
+        left: 10%;
+    }
+    100% {
+        left: 50%;
+    }
+}
+
+
+/* Standard syntax */
+
+@keyframes exampleright {
+    0% {
+        left: 10%;
+    }
+    100% {
+        left: 50%;
+    }
 }

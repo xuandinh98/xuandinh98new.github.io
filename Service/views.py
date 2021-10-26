@@ -9,3 +9,7 @@ def service_cart(request):
     return render(request, 'pages_service/service_cart.html')
 def service_order(request):
     return render(request, 'pages_service/service_order.html')
+def service_check_info(request):
+    return render(request, 'pages_service/service_check_info.html')
+def service_procedure(request):
+    return render(request, 'pages_service/service_procedure.html')

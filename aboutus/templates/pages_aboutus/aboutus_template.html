@@ -1,0 +1,41 @@
+{% extends "pages_aboutus/header_footer.html" %} {% load static %} {% block title %}Sự kiện{% endblock %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/aboutus.css' %}"> {% endblock %} {% block content %}
+<div id="contentaboutus">
+    <div id="banner">
+
+        <section id="accueil">
+
+            <div class="triangle_rose"></div>
+            <div class="triangle_vert"></div>
+            <!-- // HEADER -->
+            <header>
+                <h1>Mọi điều về GONGFIX</h1>
+                <input id="service_input" type="text" placeholder="Bạn đang tim kiếm sự kiện nào?">
+            </header>
+        </section>
+    </div>
+    <div id="main-content-aboutus">
+
+        <h2>GONGFIX</h2>
+        <div id="right-col">
+            <p>GongFix là công ty công nghệ hàng đầu, đồng thời cũng là công ty tiên phong về việc cung cấp mô hình hệ sinh thái sửa chữa xe lưu động tại Việt Nam.
+            </p>
+        </div>
+        <div id="left-col">
+            <p>Kết nối hơn 10.000 cửa hàng sửa xe với hàng triệu người dùng Việt qua các dịch vụ sửa xe lưu động, bảo trì và cung cấp phụ tùng chính hãng.
+            </p>
+            <p>GongFix cũng đang không ngừng thử nghiệm để mang tới nhiều dịch vụ đa dạng hơn nữa cho thị trường Việt Nam trong thời gian tới.
+            </p>
+        </div>
+        <div class="clear"></div>
+        <h2>Đáng tin cậy</h2>
+        <img src="{% static 'img/Screenshot.png' %}" alt="">
+    </div>
+
+</div>
+
+
+
+
+
+{% endblock %}

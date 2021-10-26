@@ -1,0 +1,41 @@
+{% extends "pages_service/header_footer.html" %} {% load static %} {% block title %}Dịch vụ{% endblock %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/service_check_info.css' %}"> {% endblock %} {% block content %}
+<div class="d-flex flex-column justify-content-center w-100 h-100">
+    <div id="content-check-order">
+        <h1>Thông tin đơn hàng</h1>
+        <div class="info-customer">
+
+            <p>Khách hàng: <span>Mai Thị Quỳnh Như</span></p>
+            <p>Quốc gia: <span>Việt Nam</span></p>
+            <p>Thành phố: <span>Hồ Chí Minh</span></p>
+            <p>Địa chỉ: <span>82/44 Đinh Bộ Lĩnh P26 Quận Bình Thạnh </span></p>
+            <p>SDT: <span>0706811338</span></p>
+            <p>Email: <span>maithiquynhnhum@gmail.com</span></p>
+        </div>
+        <table>
+            <tr>
+                <th>Hình ảnh</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Tạm tính</th>
+            </tr>
+            <tr>
+                <td><img src="{% static 'img/kinh-nghiem-mo-cua-hang-sua-chua-xe-may-tiet-kiem-von-1.jpg' %}" alt=""></td>
+                <td>Dịch vụ vá xe / Xe máy</td>
+                <td><i>60000</i>đ</td>
+                <td><i>1</i></td>
+                <td><i>60000</i>đ</td>
+            </tr>
+        </table>
+        <div class="info-customer">
+
+            <p>Tổng thanh toán: <span><i>60000</i>đ</span></p>
+            <p>Hình thức thanh toán: <span>Ví Gongfix</span></p>
+            <p>Vị trí của bạn hiện tại: <span>73 Võ Vân Ngân Thủ Đức Hồ Chí Minh</span></p>
+            <p>Cửa hàng: <span>73 Võ Vân Ngân Thủ Đức Hồ Chí Minh </span></p>
+            <button onclick="window.location.href='service_procedure'" id="btn-check-order">Xác nhận đơn hàng</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

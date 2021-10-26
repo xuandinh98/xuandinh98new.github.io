@@ -1,0 +1,48 @@
+{% extends "pages_event/header_footer.html" %} {% load static %} {% block title %}Sự kiện{% endblock %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/event.css' %}"> {% endblock %} {% block content %}
+<div id="content-event">
+    <div id="banner">
+
+        <section id="accueil">
+
+            <div class="triangle_rose"></div>
+            <div class="triangle_vert"></div>
+            <!-- // HEADER -->
+            <header>
+                <h1>SỰ KIỆN</h1>
+                <input id="service_input" type="text" placeholder="Bạn đang tim kiếm sự kiện nào?">
+            </header>
+        </section>
+    </div>
+    <div id="content-event">
+
+        <div id="title-content-event">
+            <h2 style="margin-top: 0; padding-top: 50px;">GONGFIX</h2>
+            <p>Sự kiện tháng này</p>
+            <div class="item-event-left">
+                <i style="padding-left:10%;padding-top:10%; width: 100%; display:inline-block; font-size: 50px">50%</i>
+                <p style="font-weight: bold; font-size: 30px" class="title-item-event">Đơn đặc hàng đầu tiên</p>
+                <p style="font-size: 18px;">Gongfix giảm giá 50% cho đơn đặt hàng đầu tiên khi khách hàng nhập mã ‘xinchaogongfix’ khi thanh toán hoá đơn.</p>
+            </div>
+            <div class="item-event-right">
+                <i style="padding-left:10%;padding-top:10%; width: 100%; display:inline-block; font-size: 50px">VIP</i>
+                <p style="font-weight: bold; font-size: 30px" class="title-item-event">Chính sách ưu đãi riêng</p>
+                <p style="font-size: 18px;">Gongfix giảm giá 50% cho đơn đặt hàng đầu tiên khi khách hàng nhập mã ‘xinchaogongfix’ khi thanh toán hoá đơn.</p>
+            </div>
+            <div class="item-event-left">
+                <i style="padding-left:10%;padding-top:10%; width: 100%; display:inline-block; font-size: 50px">NẠP</i>
+                <p style="font-weight: bold; font-size: 30px" class="title-item-event">Khuyến mãi khi nạp xu Gongfix</p>
+                <p style="font-size: 18px;">Gongfix giảm giá 50% cho đơn đặt hàng đầu tiên khi khách hàng nhập mã ‘xinchaogongfix’ khi thanh toán hoá đơn.</p>
+            </div>
+            <div class="item-event-right">
+                <i style="padding-left:10%;padding-top:10%; width: 100%; display:inline-block; font-size: 50px">LUCKY</i>
+                <p style="font-weight: bold; font-size: 30px" class="title-item-event">Đơn hàng may mắn</p>
+                <p style="font-size: 18px;">Gongfix giảm giá 50% cho đơn đặt hàng đầu tiên khi khách hàng nhập mã ‘xinchaogongfix’ khi thanh toán hoá đơn.</p>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}

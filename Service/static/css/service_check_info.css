@@ -1,0 +1,77 @@
+body {
+    background: linear-gradient(-45deg, #ffffff, #010e49, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#content-check-order {
+    width: 80%;
+    margin: 10%;
+    height: max-content;
+    background-color: #ffffff;
+}
+
+#content-check-order h1 {
+    width: 100%;
+    text-align: center;
+    padding-top: 10%;
+}
+
+.info-customer {
+    padding-left: 20%;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#content-check-order i {
+    color: black;
+    font-style: normal;
+}
+
+#content-check-order table {
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#content-check-order table td,
+#content-check-order table th {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    text-align: center;
+    width: 15%;
+}
+
+#content-check-order table img {
+    width: 100px;
+    height: 100px;
+}
+
+#btn-check-order {
+    width: 250px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #000D24;
+    color: white;
+    margin-top: 50px;
+    margin-left: 25%;
+    margin-bottom: 50px;
+    box-shadow: 2px 3px #888888;
+}
