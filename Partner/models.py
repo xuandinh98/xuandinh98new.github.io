@@ -87,3 +87,64 @@ class Wards(models.Model):
     created_at = models.DateTimeField()
     updated_at = models.DateTimeField()
 
+class Ticket(models.Model):
+    id = models.BigAutoField(primary_key = True)
+    partner_id = models.IntegerField()
+    desc = models.TextField()
+    status = models.IntegerField() # 1: đang chờ, 2: xác nhận, 3: không xác nhận
+    confirm_at = models.DateTimeField()
+    created_at = models.DateTimeField()
+    updated_at = models.DateTimeField()
+
+# Phiếu rút tiền
+class WithdrawalSlip(models.Model):
+    id = models.BigAutoField(primary_key = True)
+    ticket_id = models.IntegerField()
+    money_withdraw = models.IntegerField()
+    bank = models.TextField()
+    bank_account = models.TextField()
+    bank_owner = models.TextField()
+    created_at = models.DateTimeField()
+    updated_at = models.DateTimeField()
+
+# Phiếu hủy đối tác
+class CancelPartner(models.Model):
+    id = models.BigAutoField(primary_key = True)
+    ticket_id = models.IntegerField()
+    partner_id = models.IntegerField()
+    date_cancel = models.DateTimeField()
+    created_at = models.DateTimeField()
+    updated_at = models.DateTimeField()
+
+# Phiếu thay đổi thông tin
+class ChangeInfoPartner(models.Model):
+    id = models.BigAutoField(primary_key = True)
+    ticket_id = models.IntegerField()
+    partner_id = models.IntegerField()
+    partner_firstname = models.TextField() # Họ và chữ lót
+    partner_lastname = models.TextField(null=True) # Tên đối tác
+    partner_sex = models.IntegerField(null=True) # Giới tính 1=>Nam / 2=>Nữ
+    partner_image = models.ImageField(null=True, blank=True) # ảnh hồ sơ
+    store_name = models.TextField() # tên cửa hàng
+    store_image = models.ImageField(blank=True) # ảnh cửa hàng
+    partner_phone = models.CharField(max_length=11)
+    partner_phone2 = models.CharField(max_length=11)
+    partner_birthday = models.DateField()
+    partner_email = models.TextField()
+    partner_address = models.TextField()
+    partner_area = models.TextField() # quốc gia
+    partner_province = models.TextField() # tỉnh/thành
+    partner_district = models.TextField() # quận/huyện
+    partner_wards = models.TextField() # phường/xã/thị trấn
+    police_certificate = models.FileField(blank=True) # giấy xác nhận của công an như sơ yếu lý lịch,... nếu nhiều để chung 1 file
+    partner_bank_account = models.TextField() # tài khoản ngân hàng
+    bank_name = models.TextField() # tên ngân hàng
+    bank_account_holder_name = models.CharField(max_length=255) # tên tài khoản ngân hàng, viết hoa không dấu
+    bank_branch = models.TextField(null=True) # chi nhánh ngân hàng
+    typerepair_xedap = models.IntegerField(null=True) # sửa xe đạp. 1=> có, 0=> không
+    typerepair_xemay = models.IntegerField(null=True) # sửa xe máy. 1=> có, 0=> không
+    typerepair_xehoi = models.IntegerField(null=True) # sửa xe hơi. 1=> có, 0=> không
+    typerepair_xekeo = models.IntegerField(null=True) # xe kéo. 1=> có, 0=> không
+    created_at = models.DateTimeField()
+    updated_at = models.DateTimeField()
+

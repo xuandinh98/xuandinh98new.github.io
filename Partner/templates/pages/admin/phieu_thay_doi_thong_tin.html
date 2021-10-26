@@ -312,7 +312,7 @@
         <input type="hidden" value="add" name="type">
         <label class="col-sm-8 control-label" for="exampleInputEmail1"></label>
         <a href="{% url 'partner_ticket' %}" class="btn btn-secondary">Trở lại</a>
-        <button type="submit" name="add_physical" class="btn btn-info">Đăng ký</button>
+        <button type="submit" name="add_physical" class="btn btn-info btn-register">Đăng ký</button>
     </div>  
     <footer class="panel-footer">
       <div class="row">
@@ -406,5 +406,22 @@ $(".signup-phone2").blur(function() {
         $(".warning-phone2").css("display", "none");
     }
 })
+
+
+    // $(".btn-register").click(function() {
+    //     // make POST ajax call
+    //     $.ajax({
+    //         type: 'POST',
+    //         url: "{% url 'registerChangeInfo' %}",
+    //         data: {"csrfmiddlewaretoken": '{{csrf_token}}', 'type' : "1", 'data' : ''},
+    //         success: function (response) {
+                
+    //         },
+    //         error: function (response) {
+    //             // alert the error if any error occured
+    //             alert(response["responseJSON"]["error"]);
+    //         }
+    //     })
+    // });
 </script>
 {% endblock %}

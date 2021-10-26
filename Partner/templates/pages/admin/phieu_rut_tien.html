@@ -44,7 +44,7 @@
           <div class="form-group">
             <label class="col-sm-3 control-label">Ngân hàng</label>
             <div class="col-sm-6">
-                <input type="text" class="form-control" name="physical_name" value="Agribank - Chi nhánh h.Lai Vung, Đồng Tháp">
+                <input type="text" class="form-control bank" name="physical_name" value="Agribank - Chi nhánh h.Lai Vung, Đồng Tháp">
             </div>
           </div>
           <div class="form-group">
@@ -69,7 +69,7 @@
               <input type="hidden" value="add" name="type">
               <label class="col-sm-7 control-label" for="exampleInputEmail1"></label>
               <a href="{% url 'partner_ticket' %}" class="btn btn-secondary">Trở lại</a>
-              <button type="submit" name="add_physical" class="btn btn-info">Đăng ký</button>
+              <button type="submit" name="add_physical" class="btn btn-info btn-register">Đăng ký</button>
           </div>
       </form>      
     <footer class="panel-footer">
@@ -79,6 +79,22 @@
   </div>
 </section>
 <script>
-  
+  $(".btn-register").click(function() {
+      var withdraw_money = $(".withdraw-money").val();
+      var bank = $(".bank").val();
+    // make POST ajax call
+    $.ajax({
+        type: 'POST',
+        url: "{% url 'registerWithdrawal' %}",
+        data: {"csrfmiddlewaretoken": '{{csrf_token}}', 'type' : "1", 'data' : ''},
+        success: function (response) {
+            
+        },
+        error: function (response) {
+            // alert the error if any error occured
+            alert(response["responseJSON"]["error"]);
+        }
+    })
+  });
 </script>
 {% endblock %}
